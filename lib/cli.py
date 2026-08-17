@@ -99,6 +99,14 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("catalog", help="regenerate catalog.md/json from styles + brands")
 
+    rev = sub.add_parser("review", help="design-rule review of a composition or brand")
+    rev.add_argument("--style", default=None)
+    rev.add_argument("--brand", default=None, help="review a brand doc alone (no --style)")
+    rev.add_argument("--source", default=None)
+    rev.add_argument("--image-type", default=None,
+                     help="portrait|sculpture|void|landscape|texture (for effect pairing)")
+    rev.add_argument("--seed", type=int, default=None)
+
     c = sub.add_parser("compose", help="deterministic recipe render")
     c.add_argument("--style", required=True)
     c.add_argument("--brand", default=None)
@@ -197,6 +205,22 @@ def main(argv: list[str] | None = None) -> int:
         elif args.cmd == "catalog":
             from .catalog import write
             _print(write(), as_json)
+
+        elif args.cmd == "review":
+            from .design import review_resolved, review_brand
+            if args.brand and not args.style:
+                from .brand import load_brand
+                findings = review_brand(load_brand(args.brand))
+                _print({"brand": args.brand, "findings": findings}, as_json)
+            elif args.style:
+                from .compose import resolve
+                resolved = resolve(args.style, brand_id=args.brand,
+                                   source=args.source, seed=args.seed)
+                findings = review_resolved(resolved, image_type=args.image_type)
+                _print({"style": args.style, "brand": resolved.get("brand_id"),
+                        "findings": findings}, as_json)
+            else:
+                raise SystemExit("review needs --style (or --brand alone)")
 
         elif args.cmd == "compose":
             from .compose import compose

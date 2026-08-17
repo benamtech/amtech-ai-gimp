@@ -1,6 +1,6 @@
 # amtech-computer-use-graphics
 
-**v0.1.1** — AMTECH · Benjamin Palaskas <ben@amtechai.com> · https://amtechai.com
+**v0.1.2** — AMTECH · Benjamin Palaskas <ben@amtechai.com> · https://amtechai.com
 
 The program composes images. It is deterministic. It does not use diffusion.
 It does not call a large language model at render time.
@@ -110,6 +110,7 @@ The loop has five steps:
 | `tag --src P --tags T --url U` | Tag a still into the registry. |
 | `search-still --query Q` | Search images across engines. |
 | `catalog` | Regenerate catalog.md and catalog.json. |
+| `review` | Design-rule review (contrast/harmony/pairing/variant checks). |
 | `compose` | Render a still from a recipe. |
 | `generate` | Emit and run a one-shot script. |
 | `batch` | Render many stills from one template. |

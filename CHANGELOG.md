@@ -2,6 +2,48 @@
 
 All notable changes to amtech-computer-use-graphics are tracked here.
 
+## [0.1.2] — 2026-08-17
+
+### Fixed — effect dispatch silently dropped params
+
+`lib/render.py:_apply_filter` filtered out `bits`/`factor` from every effect's
+kwargs before dispatching, so `posterize(bits=4)` and `contrast(factor=1.5)`
+rendered as their defaults — a real correctness bug that also made seeded
+"variants" look identical (the grade never actually changed). Effect dispatch
+now goes through a single canonical path, `lib/effects.py:apply_filter`, which
+signature-filters kwargs (pass through everything the effect accepts, drop only
+what it doesn't). `render` and `library` share it, so the compose path and the
+generated-script path agree exactly.
+
+- `lib/effects.py`: added `filter_kwargs()` and `apply_filter()` (canonical
+  dispatch); `library._filtered_kwargs` now delegates to it.
+- `lib/render.py`: `_apply_filter` routes EFFECTS names through
+  `effects.apply_filter` and keeps only the genuinely-legacy fallback names
+  (`sharpness`, `smooth`, `detail`, `flip_h/v`, `rotate`, `resize`, `crop`,
+  `box_blur`).
+- `lib/compose.py`: `_eval` no longer swallows bad expressions as `0`; it
+  raises with the offending expression (and added `round` to the eval namespace).
+
+### Added — a design-rules layer (`lib/design.py` + `review` command)
+
+Determinism is not taste. A new advisory review layer encodes rules for
+combinations that actually look good, surfaced via `run.py review`:
+
+- **contrast** — WCAG relative-luminance ratio; `legible(fg, bg, large=…)`.
+- **harmony** — near-duplicate palette entries, forbidden-hue hits, and
+  palette colors with no legible partner.
+- **pairing** — a curated effect↔image-type table (portrait/sculpture/void/
+  landscape/texture) with recommended + avoid lists.
+- **variants** — `variants_distinct(a, b)` reports whether two resolved
+  compositions differ on a *visible* axis (canvas/background/filters/copy/
+  layout), ignoring noise-only effects (grain, glitch), so a seeded "variant"
+  that only perturbs noise is correctly flagged as identical.
+
+`run.py review --brand X` reviews a brand doc; `--style S [--brand B]
+[--source …] [--image-type portrait|sculpture|void|landscape|texture] [--seed N]`
+reviews a resolved composition. Docs (AUTHORITY.md, CODEGRAPH.md,
+SKILL.md) updated.
+
 ## [0.1.1] — 2026-08-17
 
 ### Added — styles as reusable templates + batch automation

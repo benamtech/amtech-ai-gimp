@@ -25,7 +25,9 @@ lib/
 ├── registry.py    image tagging -> sources/registry.{md,json}
 ├── catalog.py     styles/brands/families -> catalog.{md,json}
 ├── effects.py     THE effect library (type, geometry, grade, glitch, texture,
-│                  composite) — the canonical primitives
+│                  composite) — the canonical primitives + apply_filter dispatch
+├── design.py      design rules: contrast, harmony, effect↔image pairing,
+│                  variant distinctness (advisory review; no Pillow)
 ├── render.py      engine abstraction (pillow | gimp_native | cli_anything_gimp)
 ├── compose.py     resolve() + build_project() + compose()  (project-JSON path)
 ├── library.py     emit_script() + generate()  (script-of-scripts path)
@@ -46,6 +48,7 @@ registry  -> __init__
 catalog   -> __init__, brand, style
 style     -> __init__
 effects   -> __init__, brand, fonts
+design    -> __init__  (pure; no Pillow, no other lib deps)
 render    -> __init__, effects
 compose   -> __init__, brand, effects, fonts, render, source, style
 library   -> __init__, effects, compose, source
@@ -103,6 +106,7 @@ source spec ─► source.resolve() ─► local file
 - new effect primitive → `lib/effects.py` (function) + add to `EFFECTS` dict
   so filters and generated scripts can dispatch it.
 - new filter name → ensure `render._apply_filter` and `effects.EFFECTS` know it.
+- new design rule → `lib/design.py` predicate, surfaced via `review_resolved`.
 - new backend → `lib/render.py` strategy + `engine` choice in `compose`.
 - new command → `lib/cli.py` subparser + a handler.
 - new style/brand → `run.py style-new` / `run.py brand-new`, then `run.py catalog`.

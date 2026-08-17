@@ -1,6 +1,6 @@
 # Authors
 
-amtech-computer-use-graphics v0.1.1
+amtech-computer-use-graphics v0.1.2
 
 - **Benjamin Palaskas** <ben@amtechai.com> — author
 - **AMTECH** — https://amtechai.com

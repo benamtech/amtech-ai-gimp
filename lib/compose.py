@@ -35,10 +35,13 @@ def _eval(expr, w: int, h: int, rng: random.Random):
         try:
             return eval(expr, {"__builtins__": {}},
                         {"W": w, "H": h, "int": int, "float": float,
-                         "min": min, "max": max})
-        except Exception:  # noqa: BLE001
-            return 0
-    return 0
+                         "min": min, "max": max, "round": round})
+        except Exception as e:  # noqa: BLE001
+            raise SystemExit(
+                f"bad expression in style: {expr!r} ({e}). "
+                f"Allowed: int/float/W/H/min/max/round."
+            ) from e
+    raise SystemExit(f"unhandled expression type in style: {type(expr).__name__}: {expr!r}")
 
 
 def resolve(
@@ -235,7 +238,7 @@ def build_project(resolved: dict, panel: Path) -> dict:
                    "color_mode": "RGB", "dpi": 72},
         "layers": [photo_layer, copy_layer],
         "guides": [], "selection": None,
-        "metadata": {"software": "amtech-computer-use-graphics 0.1.1"},
+        "metadata": {"software": "amtech-computer-use-graphics 0.1.2"},
     }
 
 

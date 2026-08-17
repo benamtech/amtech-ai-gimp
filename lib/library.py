@@ -11,7 +11,6 @@ the program writes programs.
 """
 from __future__ import annotations
 
-import inspect
 import json
 import subprocess
 import sys
@@ -30,11 +29,7 @@ def _filtered_kwargs(fn_name: str, params: dict) -> dict:
     fn = getattr(effects, fn_name, None)
     if not fn:
         return {}
-    try:
-        sig = inspect.signature(fn)
-    except (TypeError, ValueError):
-        return dict(params)
-    return {k: v for k, v in params.items() if k in sig.parameters}
+    return effects.filter_kwargs(fn, params)
 
 
 def _py(s: str) -> str:

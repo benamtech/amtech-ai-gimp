@@ -33,7 +33,7 @@ from urllib.parse import quote
 
 from . import CACHE_DIR
 
-UA = "amtech-computer-use-graphics/0.1.1 (experimental research; image acquisition)"
+UA = "amtech-computer-use-graphics/0.1.2 (experimental research; image acquisition)"
 
 
 def _get(url: str, timeout: int = 60) -> bytes:

@@ -17,7 +17,7 @@ from pathlib import Path
 
 from . import FONTS_DIR, USER_FONTS_DIR
 
-UA = "amtech-computer-use-graphics/0.1.1 (font installer)"
+UA = "amtech-computer-use-graphics/0.1.2 (font installer)"
 
 # family (lowercase) -> (filename, download url). Only Impact auto-downloads.
 CATALOG = {

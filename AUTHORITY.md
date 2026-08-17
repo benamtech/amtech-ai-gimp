@@ -11,6 +11,8 @@ codebase that *generates* code at runtime.
 | Brand identity (palette, font, forbid, fx) | `brands/<id>.json` | The compact brand doc wins over any style or script default. |
 | Style / layout recipe | `styles/<id>.json` | A recipe is a *floor*, not a lock. A one-shot script may diverge. |
 | Effect implementations | `lib/effects.py` | Canonical effect code. `lib/rg_kit.py` is a bundled legacy kit; prefer `effects`. |
+| Effect dispatch (filters) | `lib/effects.py` `apply_filter()` | Signature-filtered kwargs; `render` and `library` both route through it. |
+| Design rules (taste) | `lib/design.py` | Contrast, harmony, effect↔image pairing, variant distinctness. Advisory findings. |
 | Font resolution | `lib/fonts.py` | Impact auto-downloads; others must exist (bundled or installed). |
 | Brand loading/creation | `lib/brand.py` | Search order below. |
 | Source acquisition | `lib/source.py` | Local → URL → Commons API → web search. |
@@ -68,6 +70,8 @@ codebase that *generates* code at runtime.
   first-class use of this program, not a side effect.
 - New effect primitive → add a function to `lib/effects.py`, then reference it
   from a style's `fx` list or a one-shot script.
+- New design rule (contrast / harmony / pairing / variant distinctness) →
+  add a predicate to `lib/design.py` and surface it in `review_resolved()`.
 - New backend → add a strategy to `lib/render.py`.
 - New agent runtime → add a manifest (see README § "Agent targets") and point
   it at `skills/meme-maker/SKILL.md`. Do not fork the skill body per runtime.

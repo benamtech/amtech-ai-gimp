@@ -13,7 +13,7 @@ license: MIT
 compatibility: Requires Python 3.10+, Pillow. GIMP optional (auto-detected).
 metadata:
   bundle: amtech-computer-use-graphics
-  version: "0.1.1"
+  version: "0.1.2"
   author: Benjamin Palaskas
   org: AMTECH
   email: ben@amtechai.com
@@ -47,6 +47,7 @@ sources        list bundled stills
 tag            tag a still into the registry (agent-searchable)
 search-still   multi-engine image search (commons, bing)
 catalog        regenerate catalog.md/json from styles + brands
+review         design-rule review: contrast/harmony/pairing/variant checks
 compose        deterministic recipe render (seeded)
 generate       emit + run a one-shot script (the self-modifying path)
 batch          render many stills from one style/brand template (manifest)
@@ -193,6 +194,14 @@ template.
 - **No leftover recipe copy.** When the user gives new headlines, override
   every copy slot (`--set l1=...`) so stale NASA/Rizzler/PUFFY lines never
   leak into the new job.
+- **Variants must differ visibly.** A "variant" that only changes grain/glitch
+  seed is not a variant — at poster size the noise is invisible. Change a real
+  axis (palette role, effect, layout, copy) or it is the same image twice.
+  `lib/design.py:variants_distinct` checks this.
+- **Check contrast before shipping.** Body text needs ≥ 4.5:1 against its
+  field, large (≥ 32px) text ≥ 3:1. `run.py review --style … --brand …` flags
+  low-contrast text, near-duplicate palette colors, forbid hits, and
+  effect↔image mismatches.
 
 ## Authoritative docs (load on demand, do not inline everything)
 

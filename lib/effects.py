@@ -21,6 +21,7 @@ Every function returns a new image (no in-place surprises) unless noted.
 from __future__ import annotations
 
 import colorsys
+import inspect
 import random
 from pathlib import Path
 
@@ -415,6 +416,36 @@ def url_plate(draw, w: int, h: int, label: str, fill="#2FF3FF", text_fill="#0000
 
 
 # ── recipe sampling ───────────────────────────────────────────────────────────
+
+def filter_kwargs(fn, params: dict) -> dict:
+    """Keep only params the effect actually accepts (by signature).
+
+    A style recipe may name a param the effect doesn't have (or spell it
+    differently). Passing a bogus kwarg raises TypeError; silently dropping
+    `bits`/`factor` (as an earlier version did) silently corrupts output.
+    The correct behavior is to pass through every param the function accepts
+    and drop only the ones it doesn't — never a hard-coded allowlist.
+    """
+    try:
+        sig = inspect.signature(fn)
+    except (TypeError, ValueError):
+        return dict(params)
+    return {k: v for k, v in params.items() if k in sig.parameters}
+
+
+def apply_filter(im: Image.Image, name: str, params: dict | None = None) -> Image.Image:
+    """Dispatch one named filter through EFFECTS with signature-filtered kwargs.
+
+    Canonical filter application: render.py and library.py both go through
+    this so the compose path and the generated-script path agree exactly.
+    Unknown names return the image unchanged (never raise).
+    """
+    fn = EFFECTS.get((name or "").lower())
+    if not fn:
+        return im
+    kwargs = filter_kwargs(fn, params or {})
+    return fn(im, **kwargs)
+
 
 def sample(rng: random.Random, spec):
     """Sample a value from a recipe spec: literal, {"choices": [...]},

@@ -98,50 +98,21 @@ def _gimp_batch_probe(bin: str) -> bool:
 # ── Pillow renderer (primary) ────────────────────────────────────────────────
 
 def _apply_filter(im: Image.Image, filt: dict) -> Image.Image:
+    """Apply one filter dict. Canonical path is effects.apply_filter (EFFECTS);
+    a small legacy fallback covers names NOT in EFFECTS (sharpness/smooth/detail/
+    flip/rotate/resize/crop/box_blur), which the cli-anything-gimp vocab may use."""
     name = (filt.get("name") or "").lower()
     # accept both "param" (style recipes) and "params" (cli-anything-gimp JSON)
     p = filt.get("param") or filt.get("params") or {}
     try:
         from . import effects
-        fn = effects.EFFECTS.get(name)
-        if fn:
-            return fn(im, **{k: v for k, v in p.items() if k not in ("bits", "factor")} or {})
-        if name == "posterize":
-            return ImageOps.posterize(im.convert("RGB"), int(p.get("bits", 3)))
-        if name == "saturation":
-            return ImageEnhance.Color(im.convert("RGB")).enhance(float(p.get("factor", 1.0)))
-        if name == "contrast":
-            return ImageEnhance.Contrast(im.convert("RGB")).enhance(float(p.get("factor", 1.0)))
-        if name == "brightness":
-            return ImageEnhance.Brightness(im.convert("RGB")).enhance(float(p.get("factor", 1.0)))
+        if name in effects.EFFECTS:
+            return effects.apply_filter(im, name, p)
+        # legacy names below are NOT in EFFECTS; map them explicitly
         if name == "sharpness":
             return ImageEnhance.Sharpness(im.convert("RGB")).enhance(float(p.get("factor", 1.0)))
-        if name == "autocontrast":
-            return ImageOps.autocontrast(im.convert("RGB"), float(p.get("cutoff", 0)))
-        if name == "equalize":
-            return ImageOps.equalize(im.convert("RGB"))
-        if name == "invert":
-            return ImageOps.invert(im.convert("RGB"))
-        if name == "solarize":
-            return ImageOps.solarize(im.convert("RGB"), int(p.get("threshold", 128)))
-        if name == "grayscale":
-            return ImageOps.grayscale(im.convert("RGB"))
-        if name == "sepia":
-            return effects.sepia(im)
-        if name in ("gaussian_blur", "blur", "box_blur"):
-            return im.filter(ImageFilter.GaussianBlur(float(p.get("radius", 2))))
-        if name == "unsharp_mask":
-            return im.filter(ImageFilter.UnsharpMask(float(p.get("radius", 2)),
-                                                     int(p.get("percent", 150)),
-                                                     int(p.get("threshold", 3))))
         if name == "smooth":
             return im.filter(ImageFilter.SMOOTH)
-        if name == "find_edges":
-            return im.convert("RGB").filter(ImageFilter.FIND_EDGES)
-        if name == "emboss":
-            return im.convert("RGB").filter(ImageFilter.EMBOSS)
-        if name == "contour":
-            return im.convert("RGB").filter(ImageFilter.CONTOUR)
         if name == "detail":
             return im.filter(ImageFilter.DETAIL)
         if name == "flip_h":
@@ -155,6 +126,8 @@ def _apply_filter(im: Image.Image, filt: dict) -> Image.Image:
         if name == "crop":
             box = p.get("box") or [0, 0, im.width, im.height]
             return im.crop(tuple(int(x) for x in box))
+        if name == "box_blur":
+            return im.filter(ImageFilter.BoxBlur(int(p.get("radius", 2))))
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"filter {name} failed: {e}; leaving image unchanged\n")
     return im

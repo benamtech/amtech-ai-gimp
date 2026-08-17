@@ -1,5 +1,5 @@
 name: amtech-computer-use-graphics
-version: 0.1.1
+version: 0.1.2
 description: >-
   Deterministic, non-generative image composer + brand/style authoring.
   Pillow (primary), native GIMP 3 batch, and cli-anything-gimp engines.
