@@ -22,7 +22,10 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 HERE = Path(__file__).resolve().parent
-STYLES = HERE / "styles"
+# In the amtech-computer-use-graphics repo the style recipes live at the
+# bundle root `styles/` (this file lives in `scripts/`). Fall back to the
+# legacy in-skill `scripts/styles/` location for back-compat.
+STYLES = HERE / "styles" if (HERE / "styles").is_dir() else HERE.parent / "styles"
 CLI = shutil.which("cli-anything-gimp") or str(Path.home() / ".local/bin/cli-anything-gimp")
 sys.path.insert(0, str(HERE))
 from ensure_fonts import resolve_font  # noqa: E402

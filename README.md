@@ -26,6 +26,23 @@ The program drives three engines:
 
 GIMP is not required. The Pillow engine needs only the Pillow package.
 
+## What this program absorbed
+
+This program consolidates two earlier skills into one codebase:
+
+- **image-compose** (a Hermes skill). Its effects, style recipes, brand
+  system, scripts, templates, and reference corpus all live here: `lib/`
+  (the program), `styles/` (71 recipes), `brands/`, `scripts/`,
+  `templates/`, and `references/`. `run.py` supersedes the old
+  `scripts/run_style.py` runner.
+- **cli-anything-gimp** (a stateful Pillow CLI). This program drives it as
+  an optional engine (`--engine cli_anything_gimp`). The harness itself is an
+  external package — install it with `pip install cli-anything-gimp`. Its
+  SKILL.md is bundled under `references/` for reference.
+
+The authority is `run.py` → `lib/`. The bundled `scripts/` and `references/`
+files are reference and legacy copies, not the entry point.
+
 ## Scope and license
 
 This is an experimental, non-commercial research project. Parody, satire, and
@@ -294,6 +311,8 @@ amtech-computer-use-graphics/
 ├── references/           technique corpus + image-search playbook
 ├── schemas/              JSON Schemas
 ├── templates/            compose templates
+├── scripts/              legacy image-compose skill scripts (brand.py,
+│                         ensure_fonts.py, run_style.py) — superseded by run.py
 ├── examples/             proven one-shot scripts + batch manifest
 ├── assets/fonts/         bundled fonts
 ├── out/                  generated stills + emitted scripts

@@ -12,7 +12,7 @@ Quick start (no build step):
 ```bash
 python3 run.py doctor
 python3 run.py compose --style instagram-ragebait-warhol-glitch \
-  --brand retardglobal --photo <src> --set l1=HEADLINE --seed 7
+  --brand retardglobal --source <src> --set l1=HEADLINE --seed 7
 ```
 
 Native GIMP 3 batch is optional and auto-detected; the Pillow path is the
