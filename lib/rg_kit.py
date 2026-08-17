@@ -2,15 +2,11 @@
 from __future__ import annotations
 
 import random
-import sys
-from pathlib import Path
 
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont, ImageOps
 
-SKILL = Path.home() / ".hermes/skills/creative/image-compose/scripts"
-sys.path.insert(0, str(SKILL))
-from brand import hex_rgb, load_brand  # noqa: E402
-from ensure_fonts import resolve_font  # noqa: E402
+from .brand import hex_rgb, load_brand
+from .fonts import resolve_font
 
 B = load_brand("retardglobal")
 C = B["c"]

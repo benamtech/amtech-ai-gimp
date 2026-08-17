@@ -2,16 +2,16 @@
 """1:1 $FUJI wallet still — CRT scan + RGB offset, cup/profile sticker."""
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from PIL import Image, ImageDraw
-from rg_kit import (
+from lib.rg_kit import (
     B, CYAN, K, LIME, MAG, W, circle_sticker, cover, grain,
     impact, lime_lift, lime_stripe, masthead, stack_lines, url_plate, warhol,
 )
 
-SRC = Path("/home/georgej/Pictures/cli-anything-poster/src/fuji_mcd1.jpg")
-STICK = Path("/home/georgej/Pictures/cli-anything-poster/src/fuji_profile.jpg")
-OUT = Path("/home/georgej/Pictures/cli-anything-poster/fuji-wallet-rg.png")
+SRC = Path(__file__).resolve().parent.parent / "sources" / "fuji_mcd1.jpg"
+STICK = Path(__file__).resolve().parent.parent / "sources" / "fuji_profile.jpg"
+OUT = Path(__file__).resolve().parent.parent / "out" / "fuji-wallet-rg.png"
 S = 1080
 
 

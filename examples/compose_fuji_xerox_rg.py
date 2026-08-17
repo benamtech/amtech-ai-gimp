@@ -2,16 +2,16 @@
 """1:1 experimental xerox/offset still — hallway + yellow-hat sticker."""
 from pathlib import Path
 import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageOps
-from rg_kit import (
+from lib.rg_kit import (
     B, CYAN, K, LIME, MAG, W, circle_sticker, cover, grain,
     hex_rgb, impact, lime_stripe, masthead, stack_lines, url_plate, warhol,
 )
 
-SRC = Path("/home/georgej/Pictures/cli-anything-poster/src/fuji_hall.jpg")
-STICK = Path("/home/georgej/Pictures/cli-anything-poster/src/fuji_profile.jpg")
-OUT = Path("/home/georgej/Pictures/cli-anything-poster/fuji-xerox-raid-rg.png")
+SRC = Path(__file__).resolve().parent.parent / "sources" / "fuji_hall.jpg"
+STICK = Path(__file__).resolve().parent.parent / "sources" / "fuji_profile.jpg"
+OUT = Path(__file__).resolve().parent.parent / "out" / "fuji-xerox-raid-rg.png"
 S = 1080
 
 

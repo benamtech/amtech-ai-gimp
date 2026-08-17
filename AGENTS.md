@@ -63,10 +63,11 @@ only `pillow`. Native GIMP 3 batch is used only when beneficial and detected.
    web/image search for a named face/place/object. Never use stock stand-ins
    for a named person. Credit the URL you actually fetched.
 3. **Compose** — one of:
-   - `python3 run.py compose --style <id> --brand <id> --photo <src> \
+   - `python3 run.py compose --style <id> --brand <id> --source <src> \
      --set l1=... --set l2=... --seed 7`
-   - or `python3 run.py generate --intent "..."` to emit + run a one-shot
-     script you then edit freely.
+   - or `python3 run.py generate --style <id> --brand <id> --source <src> \
+     --set l1=... --seed 7` to emit + run a one-shot script you then edit
+     freely.
 4. **Render** to `out/<job>.png`. The export result reports the engine used.
 5. **Verify** with vision (any agent's image tool). Every intended string must
    be readable; iterate until it is. Missing/colliding text = layer-local
@@ -133,7 +134,7 @@ python3 run.py brands                          list brands
 python3 run.py brand-new --id x --name "..."   scaffold a brand
 python3 run.py sources                         list bundled stills
 python3 run.py compose ...                     deterministic render (seeded)
-python3 run.py generate --intent "..."         emit + run a one-shot script
+python3 run.py generate --style X ...             emit + run a one-shot script
 python3 run.py batch --style X --manifest M    render many stills from one template
 ```
 
