@@ -483,6 +483,24 @@ def tint(im: Image.Image, color: str = "#0A0E1A", amount: float = 0.4) -> Image.
     return Image.blend(im.convert("RGB"), Image.new("RGB", im.size, _rgb(color)), amount)
 
 
+def fade_gradient(im: Image.Image, start: float = 0.5, color: str = "#000000",
+                  strength: float = 0.85) -> Image.Image:
+    """Smooth vertical fade from transparent (at `start`) to `color` at the
+    bottom edge — the clean 'text on a subtle gradient' legibility lift.
+    Unlike `bottom_lift` (a sparse banded lift), this draws contiguous 1px rows
+    so the fade is smooth and reads as a gradient, not scanlines."""
+    w, h = im.size
+    y0 = int(h * start)
+    col = _rgb(color)
+    ov = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(ov)
+    span = max(1, h - y0)
+    for y in range(y0, h):
+        a = int(255 * strength * (y - y0) / span)
+        d.line([(0, y), (w, y)], fill=(*col, a))
+    return Image.alpha_composite(im.convert("RGBA"), ov).convert("RGB")
+
+
 def lead_lines(im: Image.Image, dark="#0A0E1A", light="#2FF3FF") -> Image.Image:
     """Stained-glass: find edges as lead lines over a posterized color plate."""
     edges = im.convert("RGB").filter(ImageFilter.FIND_EDGES)
@@ -625,5 +643,5 @@ EFFECTS = {
     "duotone": duotone, "mosaic": mosaic, "xerox": xerox, "relief": relief,
     "slice_glitch": slice_glitch, "color_split": color_split, "waterline": waterline,
     "tint": tint, "lead_lines": lead_lines, "perspective_grid": perspective_grid,
-    "starfield": starfield,
+    "starfield": starfield, "fade_gradient": fade_gradient,
 }

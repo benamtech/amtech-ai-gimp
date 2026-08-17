@@ -298,13 +298,105 @@
         "id": "zine",
         "title": "Xerox zine cover"
       }
+    ],
+    "retardglobal": [
+      {
+        "id": "rg-banner",
+        "title": "RETARD GLOBAL wordmark banner (hi-vis lime / orange retro) + serif footer"
+      },
+      {
+        "id": "rg-meme-45",
+        "title": "RETARD GLOBAL meme card (4:5 portrait) \u2014 clean photo + subtle bottom gradient + masthead + stacked lime Impact headline"
+      },
+      {
+        "id": "rg-meme",
+        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + subtle bottom gradient + masthead + stacked lime Impact headline"
+      }
     ]
   },
   "style_brand": {
     "fuji-ragebait": "retardglobal",
-    "instagram-ragebait-rg-lock": "retardglobal"
+    "instagram-ragebait-rg-lock": "retardglobal",
+    "rg-meme-45": "retardglobal",
+    "rg-meme": "retardglobal"
   },
   "brands": {
+    "amtech": {
+      "name": "AMTECH",
+      "font": "Archivo Black",
+      "colors": {
+        "abyss": "#0A0E1A",
+        "deep": "#0E2A47",
+        "dusk": "#FF2E9A",
+        "violet": "#7A4BFF",
+        "signal": "#2FF3FF",
+        "coral": "#FF7A6B",
+        "halo": "#E8C76A",
+        "marble": "#F0EBDF",
+        "period": "#E4251C"
+      },
+      "role": {
+        "abyss": "background/void (the absence)",
+        "marble": "the old body of labor / type",
+        "halo": "the soul / keyline (reserved)",
+        "dusk": "sunset / nostalgia",
+        "signal": "the work after the body / data",
+        "deep": "panels",
+        "coral": "sunset warmth",
+        "violet": "dream",
+        "period": "the period of the wordmark only"
+      },
+      "fx": [
+        "scan",
+        "crt",
+        "halftone",
+        "channel_offset",
+        "posterize",
+        "vignette",
+        "grain",
+        "duotone",
+        "sepia",
+        "find_edges",
+        "emboss",
+        "bottom_lift",
+        "blur",
+        "unsharp",
+        "solarize",
+        "gradient"
+      ],
+      "forbid": [
+        "red-as-field",
+        "lime",
+        "candy-rainbow",
+        "pure-black",
+        "orange",
+        "pastel-pink",
+        "chrome-silver"
+      ],
+      "canvas": {
+        "square": [
+          1080,
+          1080
+        ],
+        "landscape": [
+          2560,
+          1440
+        ],
+        "wide": [
+          1600,
+          900
+        ],
+        "portrait": [
+          1080,
+          1350
+        ],
+        "print": [
+          1600,
+          2000
+        ]
+      },
+      "url": "amtechai.com"
+    },
     "bureau-of-stolen-weather": {
       "name": "BUREAU OF STOLEN WEATHER",
       "font": "Archivo Black",
@@ -446,6 +538,21 @@
     }
   },
   "brand_index": {
+    "amtech": {
+      "name": "AMTECH",
+      "font": "Archivo Black",
+      "colors": [
+        "abyss",
+        "coral",
+        "deep",
+        "dusk",
+        "halo",
+        "marble",
+        "period",
+        "signal",
+        "violet"
+      ]
+    },
     "bureau-of-stolen-weather": {
       "name": "BUREAU OF STOLEN WEATHER",
       "font": "Archivo Black",
@@ -473,6 +580,30 @@
   },
   "techniques": [
     {
+      "id": "clean-tabloid",
+      "title": "Clean tabloid \u2014 natural photo + subtle bottom fade for headline legibility",
+      "family": "grade",
+      "image_types": [
+        "portrait",
+        "object",
+        "landscape"
+      ],
+      "tags": [
+        "tabloid",
+        "clean",
+        "gradient",
+        "legibility",
+        "meme",
+        "headline",
+        "retardglobal"
+      ],
+      "era": [
+        "2010s",
+        "tabloid"
+      ],
+      "file": "clean-tabloid.json"
+    },
+    {
       "id": "cosmic-void-starfield",
       "title": "Cosmic void + starfield",
       "family": "procedural",
@@ -492,6 +623,32 @@
         "cosmic-horror"
       ],
       "file": "cosmic-void-starfield.json"
+    },
+    {
+      "id": "deep-fried-ragebait",
+      "title": "Deep-fried ragebait \u2014 RG lime/mag/cyan clamp + anaglyph + grain",
+      "family": "grade",
+      "image_types": [
+        "portrait",
+        "object",
+        "landscape"
+      ],
+      "tags": [
+        "ragebait",
+        "deep-fried",
+        "glitch",
+        "anaglyph",
+        "warhol",
+        "viral",
+        "tabloid",
+        "retardglobal"
+      ],
+      "era": [
+        "2010s",
+        "glitch",
+        "vaporwave"
+      ],
+      "file": "deep-fried-ragebait.json"
     },
     {
       "id": "duotone-marble-relief",

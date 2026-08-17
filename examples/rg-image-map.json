@@ -1,0 +1,5 @@
+{
+  "_note": "Real sourced stills (see sources/registry.md for credit). Keys match case-insensitively as substrings of the caption. For 100s of captions, map every recurring subject here; anything missing falls back to --find-images.",
+  "the rizzler": "the-rizzler.jpg",
+  "chester stone": "chester-stone-face.png"
+}

@@ -74,6 +74,7 @@ review         design-rule review: contrast/harmony/hierarchy/pairing/variant
 compose        deterministic recipe render (seeded)
 generate       emit + run a one-shot script (the self-modifying path)
 batch          render many stills from one style/brand template (manifest)
+meme           captions + images -> many brand-locked memes (RG factory)
 ```
 
 GIMP is optional. The Pillow render path is the stable default and needs only
@@ -203,6 +204,25 @@ uses the project-JSON path instead.
 See `examples/batch-fuji.json` for a working 4-image demo reproducing the
 Fujimoto grimace/wallet/mcflurry/rico stills from the one `fuji-ragebait`
 template.
+
+### Retard Global meme factory (drop-in copy → memes)
+
+The `retardglobal` brand ships a one-format factory. "Wanted for X" and "starts
+taking Ozempic" are the same meme: clean photo + smooth bottom fade + magenta
+masthead + lime Impact headline + cyan footer. No per-copy-type templates.
+
+- Templates: `rg-meme` (1:1), `rg-meme-45` (4:5), `rg-banner` (wordmark banner).
+- Grade: `clean-tabloid` technique (default, referenced via `"technique"` in the
+  style); `deep-fried-ragebait` is the optional grit look. Search with
+  `run.py techniques --tag ragebait`.
+- Bulk: `run.py meme --copy captions.txt [--images map.json] [--find-images]`
+  wraps each caption into headline lines, resolves/stitches images, and emits a
+  one-shot script + PNG per caption (deterministic per seed).
+- Launch: "i need a retardglobal style instagram meme copy: '<copy>' with image
+  of <subject> [link]" → source a real still (never a stock stand-in), wrap the
+  copy, `run.py generate --style rg-meme --brand retardglobal --source <still>
+  --set l1=... --seed N`, vision-verify. Full playbook:
+  `docs/RETARDGLOBAL-MEMES.md`.
 
 ## Hard rules
 

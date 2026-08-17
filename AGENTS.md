@@ -139,9 +139,25 @@ python3 run.py style-new --id x --family ...   scaffold a style recipe
 python3 run.py brands                          list brands
 python3 run.py brand-new --id x --name "..."   scaffold a brand
 python3 run.py sources                         list bundled stills
+python3 run.py techniques [--tag/--image-type/--era]   search the technique catalog
+python3 run.py technique-new --id x ...        add a reusable technique
 python3 run.py compose ...                     deterministic render (seeded)
 python3 run.py generate --style X ...             emit + run a one-shot script
 python3 run.py batch --style X --manifest M    render many stills from one template
+python3 run.py meme --copy captions.txt ...    captions + images -> many RG memes
 ```
 
 Pass `--help` on any subcommand. All output is plain text or `--json`.
+
+## Retard Global meme factory
+
+The `retardglobal` brand ships a one-format meme factory: drop in copy + images,
+get brand-locked stills (`run.py meme`). Templates `rg-meme` (1:1) /
+`rg-meme-45` (4:5) / `rg-banner`, default grade `techniques/clean-tabloid.json`,
+meta-generator `lib/meme.py`. The natural-language launch contract is:
+
+> "i need a retardglobal style instagram meme copy: '<copy>' with image of
+> <subject> [link]"
+
+→ source a real still, wrap the copy, `run.py generate --style rg-meme ...`,
+vision-verify. Full playbook: `docs/RETARDGLOBAL-MEMES.md`.

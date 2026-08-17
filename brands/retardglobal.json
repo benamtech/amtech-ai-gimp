@@ -69,12 +69,8 @@
   ],
 
   "templates": {
-    "headline": "rg-headline",
-    "headline_45": "rg-headline-45",
-    "breaking": "rg-breaking",
-    "wanted": "rg-wanted",
-    "quote": "rg-quote",
-    "vs": "rg-vs",
+    "meme": "rg-meme",
+    "meme_45": "rg-meme-45",
     "banner": "rg-banner"
   },
 

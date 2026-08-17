@@ -57,6 +57,19 @@ def resolve(
     style = load_style(style_id)
     rng = random.Random(seed)
 
+    # A style may reference a technique from the catalog ("technique": "<id>").
+    # The technique's effect pipeline becomes the base filter stack; the style's
+    # own filters layer on top. Techniques are brand-agnostic grades; styles are
+    # layout + type. (See lib/technique.py.)
+    _style_filters = list(style.get("filters", []))
+    if style.get("technique"):
+        from .technique import load_technique as _load_technique
+        _tech = _load_technique(style["technique"])
+        _style_filters = [
+            {"name": f["name"], "param": (f.get("param") or {})}
+            for f in _tech.get("effects", [])
+        ] + _style_filters
+
     canvas_spec = style.get("canvas", [1080, 1350])
     canvas = sample(rng, canvas_spec)
     if isinstance(canvas, list):
@@ -100,7 +113,7 @@ def resolve(
 
     # filters (sample params)
     resolved["filters"] = []
-    for f in style.get("filters", []):
+    for f in _style_filters:
         params = {k: sample(rng, v) for k, v in (f.get("param") or {}).items()}
         resolved["filters"].append({"name": f["name"], "param": params})
 

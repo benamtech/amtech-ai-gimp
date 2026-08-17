@@ -1,0 +1,16 @@
+{
+  "id": "deep-fried-ragebait",
+  "title": "Deep-fried ragebait — RG lime/mag/cyan clamp + anaglyph + grain",
+  "family": "grade",
+  "era": ["2010s", "glitch", "vaporwave"],
+  "image_types": ["portrait", "object", "landscape"],
+  "tags": ["ragebait", "deep-fried", "glitch", "anaglyph", "warhol", "viral", "tabloid", "retardglobal"],
+  "effects": [
+    {"name": "clamp_hues", "param": {"palette": ["#DEFF2E", "#FD2EFF", "#2FF3FF"], "mix": 0.55, "skin_keep": true}},
+    {"name": "saturation", "param": {"factor": 1.35}},
+    {"name": "contrast", "param": {"factor": 1.22}},
+    {"name": "color_split", "param": {"dx": 5, "dy": 0}}
+  ],
+  "note": "The RETARD GLOBAL deep-fried tabloid grade: clamp chroma to lime/mag/cyan (skin kept), boost, anaglyph split. The rg-meme / rg-meme-45 styles layer a seeded film grain on top for per-image variation. Layout + type live in those styles.",
+  "source": {"provenance": "retardglobal instagram", "credit": ""}
+}

@@ -1,0 +1,16 @@
+{
+  "id": "rg-banner",
+  "family": "retardglobal",
+  "title": "RETARD GLOBAL wordmark banner (hi-vis lime / orange retro) + serif footer",
+  "canvas": [1920, 640],
+  "background": {"choices": ["#DEFF2E", "#FF7F00"]},
+  "font": "Impact",
+  "copy": {
+    "wordmark": ["RETARD"],
+    "footer": ["RetardGlobal.com // Join Retard Global // Love and Peace on Earth // Made in USA // Love, America"]
+  },
+  "texts": [
+    {"text": "{wordmark}", "x": "int(W*0.5)", "y": "int(H*0.40)", "size": 230, "color": "#000000", "anchor": "mm", "stroke": 0},
+    {"text": "{footer}", "x": "int(W*0.5)", "y": "int(H*0.84)", "size": 30, "color": "#000000", "font": "serif-italic", "anchor": "mm", "stroke": 0}
+  ]
+}

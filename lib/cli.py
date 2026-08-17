@@ -158,6 +158,16 @@ def build_parser() -> argparse.ArgumentParser:
     bt.add_argument("--out", default=None)
     bt.add_argument("--limit", type=int, default=None, help="render only the first N items")
 
+    m = sub.add_parser("meme", help="captions + images -> many brand-locked memes (RG factory)")
+    m.add_argument("--copy", required=True, help="captions file: txt (one per line) or JSON list")
+    m.add_argument("--style", default="rg-meme", help="template to render (default rg-meme)")
+    m.add_argument("--brand", default="retardglobal")
+    m.add_argument("--images", default=None, help="subject->image map JSON ({\"subject\": \"path/url\"})")
+    m.add_argument("--find-images", action="store_true", help="best-effort search for missing subject images")
+    m.add_argument("--seed", type=int, default=7, help="base seed (per item = seed + index)")
+    m.add_argument("--out", default=None)
+    m.add_argument("--limit", type=int, default=None, help="render only the first N items")
+
     return p
 
 
@@ -285,6 +295,18 @@ def main(argv: list[str] | None = None) -> int:
                 photo2=args.photo2, font=args.font, seed=args.seed,
                 engine=args.engine, mode=args.mode, out_dir=out_dir,
                 limit=args.limit)
+            _print(result, as_json)
+
+        elif args.cmd == "meme":
+            from .meme import render_memes
+            from . import OUT_DIR
+            image_map = {}
+            if args.images:
+                image_map = json.loads(Path(args.images).expanduser().read_text())
+            out_dir = Path(args.out) if args.out else OUT_DIR
+            result = render_memes(args.copy, style=args.style, brand=args.brand,
+                                  image_map=image_map, find_images=args.find_images,
+                                  seed=args.seed, out_dir=out_dir, limit=args.limit)
             _print(result, as_json)
 
         return 0

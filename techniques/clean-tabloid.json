@@ -1,0 +1,15 @@
+{
+  "id": "clean-tabloid",
+  "title": "Clean tabloid — natural photo + subtle bottom fade for headline legibility",
+  "family": "grade",
+  "era": ["2010s", "tabloid"],
+  "image_types": ["portrait", "object", "landscape"],
+  "tags": ["tabloid", "clean", "gradient", "legibility", "meme", "headline", "retardglobal"],
+  "effects": [
+    {"name": "contrast", "param": {"factor": 1.12}},
+    {"name": "saturation", "param": {"factor": 1.08}},
+    {"name": "fade_gradient", "param": {"start": 0.45, "color": "#000000", "strength": 0.85}}
+  ],
+  "note": "The default RETARD GLOBAL meme grade: a clean, un-processed photo (mild contrast/saturation only — no deep-fry), with a smooth fade-to-black in the lower half so the stacked Impact headline reads without a hard black box. Layout + type live in the rg-meme / rg-meme-45 styles.",
+  "source": {"provenance": "retardglobal instagram", "credit": ""}
+}

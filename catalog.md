@@ -55,6 +55,11 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `vhs-label` — VHS sleeve type
 - `xerox-punk` — High contrast xerox
 
+### retardglobal
+- `rg-banner` — RETARD GLOBAL wordmark banner (hi-vis lime / orange retro) + serif footer
+- `rg-meme-45` — RETARD GLOBAL meme card (4:5 portrait) — clean photo + subtle bottom gradient + masthead + stacked lime Impact headline  (brand: retardglobal)
+- `rg-meme` — RETARD GLOBAL meme card (1:1) — clean photo + subtle bottom gradient + masthead + stacked lime Impact headline  (brand: retardglobal)
+
 ### type
 - `big-type-only` — Type-led field
 - `kinetic-echo` — Kinetic echo type
@@ -86,6 +91,15 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `yt-thumb` — YouTube thumbnail
 
 ## Brands
+### amtech — AMTECH
+- font: Archivo Black
+- palette: abyss=#0A0E1A, coral=#FF7A6B, deep=#0E2A47, dusk=#FF2E9A, halo=#E8C76A, marble=#F0EBDF, period=#E4251C, signal=#2FF3FF, violet=#7A4BFF
+- roles: abyss=background/void (the absence), coral=sunset warmth, deep=panels, dusk=sunset / nostalgia, halo=the soul / keyline (reserved), marble=the old body of labor / type, period=the period of the wordmark only, signal=the work after the body / data, violet=dream
+- fx: scan, crt, halftone, channel_offset, posterize, vignette, grain, duotone, sepia, find_edges, emboss, bottom_lift, blur, unsharp, solarize, gradient
+- forbid: red-as-field, lime, candy-rainbow, pure-black, orange, pastel-pink, chrome-silver
+- canvas: {"square": [1080, 1080], "landscape": [2560, 1440], "wide": [1600, 900], "portrait": [1080, 1350], "print": [1600, 2000]}
+- url: amtechai.com
+
 ### bureau-of-stolen-weather — BUREAU OF STOLEN WEATHER
 - font: Archivo Black
 - palette: brass=#B08D57, fog=#5B7A8C, ink=#1A1C1E, paper=#E8E4D8, rust=#C4552A, storm=#1F4E5A
@@ -105,7 +119,9 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - url: retardglobal.com
 
 ## Techniques
+- `clean-tabloid` — Clean tabloid — natural photo + subtle bottom fade for headline legibility [grade] · types: portrait, object, landscape · era: 2010s, tabloid · tags: tabloid, clean, gradient, legibility, meme, headline, retardglobal
 - `cosmic-void-starfield` — Cosmic void + starfield [procedural] · types: void · era: 2010s, cosmic-horror · tags: stars, void, cosmic, space, abyss, serene
+- `deep-fried-ragebait` — Deep-fried ragebait — RG lime/mag/cyan clamp + anaglyph + grain [grade] · types: portrait, object, landscape · era: 2010s, glitch, vaporwave · tags: ragebait, deep-fried, glitch, anaglyph, warhol, viral, tabloid, retardglobal
 - `duotone-marble-relief` — Duotone marble relief [grade] · types: sculpture, portrait · era: 1970s, greek · tags: duotone, relief, stone, marble, mono, sculptural
 - `duotone-waterline` — Duotone waterline submerge [composite] · types: sculpture, portrait, landscape · era: 1970s, yacht-rock · tags: duotone, water, submerge, ocean, reflection, mono
 - `gold-mandorla-mosaic` — Gold mandorla (catholic icon) [composite] · types: portrait, sculpture · era: 1930s, byzantine, icon · tags: gold, mosaic, icon, halo, sacred, mandorla
