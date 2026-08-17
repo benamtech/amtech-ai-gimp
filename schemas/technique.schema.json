@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amtechai.com/schemas/technique.schema.json",
+  "title": "Technique",
+  "description": "A reusable, brand-agnostic effect pipeline (a 'technique') plus metadata for discovery. The growing universal catalog of hand-made computer graphics treatments.",
+  "type": "object",
+  "required": ["id", "title"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Lowercase slug (also the filename)."
+    },
+    "title": {"type": "string"},
+    "family": {
+      "type": "string",
+      "description": "grade | glitch | texture | composite | type | procedural"
+    },
+    "era": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Optional design-movement echoes (1930s..2010s): e.g. swiss, art-deco, pop, punk, grunge, vaporwave."
+    },
+    "image_types": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Coarse source classes this suits (portrait/sculpture/void/landscape/texture)."
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Free tags for discovery (duotone, glitch, gold, cosmic, etc.)."
+    },
+    "effects": {
+      "type": "array",
+      "description": "Ordered effect pipeline, dispatched via lib.effects.apply_filter.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "param": {"type": "object", "additionalProperties": true}
+        },
+        "required": ["name"]
+      }
+    },
+    "note": {"type": "string", "description": "Why this works / when to use it."},
+    "source": {
+      "type": "object",
+      "description": "Provenance + credit for the still(s) this technique was first proven on.",
+      "properties": {
+        "provenance": {"type": "string"},
+        "credit": {"type": "string"}
+      }
+    }
+  }
+}

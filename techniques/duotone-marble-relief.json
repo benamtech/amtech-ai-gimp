@@ -1,0 +1,15 @@
+{
+  "id": "duotone-marble-relief",
+  "title": "Duotone marble relief",
+  "family": "grade",
+  "era": ["1970s", "greek"],
+  "image_types": ["sculpture", "portrait"],
+  "tags": ["duotone", "relief", "stone", "marble", "mono", "sculptural"],
+  "effects": [
+    {"name": "duotone", "param": {"dark": "#0A0E1A", "light": "#F0EBDF"}},
+    {"name": "relief", "param": {"amount": 0.45}},
+    {"name": "contrast", "param": {"factor": 1.25}}
+  ],
+  "note": "The old body of labor: duotone to two-ink stone, then relief for sculpted depth. High contrast keeps the carving legible.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "Michelangelo's David (public domain still)"}
+}

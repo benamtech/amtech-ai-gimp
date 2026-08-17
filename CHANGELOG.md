@@ -2,6 +2,55 @@
 
 All notable changes to amtech-computer-use-graphics are tracked here.
 
+## [0.2.0] — 2026-08-17
+
+### Added — universal technique catalog + design canon
+
+- `techniques/` — a growing catalog of reusable, brand-agnostic effect
+  pipelines (duotone marble, gold mandorla, vaporwave grid, xerox ghost,
+  cosmic void, solarized specter, etc.), each tagged by image type / family /
+  era / tags. `run.py techniques` searches it; `run.py technique-new`
+  scaffolds a new entry; `run.py catalog` now indexes it. The catalog is meant
+  to grow forever — every reusable look becomes a technique file.
+- `lib/technique.py` — catalog loader/search/validate/create + schema
+  (`schemas/technique.schema.json`).
+- `lib/effects.py` — 11 new compositing/craft primitives promoted to the
+  canonical library and registered in `EFFECTS`: `duotone`, `mosaic`, `xerox`,
+  `relief`, `slice_glitch`, `color_split`, `waterline`, `tint`, `lead_lines`,
+  `blend`, `perspective_grid`, `starfield`, `vgradient`.
+- `references/design-canon.md` — a century of pre-AI graphic design
+  (1930s–2010s movement map) + non-style-specific taste rules + boundary-push
+  guidance + the reliability contract. Load this for "make it look good".
+- `lib/design.py` — compositional taste checks: `hierarchy_ok` (headline must
+  dominate), `palette_size_ok` (≤4 accent colors), `review_composition`
+  (full taste review). `run.py review` now reports hierarchy + color count too.
+- `lib/fonts.py` — `SYSTEM_SPECS` fallback for serif / sans-condensed /
+  mono-bold faces via fontconfig, so brand banner footers resolve on a bare
+  system without a hardcoded path.
+
+### Changed — out-of-box agent usability + naming
+
+- **Renamed the skill** `meme-maker` → `computer-use-graphics` (dir, name,
+  plugin registration, and every reference). The program is not just memes:
+  it is any hand-made graphic.
+- **Human gives a vision, not a spec.** AGENTS.md + SKILL.md now lead with the
+  contract: the user describes the picture ("an old punk zine", "clean and
+  swiss"), the agent infers canvas / era / palette / type and never makes the
+  user name a style, font, or flag. The loop now includes a "review, then push
+  one axis further" step.
+- `examples/batch-fuji.json` now points at bundled `sources/` (runnable on a
+  fresh clone) instead of a personal Pictures dir.
+
+### Removed — personal attribution
+
+- Dropped the "George (georgej)" attribution from AUTHORS.md and all hardcoded
+  `/home/georgej/...` paths (examples, references, notes). Everything is
+  portable (`~`, `Path.home()`).
+
+### Fixed
+
+- `catalog.md/json` regenerated cleanly (no project-specific brand baked in).
+
 ## [0.1.2] — 2026-08-17
 
 ### Fixed — effect dispatch silently dropped params
@@ -94,7 +143,7 @@ the unique copy is a one-line-per-image override.
 - `lib/library.py`: `emit_script()` emits `effects.stack_lines` for stacks and
   respects `anchor`/`lift_color`, so generated scripts stay faithful.
 - `lib/cli.py`: added the `batch` subcommand.
-- Docs (`skills/meme-maker/SKILL.md`, `AGENTS.md`, `README.md`) document the
+- Docs (`skills/computer-use-graphics/SKILL.md`, `AGENTS.md`, `README.md`) document the
   template + batch workflow and the "write captions, not scripts" contract.
 
 ## [0.1.0] — initial

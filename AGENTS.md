@@ -10,7 +10,7 @@ and the `cli-anything-gimp` CLI (optional). It installs its own dependencies
 
 When you first enter this folder, do these steps in order. Do not guess flags.
 
-1. Read `skills/meme-maker/SKILL.md`. It is the canonical playbook.
+1. Read `skills/computer-use-graphics/SKILL.md`. It is the canonical playbook.
 2. Read `AGENTS.md` (this file). It is the working agreement.
 3. Run `python3 run.py doctor`. It reports the environment. No installs.
 4. Run `python3 run.py bootstrap`. It installs missing dependencies and fonts.
@@ -41,7 +41,9 @@ Every subcommand takes `--help`. All output is plain text or `--json`.
   they can import the effect library, and can themselves emit more scripts.
 - **Open-ended.** Not limited to a fixed style set. `styles/` holds 70+ seed
   recipes; any of them can be overridden or ignored, and new ones are trivial
-  to author. The effect library (`lib/effects.py`) exposes every primitive.
+  to author. The effect library (`lib/effects.py`) exposes every primitive,
+  and `techniques/` is a growing catalog of reusable, brand-agnostic effect
+  pipelines (search with `run.py techniques`, add with `run.py technique-new`).
 
 ## Bootstrap (run once)
 
@@ -56,8 +58,12 @@ only `pillow`. Native GIMP 3 batch is used only when beneficial and detected.
 
 ## Core loop
 
-1. **Read the ask** as a normal person describes a picture. Infer canvas,
-   style, brand, sources. Do not make them name scripts or font paths.
+The human gives a **vision**, not a spec. They are not a designer or a
+programmer. Translate "a poster that looks like an old punk zine" or "something
+clean and swiss" yourself — never make them name a style, font, canvas, or
+flag. Read `references/design-canon.md` for the movement map + taste rules.
+
+1. **Hear the vision.** Infer canvas, movement/era, palette, sources, and copy.
 2. **Sources**: local path, URL, Wikimedia Commons `File:` title (resolve via
    the `imageinfo` API — never guess the `/commons/X/Yz/` hash), or a
    web/image search for a named face/place/object. Never use stock stand-ins
@@ -101,7 +107,7 @@ python3 run.py batch --style fuji-ragebait --brand retardglobal \
   the search order when sources disagree.
 - `CODEGRAPH.md` — the **codegraph**: modules, import edges, and the
   script-emits-script graph. Read it before editing `lib/`.
-- `skills/meme-maker/SKILL.md` — the open Agent Skills playbook (this is the
+- `skills/computer-use-graphics/SKILL.md` — the open Agent Skills playbook (this is the
   file every agent runtime actually loads).
 - `references/INDEX.md` — routing table into the technique corpus.
 - `references/image-search.md` — the encoded image-search playbook (engines,

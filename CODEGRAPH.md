@@ -25,9 +25,11 @@ lib/
 ├── registry.py    image tagging -> sources/registry.{md,json}
 ├── catalog.py     styles/brands/families -> catalog.{md,json}
 ├── effects.py     THE effect library (type, geometry, grade, glitch, texture,
-│                  composite) — the canonical primitives + apply_filter dispatch
+│                  composite, procedural) — canonical primitives + apply_filter
 ├── design.py      design rules: contrast, harmony, effect↔image pairing,
-│                  variant distinctness (advisory review; no Pillow)
+│                  hierarchy, variant distinctness (advisory review; no Pillow)
+├── technique.py   the growing catalog of reusable effect pipelines
+│                  (techniques/*.json); search by image-type/family/tag/era
 ├── render.py      engine abstraction (pillow | gimp_native | cli_anything_gimp)
 ├── compose.py     resolve() + build_project() + compose()  (project-JSON path)
 ├── library.py     emit_script() + generate()  (script-of-scripts path)
@@ -45,10 +47,11 @@ fonts     -> __init__
 source    -> __init__
 search    -> __init__, source (commons_url)
 registry  -> __init__
-catalog   -> __init__, brand, style
+catalog   -> __init__, brand, style, technique
 style     -> __init__
 effects   -> __init__, brand, fonts
 design    -> __init__  (pure; no Pillow, no other lib deps)
+technique -> __init__  (loads techniques/*.json; pure stdlib)
 render    -> __init__, effects
 compose   -> __init__, brand, effects, fonts, render, source, style
 library   -> __init__, effects, compose, source

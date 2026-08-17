@@ -20,6 +20,7 @@ from pathlib import Path
 from . import ROOT
 from .brand import list_brands, load_brand
 from .style import list_styles, list_families
+from .technique import list_techniques
 
 CATALOG_JSON = ROOT / "catalog.json"
 CATALOG_MD = ROOT / "catalog.md"
@@ -68,6 +69,7 @@ def build() -> dict:
         "brands": brand_detail,
         "brand_index": {b["id"]: {"name": b["name"], "font": b["font"],
                                   "colors": sorted(b["colors"])} for b in brands},
+        "techniques": list_techniques(),
     }
 
 
@@ -108,6 +110,24 @@ def _write_md(d: dict) -> None:
         if b.get("url"):
             lines.append(f"- url: {b['url']}")
         lines.append("")
+
+    lines.append("## Techniques")
+    if not d.get("techniques"):
+        lines.append("(none yet — add with `python3 run.py technique-new ...` or drop a JSON in `techniques/`)")
+    for t in d.get("techniques", []):
+        tags = ", ".join(t.get("tags", []))
+        types = ", ".join(t.get("image_types", []))
+        eras = ", ".join(t.get("era", []))
+        extra = []
+        if types:
+            extra.append(f"types: {types}")
+        if eras:
+            extra.append(f"era: {eras}")
+        if tags:
+            extra.append(f"tags: {tags}")
+        suffix = (" · " + " · ".join(extra)) if extra else ""
+        lines.append(f"- `{t['id']}` — {t.get('title','')} [{t.get('family','?')}]{suffix}")
+    lines.append("")
     CATALOG_MD.write_text("\n".join(lines))
 
 

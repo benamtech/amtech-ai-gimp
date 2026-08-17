@@ -24,7 +24,7 @@ from urllib.parse import quote
 
 from . import CACHE_DIR, SOURCES_DIR
 
-UA = "amtech-computer-use-graphics/0.1.2 (source resolver)"
+UA = "amtech-computer-use-graphics/0.2.0 (source resolver)"
 
 
 def _fetch(url: str, dest: Path) -> Path:

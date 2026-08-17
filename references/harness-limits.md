@@ -1,6 +1,6 @@
 # Harness limits (2026-08-16 test)
 
-Full write-up: `/home/georgej/Pictures/cli-anything-poster/limits/LIMITS.md`
+Full write-up: `~/Pictures/cli-anything-poster/limits/LIMITS.md`
 
 - `draw text` does not wrap. Break lines in the script.
 - Guessed Commons hash 404s. Use `action=query&prop=imageinfo`.

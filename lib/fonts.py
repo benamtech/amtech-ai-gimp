@@ -17,7 +17,7 @@ from pathlib import Path
 
 from . import FONTS_DIR, USER_FONTS_DIR
 
-UA = "amtech-computer-use-graphics/0.1.2 (font installer)"
+UA = "amtech-computer-use-graphics/0.2.0 (font installer)"
 
 # family (lowercase) -> (filename, download url). Only Impact auto-downloads.
 CATALOG = {
@@ -35,6 +35,41 @@ ALIASES = {
     "bangers": "Bangers-Regular.ttf",
 }
 
+# family -> fc-match patterns (fallback order). "style" suffix selects a face.
+# Serif is needed for brand banner footers (the RETARD GLOBAL bumper line) and
+# any institutional/classical work; it must resolve on a bare system, so we
+# query fontconfig rather than hardcoding a path.
+SYSTEM_SPECS = {
+    "serif": [
+        "Nimbus Roman:style=Regular",
+        "Liberation Serif:style=Regular",
+        "DejaVu Serif:style=Regular",
+        "Noto Serif:style=Regular",
+    ],
+    "serif-italic": [
+        "Nimbus Roman:style=Italic",
+        "Liberation Serif:style=Italic",
+        "DejaVu Serif:style=Italic",
+        "Noto Serif:style=Italic",
+    ],
+    "serif-bold": [
+        "Nimbus Roman:style=Bold",
+        "Liberation Serif:style=Bold",
+        "DejaVu Serif:style=Bold",
+        "Noto Serif:style=Bold",
+    ],
+    "sans-condensed": [
+        "DejaVu Sans Condensed:style=Bold",
+        "Liberation Sans Narrow:style=Bold",
+        "Noto Sans Condensed:style=Bold",
+    ],
+    "mono-bold": [
+        "DejaVu Sans Mono:style=Bold",
+        "Liberation Mono:style=Bold",
+        "Noto Sans Mono:style=Bold",
+    ],
+}
+
 
 def _download(url: str, dest: Path) -> None:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
@@ -50,6 +85,25 @@ def _find_local(fname: str) -> Path | None:
         p = base / fname
         if p.exists() and p.stat().st_size >= 10_000:
             return p
+    return None
+
+
+def _system_font(spec: str) -> str | None:
+    """Resolve a family/style via fontconfig (`fc-match`) when a bare system
+    has no bundled face. Returns a path, or None if fc-match is unavailable
+    or finds nothing."""
+    import shutil
+    import subprocess
+    fc = shutil.which("fc-match")
+    if not fc:
+        return None
+    try:
+        out = subprocess.run([fc, "-f", "%{file}", spec],
+                             capture_output=True, text=True, timeout=10).stdout.strip()
+    except (subprocess.TimeoutExpired, OSError):
+        return None
+    if out and Path(out).exists():
+        return out
     return None
 
 
@@ -81,6 +135,14 @@ def resolve_font(spec: str | None) -> str:
         if found:
             return str(found)
         raise SystemExit(f"font file missing: {ALIASES[key]} (not bundled, not installed)")
+
+    # system families via fontconfig (serif, serif-italic, sans-condensed, …)
+    if key in SYSTEM_SPECS:
+        for pattern in SYSTEM_SPECS[key]:
+            found = _system_font(pattern)
+            if found:
+                return found
+        raise SystemExit(f"system font family not found: {spec} (no bundled or installed face)")
 
     # last try: as-written filename in either fonts dir
     found = _find_local(spec)

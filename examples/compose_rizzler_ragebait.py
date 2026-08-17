@@ -9,14 +9,14 @@ from pathlib import Path
 
 from PIL import Image, ImageEnhance, ImageChops
 
-SKILL_SCRIPTS = Path("/home/georgej/.hermes/skills/creative/image-compose/scripts")
+SKILL_SCRIPTS = Path.home() / ".hermes" / "skills" / "creative" / "image-compose" / "scripts"
 sys.path.insert(0, str(SKILL_SCRIPTS))
 from run_style import apply_style  # noqa: E402
 
 HERO_SRC = Path("/tmp/rizzler-src/sportskeeda.jpg")
 INSET_SRC = Path("/tmp/rizzler-src/2ea21b65.bin")
 WORK = Path("/tmp/rizzler-src")
-OUT = Path("/home/georgej/Pictures/cli-anything-poster")
+OUT = Path.home() / "Pictures" / "cli-anything-poster"
 STYLE_PATH = SKILL_SCRIPTS / "styles" / "instagram-ragebait-warhol-glitch.json"
 FONT = "Impact"
 

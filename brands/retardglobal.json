@@ -6,12 +6,77 @@
   "tag": "",
   "hat": "RETARD",
   "font": "Impact",
-  "canvas": {"ig": [1080, 1080], "yt": [2560, 1440]},
-  "c": {"lime": "#DEFF2E", "mag": "#FD2EFF", "cyan": "#2FF3FF", "k": "#000000", "w": "#FFFFFF"},
-  "role": {"lime": "headline/band", "mag": "strap/alert", "cyan": "cta/url/frame"},
-  "mix": {"lime": [45, 55], "mag": [25, 35], "cyan": [15, 25]},
+  "canvas": {
+    "ig": [1080, 1080],
+    "ig_portrait": [1080, 1350],
+    "story": [1080, 1920],
+    "yt": [2560, 1440],
+    "banner": [1920, 640]
+  },
+  "c": {
+    "lime": "#DEFF2E",
+    "mag": "#FD2EFF",
+    "cyan": "#2FF3FF",
+    "k": "#000000",
+    "w": "#FFFFFF",
+    "orange": "#FF7F00"
+  },
+  "role": {
+    "lime": "headline/band",
+    "mag": "strap/alert",
+    "cyan": "cta/url/frame",
+    "orange": "banner-variant-only"
+  },
+  "mix": {"lime": [45, 55], "mag": [25, 35], "cyan": [15, 25], "orange": [0, 2]},
   "type": {"on_sat": "k", "on_k": "w", "stroke": "k", "keyline": "w"},
-  "forbid": ["red", "gold", "orange", "navy-accent", "purple-blend", "rainbow"],
+  "forbid": ["red", "gold", "purple-blend", "navy-accent", "rainbow"],
   "fx": ["torn", "halftone", "xerox", "scan", "crt", "splatter-3only", "offset", "posterize"],
-  "cta": ["REAL OR FAKE", "BELIEVE THIS", "HOT OR NOT"]
+  "cta": ["REAL OR FAKE", "BELIEVE THIS", "HOT OR NOT"],
+
+  "banner": {
+    "wordmark": "RETARD",
+    "wordmark_font": "Impact",
+    "variants": [
+      {"id": "lime",   "bg": "#DEFF2E", "ink": "#000000", "label": "hi-vis lime"},
+      {"id": "orange", "bg": "#FF7F00", "ink": "#000000", "label": "orange retro"}
+    ],
+    "footer": "RetardGlobal.com // Join Retard Global // Love and Peace on Earth // Made in USA // Love, America",
+    "footer_font": "serif-italic"
+  },
+
+  "masthead": {
+    "lines": ["RETARD GLOBAL", "RETARDGLOBAL.COM"],
+    "font": "Impact",
+    "case": "upper",
+    "bg": "#FD2EFF"
+  },
+
+  "logo": {
+    "style": "8-bit retro",
+    "mark": "vintage CRT monitor showing a lime wireframe globe; a large black serif R with a thick lime outline overlapping the bottom-right corner",
+    "ink": "#000000",
+    "accent": "#DEFF2E",
+    "assets": [
+      "logo-with-text--features-flat-map-of-world-in-black-with-grid-against-hi-vis-green-bg.png",
+      "no-text-logo--contains-computer-with-globe-and-letter-r--small-low-res-old-school-with-hi-vis-green.png"
+    ]
+  },
+
+  "cast": [
+    "THE RIZZLER", "CHESTER STONE", "NETTSPEND", "AOC", "KAMALA HARRIS",
+    "LOGAN PAUL", "KANYE WEST", "YUNG LEAN", "SEMATARY",
+    "CHANCE THE RAPPER", "2SLIMEY", "OBAMA", "MOSSAD"
+  ],
+
+  "templates": {
+    "headline": "rg-headline",
+    "headline_45": "rg-headline-45",
+    "breaking": "rg-breaking",
+    "wanted": "rg-wanted",
+    "quote": "rg-quote",
+    "vs": "rg-vs",
+    "banner": "rg-banner"
+  },
+
+  "notes": "No red banners. Orange is reserved for the retro banner variant only (never an on-meme accent). Named faces are real stills, never stock stand-ins. Impact is the meme face — never Anton."
 }

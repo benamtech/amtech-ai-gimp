@@ -1,0 +1,15 @@
+{
+  "id": "organic-computer-screen-blend",
+  "title": "Organic computer (circuit × coral screen blend)",
+  "family": "composite",
+  "era": ["2010s", "biopunk"],
+  "image_types": ["texture"],
+  "tags": ["circuit", "coral", "machine", "organic", "screen", "double-exposure", "signal"],
+  "effects": [
+    {"name": "clamp_hues", "param": {"palette": ["#2FF3FF", "#FF2E9A", "#7A4BFF"], "skin_keep": false, "mix": 0.62}},
+    {"name": "tint", "param": {"color": "#0A0E1A", "amount": 0.45}},
+    {"name": "vignette", "param": {"strength": 0.6, "color": "#000000"}}
+  ],
+  "note": "The machine is alive: blend circuit board with coral via screen, then clamp hues to a signal palette. Two sources, one body.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "circuit board + coral reef (public domain stills)"}
+}

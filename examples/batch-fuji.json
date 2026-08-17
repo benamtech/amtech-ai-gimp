@@ -4,32 +4,32 @@
   "mode": "generate",
   "engine": "pillow",
   "defaults": {
-    "source": "/home/georgej/Pictures/cli-anything-poster/src/fuji_mcd1.jpg",
-    "photo2": "/home/georgej/Pictures/cli-anything-poster/src/fuji_profile.jpg"
+    "source": "sources/fuji_mcd1.jpg",
+    "photo2": "sources/fuji_profile.jpg"
   },
   "items": [
     {
       "name": "fuji-grimace",
-      "source": "/home/georgej/Pictures/cli-anything-poster/src/fuji_mcd2.jpg",
-      "photo2": "/home/georgej/Pictures/cli-anything-poster/src/cup_mid.jpg",
+      "source": "sources/fuji_mcd2.jpg",
+      "photo2": "sources/cup_mid.jpg",
       "seed": 11,
       "set": {"pill": "BREAKING", "l1": "FUJIMOTO", "l2": "DRINKS THE LAST", "l3": "GRIMACE SHAKE", "l4": "IN ASIA"}
     },
     {
       "name": "fuji-wallet",
-      "source": "/home/georgej/Pictures/cli-anything-poster/src/fuji_mcd1.jpg",
+      "source": "sources/fuji_mcd1.jpg",
       "seed": 12,
       "set": {"pill": "ALERT", "l1": "HE LOST", "l2": "THE $FUJI", "l3": "WALLET", "l4": "INSIDE A", "l5": "TOKYO", "l6": "MCDONALDS"}
     },
     {
       "name": "fuji-mcflurry",
-      "source": "/home/georgej/Pictures/cli-anything-poster/src/fuji_mcd1.jpg",
+      "source": "sources/fuji_mcd1.jpg",
       "seed": 13,
       "set": {"pill": "NEWS", "l1": "TOKYO POLICE", "l2": "SAY FUJIMOTO", "l3": "LAUNDERED", "l4": "$4.2M THROUGH", "l5": "A MCFLURRY", "l6": "MACHINE"}
     },
     {
       "name": "fuji-rico",
-      "source": "/home/georgej/Pictures/cli-anything-poster/src/fuji_hall.jpg",
+      "source": "sources/fuji_hall.jpg",
       "seed": 14,
       "set": {"pill": "LIVE", "l1": "FEDS RAID", "l2": "THE HALLWAY", "l3": "FUJIMOTO", "l4": "NAMED IN A", "l5": "RICO CASE", "l6": "OVER ONE BEER"}
     }

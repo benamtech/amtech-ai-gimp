@@ -1,0 +1,16 @@
+{
+  "id": "solarized-specter",
+  "title": "Solarized specter (ghost body)",
+  "family": "glitch",
+  "era": ["1970s", "psychedelic"],
+  "image_types": ["sculpture", "portrait"],
+  "tags": ["solarize", "anaglyph", "ghost", "violet", "offset", "dream"],
+  "effects": [
+    {"name": "solarize", "param": {"threshold": 110}},
+    {"name": "color_split", "param": {"dx": 10, "dy": 0}},
+    {"name": "tint", "param": {"color": "#7A4BFF", "amount": 0.35}},
+    {"name": "vignette", "param": {"strength": 0.55, "color": "#000000"}}
+  ],
+  "note": "The body going ghost: solarize to invert midtones, anaglyph split, violet tint. Dreamy, uncanny.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "Augustus of Prima Porta (public domain still)"}
+}

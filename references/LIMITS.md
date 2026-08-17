@@ -1,7 +1,7 @@
 # LIMITS
 
 Honest report from the 2026-08-16 stress test.
-Work notes live in `/home/georgej/AMTECH/gimp-hermes-grok-test/notes/`.
+Work notes live in `~/AMTECH/gimp-hermes-grok-test/notes/`.
 Final stills live in this folder.
 
 ## What the skill handled
@@ -36,7 +36,7 @@ Final stills live in this folder.
 
 | Probe | Result | Evidence |
 |---|---|---|
-| cli-anything-gimp present | PASS | `/home/georgej/.local/bin/cli-anything-gimp` |
+| cli-anything-gimp present | PASS | `~/.local/bin/cli-anything-gimp` |
 | project new / draw text help match | PASS | `notes/01-probes.md` |
 | Guessed Commons hash | PASS as fail (404) | curl -sI |
 | Commons API | PASS | `probes/commons-api.json` |
@@ -58,7 +58,7 @@ Also fix the harness docstring in `Session.save_session`: it does not persist un
 
 ## Final files
 
-- `/home/georgej/Pictures/cli-anything-poster/limits/poster1-landscape.png`
-- `/home/georgej/Pictures/cli-anything-poster/limits/poster2-tiny-trap.png`
-- `/home/georgej/Pictures/cli-anything-poster/limits/poster3-stack.png`
+- `~/Pictures/cli-anything-poster/limits/poster1-landscape.png`
+- `~/Pictures/cli-anything-poster/limits/poster2-tiny-trap.png`
+- `~/Pictures/cli-anything-poster/limits/poster3-stack.png`
 - matching `.gimp-cli.json` and `compose_*.py` in the same folder

@@ -2,7 +2,7 @@
 name: image-compose
 description: Use when composing any still from copy or refs.
 version: 1.0.0
-author: George (georgej), Hermes Agent
+author: AMTECH
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

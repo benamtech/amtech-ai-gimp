@@ -1,0 +1,15 @@
+{
+  "id": "xerox-torn-ghost",
+  "title": "Xerox saint (torn photocopy ghost)",
+  "family": "glitch",
+  "era": ["1990s", "grunge", "zine"],
+  "image_types": ["sculpture", "portrait"],
+  "tags": ["xerox", "photocopy", "torn", "ghost", "1-bit", "zine", "punk"],
+  "effects": [
+    {"name": "xerox", "param": {"contrast": 2.0, "grain_n": 3000, "seed": 5}},
+    {"name": "torn", "param": {"edge": "bottom", "steps": 36, "seed": 5}},
+    {"name": "vignette", "param": {"strength": 0.45, "color": "#000000"}}
+  ],
+  "note": "The body as a photocopy of itself: 1-bit xerox, torn edge, slight vignette. Grungy, sacred, disposable.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "statue head (public domain still)"}
+}

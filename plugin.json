@@ -2,5 +2,5 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "amtech-computer-use-graphics",
   "description": "Deterministic, non-generative image composer + brand/style authoring (Pillow, GIMP 3, cli-anything-gimp).",
-  "version": "0.1.2"
+  "version": "0.2.0"
 }

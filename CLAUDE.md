@@ -5,7 +5,7 @@
 This directory is a self-contained, deterministic, non-generative image
 composer. Read AGENTS.md for the full working agreement, AUTHORITY.md for the
 authority map, and CODEGRAPH.md for the module graph. The playbook your skills
-load is skills/meme-maker/SKILL.md.
+load is skills/computer-use-graphics/SKILL.md.
 
 Quick start (no build step):
 

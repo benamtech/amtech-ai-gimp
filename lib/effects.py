@@ -415,6 +415,153 @@ def url_plate(draw, w: int, h: int, label: str, fill="#2FF3FF", text_fill="#0000
     draw.text((w // 2, (y1 + y2) // 2), label, font=f, fill=text_fill, anchor="mm")
 
 
+# ── compositing / craft (brand-agnostic, image→image) ────────────────────────
+# These are the "hand-made graphics" primitives: duotone, mosaic, xerox, relief,
+# glitch-slice, anaglyph, waterline submerge, tint, and a two-image blend. Each
+# takes colors as plain args (hex or rgb) so any brand palette can drive them.
+
+def duotone(im: Image.Image, dark="#000000", light="#FFFFFF") -> Image.Image:
+    """Map grayscale to a two-color ramp (dark shadow → light highlight)."""
+    g = ImageOps.grayscale(im.convert("RGB"))
+    return ImageOps.colorize(g, black=_rgb(dark), white=_rgb(light))
+
+
+def mosaic(im: Image.Image, tile: int = 18) -> Image.Image:
+    """Pixelate: shrink to a coarse grid, stretch back (mosaic / censor look)."""
+    w, h = im.size
+    small = im.resize((max(1, w // tile), max(1, h // tile)), Image.Resampling.BILINEAR)
+    return small.resize((w, h), Image.Resampling.NEAREST)
+
+
+def xerox(im: Image.Image, contrast: float = 2.0, grain_n: int = 3000, seed: int = 9) -> Image.Image:
+    """1-bit photocopy: harsh threshold + grain. A 'body as a copy of itself' look."""
+    g = ImageEnhance.Contrast(ImageOps.autocontrast(ImageOps.grayscale(im.convert("RGB")))).enhance(contrast)
+    g = g.point(lambda p: 255 if p > 128 else 0)
+    return grain(g.convert("RGB"), n=grain_n, seed=seed, alpha=60, max_v=40)
+
+
+def relief(im: Image.Image, amount: float = 0.35) -> Image.Image:
+    """Emboss relief blended back into the source (sculpted stone look)."""
+    return Image.blend(im.convert("RGB"), im.convert("RGB").filter(ImageFilter.EMBOSS), amount)
+
+
+def slice_glitch(im: Image.Image, n: int = 14, max_shift: int = 40, seed: int = 7) -> Image.Image:
+    """Horizontal slice glitch: shift each band sideways by a seeded amount."""
+    rng = random.Random(seed)
+    im = im.convert("RGB"); W, H = im.size
+    band = max(2, H // n)
+    out = Image.new("RGB", (W, H), (0, 0, 0))
+    for i in range(n):
+        y0 = i * band; y1 = min(H, (i + 1) * band)
+        strip = im.crop((0, y0, W, y1))
+        dx = rng.randint(-max_shift, max_shift)
+        out.paste(strip, (dx, y0))
+    return out
+
+
+def color_split(im: Image.Image, dx: int = 8, dy: int = 0) -> Image.Image:
+    """Anaglyph channel split (real RGB separation, keep the red channel)."""
+    r, g, b = im.convert("RGB").split()
+    g = ImageChops.offset(g, dx, dy)
+    b = ImageChops.offset(b, -dx, -dy)
+    return Image.merge("RGB", (r, g, b))
+
+
+def waterline(im: Image.Image, frac: float = 0.55, dark="#0A0E1A", glow="#2FF3FF") -> Image.Image:
+    """Submerge the lower portion: dark water + a faint glowing reflection line."""
+    im = im.convert("RGB"); W, H = im.size; y = int(H * frac)
+    top = im.crop((0, 0, W, y))
+    below = im.crop((0, y, W, H)).convert("L").point(lambda p: int(p * 0.5))
+    below = ImageOps.colorize(below, black=_rgb(dark), white=_rgb(dark))
+    out = Image.new("RGB", (W, H), _rgb(dark)); out.paste(top, (0, 0)); out.paste(below, (0, y))
+    ImageDraw.Draw(out).line([(0, y), (W, y)], fill=_rgb(glow), width=3)
+    return out
+
+
+def tint(im: Image.Image, color: str = "#0A0E1A", amount: float = 0.4) -> Image.Image:
+    """Blend a solid color over the image (grade toward a mood)."""
+    return Image.blend(im.convert("RGB"), Image.new("RGB", im.size, _rgb(color)), amount)
+
+
+def lead_lines(im: Image.Image, dark="#0A0E1A", light="#2FF3FF") -> Image.Image:
+    """Stained-glass: find edges as lead lines over a posterized color plate."""
+    edges = im.convert("RGB").filter(ImageFilter.FIND_EDGES)
+    plate = ImageOps.posterize(im.convert("RGB"), 3)
+    return Image.blend(plate, edges, 0.5)
+
+
+def blend(a: Image.Image, b: Image.Image, mode: str = "screen") -> Image.Image:
+    """Blend two images of (possibly) different size; cover-crops b to a."""
+    a = a.convert("RGB"); b = b.convert("RGB")
+    if a.size != b.size:
+        b = cover_crop(b, *a.size)
+    if mode == "screen":
+        return ImageChops.screen(a, b)
+    if mode == "multiply":
+        return ImageChops.multiply(a, b)
+    if mode == "lighter":
+        return ImageChops.lighter(a, b)
+    if mode == "overlay":
+        return ImageChops.overlay(a, b)
+    if mode == "soft_light":
+        return ImageChops.soft_light(a, b)
+    if mode == "difference":
+        return ImageChops.difference(a, b)
+    return Image.blend(a, b, 0.5)
+
+
+# ── procedural overlays (image → image; draw-based, still deterministic) ─────
+
+def perspective_grid(im: Image.Image, horizon: float = 0.55, color="#2FF3FF",
+                     alpha: int = 30, n_h: int = 12, n_v: int = 17, width: int = 2) -> Image.Image:
+    """Vaporwave/synthwave perspective grid over the image (vanishing-point lines)."""
+    ov = Image.new("RGBA", im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+    W, H = im.size; hy = int(H * horizon); vp = (W // 2, hy)
+    col = _rgb(color)
+    for i in range(n_v + 1):
+        x = int(W * i / n_v)
+        d.line([(x, H), vp], fill=(*col, alpha), width=width)
+    for i in range(n_h + 1):
+        t = i / n_h; y = H - (H - hy) * (t ** 2)
+        d.line([(0, y), (W, y)], fill=(*col, alpha), width=width)
+    return Image.alpha_composite(im.convert("RGBA"), ov).convert("RGB")
+
+
+def starfield(im: Image.Image, n: int = 900, seed: int = 7, color="#FFFFFF",
+              max_a: int = 160, y_frac: float = 0.7) -> Image.Image:
+    """Scatter seeded star dots across the upper portion (cosmic/void)."""
+    rng = random.Random(seed)
+    ov = Image.new("RGBA", im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
+    W, H = im.size; col = _rgb(color)
+    for _ in range(n):
+        x = rng.randint(0, W - 1); y = rng.randint(0, int(H * y_frac))
+        a = rng.randint(30, max_a); r = rng.choice([1, 1, 1, 2, 2, 3])
+        d.ellipse([x - r, y - r, x + r, y + r], fill=(*col, a))
+    return Image.alpha_composite(im.convert("RGBA"), ov).convert("RGB")
+
+
+def vgradient(w: int, h: int, stops: list) -> Image.Image:
+    """Vertical gradient. stops = [(pos0..1, (r,g,b)), ...], ordered."""
+    g = Image.new("RGB", (1, h)); gd = ImageDraw.Draw(g)
+    for y in range(h):
+        t = y / max(1, h - 1)
+        col = stops[-1][1]
+        for i in range(len(stops) - 1):
+            p0, c0 = stops[i]; p1, c1 = stops[i + 1]
+            if p0 <= t <= p1:
+                f = (t - p0) / (p1 - p0) if p1 > p0 else 0
+                col = tuple(int(c0[k] + (c1[k] - c0[k]) * f) for k in range(3)); break
+        gd.point((0, y), fill=col)
+    return g.resize((w, h))
+
+
+def _rgb(c) -> tuple:
+    if isinstance(c, str):
+        from .brand import hex_rgb
+        return hex_rgb(c)
+    return tuple(c)
+
+
 # ── recipe sampling ───────────────────────────────────────────────────────────
 
 def filter_kwargs(fn, params: dict) -> dict:
@@ -474,4 +621,9 @@ EFFECTS = {
     "clamp_hues": clamp_hues, "bottom_lift": bottom_lift, "color_lift": color_lift,
     "grain": grain, "scanlines": scanlines, "crt": crt, "halftone": halftone,
     "vignette": vignette, "torn": torn, "splatter": splatter,
+    # compositing / craft
+    "duotone": duotone, "mosaic": mosaic, "xerox": xerox, "relief": relief,
+    "slice_glitch": slice_glitch, "color_split": color_split, "waterline": waterline,
+    "tint": tint, "lead_lines": lead_lines, "perspective_grid": perspective_grid,
+    "starfield": starfield,
 }

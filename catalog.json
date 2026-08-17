@@ -394,12 +394,14 @@
         "mag": "#FD2EFF",
         "cyan": "#2FF3FF",
         "k": "#000000",
-        "w": "#FFFFFF"
+        "w": "#FFFFFF",
+        "orange": "#FF7F00"
       },
       "role": {
         "lime": "headline/band",
         "mag": "strap/alert",
-        "cyan": "cta/url/frame"
+        "cyan": "cta/url/frame",
+        "orange": "banner-variant-only"
       },
       "fx": [
         "torn",
@@ -414,9 +416,8 @@
       "forbid": [
         "red",
         "gold",
-        "orange",
-        "navy-accent",
         "purple-blend",
+        "navy-accent",
         "rainbow"
       ],
       "canvas": {
@@ -424,9 +425,21 @@
           1080,
           1080
         ],
+        "ig_portrait": [
+          1080,
+          1350
+        ],
+        "story": [
+          1080,
+          1920
+        ],
         "yt": [
           2560,
           1440
+        ],
+        "banner": [
+          1920,
+          640
         ]
       },
       "url": "retardglobal.com"
@@ -453,8 +466,192 @@
         "k",
         "lime",
         "mag",
+        "orange",
         "w"
       ]
     }
-  }
+  },
+  "techniques": [
+    {
+      "id": "cosmic-void-starfield",
+      "title": "Cosmic void + starfield",
+      "family": "procedural",
+      "image_types": [
+        "void"
+      ],
+      "tags": [
+        "stars",
+        "void",
+        "cosmic",
+        "space",
+        "abyss",
+        "serene"
+      ],
+      "era": [
+        "2010s",
+        "cosmic-horror"
+      ],
+      "file": "cosmic-void-starfield.json"
+    },
+    {
+      "id": "duotone-marble-relief",
+      "title": "Duotone marble relief",
+      "family": "grade",
+      "image_types": [
+        "sculpture",
+        "portrait"
+      ],
+      "tags": [
+        "duotone",
+        "relief",
+        "stone",
+        "marble",
+        "mono",
+        "sculptural"
+      ],
+      "era": [
+        "1970s",
+        "greek"
+      ],
+      "file": "duotone-marble-relief.json"
+    },
+    {
+      "id": "duotone-waterline",
+      "title": "Duotone waterline submerge",
+      "family": "composite",
+      "image_types": [
+        "sculpture",
+        "portrait",
+        "landscape"
+      ],
+      "tags": [
+        "duotone",
+        "water",
+        "submerge",
+        "ocean",
+        "reflection",
+        "mono"
+      ],
+      "era": [
+        "1970s",
+        "yacht-rock"
+      ],
+      "file": "duotone-waterline.json"
+    },
+    {
+      "id": "gold-mandorla-mosaic",
+      "title": "Gold mandorla (catholic icon)",
+      "family": "composite",
+      "image_types": [
+        "portrait",
+        "sculpture"
+      ],
+      "tags": [
+        "gold",
+        "mosaic",
+        "icon",
+        "halo",
+        "sacred",
+        "mandorla"
+      ],
+      "era": [
+        "1930s",
+        "byzantine",
+        "icon"
+      ],
+      "file": "gold-mandorla-mosaic.json"
+    },
+    {
+      "id": "organic-computer-screen-blend",
+      "title": "Organic computer (circuit \u00d7 coral screen blend)",
+      "family": "composite",
+      "image_types": [
+        "texture"
+      ],
+      "tags": [
+        "circuit",
+        "coral",
+        "machine",
+        "organic",
+        "screen",
+        "double-exposure",
+        "signal"
+      ],
+      "era": [
+        "2010s",
+        "biopunk"
+      ],
+      "file": "organic-computer-screen-blend.json"
+    },
+    {
+      "id": "solarized-specter",
+      "title": "Solarized specter (ghost body)",
+      "family": "glitch",
+      "image_types": [
+        "sculpture",
+        "portrait"
+      ],
+      "tags": [
+        "solarize",
+        "anaglyph",
+        "ghost",
+        "violet",
+        "offset",
+        "dream"
+      ],
+      "era": [
+        "1970s",
+        "psychedelic"
+      ],
+      "file": "solarized-specter.json"
+    },
+    {
+      "id": "vaporwave-crt-grid",
+      "title": "Vaporwave CRT perspective grid",
+      "family": "texture",
+      "image_types": [
+        "sculpture",
+        "portrait",
+        "landscape"
+      ],
+      "tags": [
+        "vaporwave",
+        "crt",
+        "grid",
+        "retro",
+        "purple",
+        "scanline"
+      ],
+      "era": [
+        "1980s",
+        "vaporwave",
+        "synthwave"
+      ],
+      "file": "vaporwave-crt-grid.json"
+    },
+    {
+      "id": "xerox-torn-ghost",
+      "title": "Xerox saint (torn photocopy ghost)",
+      "family": "glitch",
+      "image_types": [
+        "sculpture",
+        "portrait"
+      ],
+      "tags": [
+        "xerox",
+        "photocopy",
+        "torn",
+        "ghost",
+        "1-bit",
+        "zine",
+        "punk"
+      ],
+      "era": [
+        "1990s",
+        "grunge",
+        "zine"
+      ],
+      "file": "xerox-torn-ghost.json"
+    }
+  ]
 }

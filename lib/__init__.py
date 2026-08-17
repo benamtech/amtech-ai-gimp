@@ -7,13 +7,13 @@ Pillow, with optional native-GIMP and cli-anything-gimp engines.
 
 Nothing here depends on a specific agent runtime (Hermes, Claude Code,
 Codex, etc.). Agents discover the workflow through AGENTS.md and
-skills/meme-maker/SKILL.md, then drive this library directly.
+skills/computer-use-graphics/SKILL.md, then drive this library directly.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
-__version__ = "0.1.2"
+__version__ = "0.2.0"
 
 # Product / authorship metadata (AMTECH)
 PRODUCT = "amtech-computer-use-graphics"

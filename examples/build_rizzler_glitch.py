@@ -16,7 +16,7 @@ IMPACT_TTF = FONT_DIR / "Impact.ttf"
 PHOTO_MAIN = Path("/tmp/rizzler-src/sportskeeda.jpg")
 PHOTO_CIRCLE = Path("/tmp/rizzler-src/2ea21b65.bin")
 
-OUT = Path("/home/georgej/Pictures/cli-anything-poster/rizzler-warhol-glitch-portrait.png")
+OUT = Path.home() / "Pictures" / "cli-anything-poster" / "rizzler-warhol-glitch-portrait.png"
 
 W, H = 1080, 1350
 BASE_BG = (0x12, 0x00, 0x18)

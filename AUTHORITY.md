@@ -12,7 +12,9 @@ codebase that *generates* code at runtime.
 | Style / layout recipe | `styles/<id>.json` | A recipe is a *floor*, not a lock. A one-shot script may diverge. |
 | Effect implementations | `lib/effects.py` | Canonical effect code. `lib/rg_kit.py` is a bundled legacy kit; prefer `effects`. |
 | Effect dispatch (filters) | `lib/effects.py` `apply_filter()` | Signature-filtered kwargs; `render` and `library` both route through it. |
-| Design rules (taste) | `lib/design.py` | Contrast, harmony, effect↔image pairing, variant distinctness. Advisory findings. |
+| Design rules (taste) | `lib/design.py` | Contrast, harmony, effect↔image pairing, hierarchy, variant distinctness. Advisory findings. |
+| Design canon (movements, taste) | `references/design-canon.md` | 1930s–2010s movement map + non-style-specific rules + boundary-push guidance. |
+| Technique catalog (effect pipelines) | `lib/technique.py` + `techniques/*.json` | Reusable, brand-agnostic treatments; searchable, growing. |
 | Font resolution | `lib/fonts.py` | Impact auto-downloads; others must exist (bundled or installed). |
 | Brand loading/creation | `lib/brand.py` | Search order below. |
 | Source acquisition | `lib/source.py` | Local → URL → Commons API → web search. |
@@ -20,10 +22,10 @@ codebase that *generates* code at runtime.
 | Script generation (self-modify) | `lib/library.py` | Emits one-shot scripts to `out/`, runs them. |
 | Batch rendering (manifest-driven) | `lib/batch.py` | One style/brand template × N items → `<out>/<name>.png`. |
 | CLI surface | `run.py` + `lib/cli.py` | One entry point, argparse + optional REPL. |
-| Agent-facing playbook | `skills/meme-maker/SKILL.md` | What agent runtimes load. |
+| Agent-facing playbook | `skills/computer-use-graphics/SKILL.md` | What agent runtimes load. |
 | Universal working agreement | `AGENTS.md` | Codex/Cursor/Aider/… read this. |
 | Claude Code agreement | `CLAUDE.md` | Imports AGENTS.md. |
-| Schemas (contracts) | `schemas/*.json` | brand, style, source, project, recipe. |
+| Schemas (contracts) | `schemas/*.json` | brand, style, source, project, recipe, technique. |
 | Technique corpus | `references/*.md` | Routed via `references/INDEX.md`. |
 | Capability matrix | `capability-matrix.json` | Effect/technique catalog + style-schema union (regenerated from references + styles). |
 
@@ -70,8 +72,11 @@ codebase that *generates* code at runtime.
   first-class use of this program, not a side effect.
 - New effect primitive → add a function to `lib/effects.py`, then reference it
   from a style's `fx` list or a one-shot script.
-- New design rule (contrast / harmony / pairing / variant distinctness) →
-  add a predicate to `lib/design.py` and surface it in `review_resolved()`.
+- New design rule (contrast / harmony / pairing / hierarchy / variant
+  distinctness) → add a predicate to `lib/design.py`, surface it in
+  `review_composition()`.
+- New reusable effect pipeline → `techniques/<id>.json` (or `run.py
+  technique-new`), so it joins the growing catalog.
 - New backend → add a strategy to `lib/render.py`.
 - New agent runtime → add a manifest (see README § "Agent targets") and point
-  it at `skills/meme-maker/SKILL.md`. Do not fork the skill body per runtime.
+  it at `skills/computer-use-graphics/SKILL.md`. Do not fork the skill body per runtime.

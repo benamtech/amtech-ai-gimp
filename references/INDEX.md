@@ -34,6 +34,8 @@ Pattern: `skill_view(name='image-compose', file_path='references/<file>.md')`
 | rule of thirds, leading lines, frame-in-frame | `formats.md` |
 | harness broke / undo / wrap / GIMP hang | `harness-limits.md` |
 | find / search / source a photo / named face | `image-search.md` |
+| taste, hierarchy, color, "make it look good" | `design-canon.md` |
+| reusable effect pipeline / technique / treatment | `lib/technique.py` + `run.py techniques` |
 
 ## Harness capability (truth)
 

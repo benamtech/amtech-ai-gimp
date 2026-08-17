@@ -1,0 +1,15 @@
+{
+  "id": "duotone-waterline",
+  "title": "Duotone waterline submerge",
+  "family": "composite",
+  "era": ["1970s", "yacht-rock"],
+  "image_types": ["sculpture", "portrait", "landscape"],
+  "tags": ["duotone", "water", "submerge", "ocean", "reflection", "mono"],
+  "effects": [
+    {"name": "duotone", "param": {"dark": "#0A0E1A", "light": "#F0EBDF"}},
+    {"name": "waterline", "param": {"frac": 0.56, "dark": "#0A0E1A", "glow": "#2FF3FF"}},
+    {"name": "vignette", "param": {"strength": 0.5, "color": "#000000"}}
+  ],
+  "note": "The subject going under: a glowing waterline splits the frame. Reserve the glow color for the brand signal/accent.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "bust of a goddess (public domain still)"}
+}

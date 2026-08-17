@@ -107,6 +107,21 @@ def build_parser() -> argparse.ArgumentParser:
                      help="portrait|sculpture|void|landscape|texture (for effect pairing)")
     rev.add_argument("--seed", type=int, default=None)
 
+    tc = sub.add_parser("techniques", help="list/search the technique catalog")
+    tc.add_argument("--image-type", default=None)
+    tc.add_argument("--family", default=None)
+    tc.add_argument("--tag", default=None)
+    tc.add_argument("--era", default=None)
+    tc.add_argument("--show", default=None, help="print one technique's full JSON")
+
+    tn = sub.add_parser("technique-new", help="scaffold a new technique entry")
+    tn.add_argument("--id", required=True)
+    tn.add_argument("--title", required=True)
+    tn.add_argument("--family", default="grade")
+    tn.add_argument("--image-type", action="append", default=[])
+    tn.add_argument("--tag", action="append", default=[])
+    tn.add_argument("--era", action="append", default=[])
+
     c = sub.add_parser("compose", help="deterministic recipe render")
     c.add_argument("--style", required=True)
     c.add_argument("--brand", default=None)
@@ -207,7 +222,7 @@ def main(argv: list[str] | None = None) -> int:
             _print(write(), as_json)
 
         elif args.cmd == "review":
-            from .design import review_resolved, review_brand
+            from .design import review_composition, review_brand
             if args.brand and not args.style:
                 from .brand import load_brand
                 findings = review_brand(load_brand(args.brand))
@@ -216,11 +231,26 @@ def main(argv: list[str] | None = None) -> int:
                 from .compose import resolve
                 resolved = resolve(args.style, brand_id=args.brand,
                                    source=args.source, seed=args.seed)
-                findings = review_resolved(resolved, image_type=args.image_type)
+                findings = review_composition(resolved, image_type=args.image_type)
                 _print({"style": args.style, "brand": resolved.get("brand_id"),
                         "findings": findings}, as_json)
             else:
                 raise SystemExit("review needs --style (or --brand alone)")
+
+        elif args.cmd == "techniques":
+            from .technique import list_techniques, find_techniques, load_technique
+            if args.show:
+                _print(load_technique(args.show), as_json)
+            else:
+                _print(find_techniques(image_type=args.image_type, family=args.family,
+                                       tag=args.tag, era=args.era), as_json)
+
+        elif args.cmd == "technique-new":
+            from .technique import create_technique
+            out = create_technique(args.id, args.title, family=args.family,
+                                   image_types=args.image_type, tags=args.tag,
+                                   era=args.era)
+            _print({"created": str(out)}, as_json)
 
         elif args.cmd == "compose":
             from .compose import compose

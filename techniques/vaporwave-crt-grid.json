@@ -1,0 +1,16 @@
+{
+  "id": "vaporwave-crt-grid",
+  "title": "Vaporwave CRT perspective grid",
+  "family": "texture",
+  "era": ["1980s", "vaporwave", "synthwave"],
+  "image_types": ["sculpture", "portrait", "landscape"],
+  "tags": ["vaporwave", "crt", "grid", "retro", "purple", "scanline"],
+  "effects": [
+    {"name": "duotone", "param": {"dark": "#0A0E1A", "light": "#F0EBDF"}},
+    {"name": "tint", "param": {"color": "#7A4BFF", "amount": 0.3}},
+    {"name": "perspective_grid", "param": {"horizon": 0.66, "color": "#2FF3FF", "alpha": 28}},
+    {"name": "crt", "param": {"gap": 4, "alpha": 34}}
+  ],
+  "note": "Statue bust on a synthwave grid, never slept: duotone, violet tint, perspective grid, CRT scanlines.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "statue head (public domain still)"}
+}

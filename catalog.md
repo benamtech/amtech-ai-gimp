@@ -97,9 +97,19 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 
 ### retardglobal — RETARD GLOBAL
 - font: Impact
-- palette: cyan=#2FF3FF, k=#000000, lime=#DEFF2E, mag=#FD2EFF, w=#FFFFFF
-- roles: cyan=cta/url/frame, lime=headline/band, mag=strap/alert
+- palette: cyan=#2FF3FF, k=#000000, lime=#DEFF2E, mag=#FD2EFF, orange=#FF7F00, w=#FFFFFF
+- roles: cyan=cta/url/frame, lime=headline/band, mag=strap/alert, orange=banner-variant-only
 - fx: torn, halftone, xerox, scan, crt, splatter-3only, offset, posterize
-- forbid: red, gold, orange, navy-accent, purple-blend, rainbow
-- canvas: {"ig": [1080, 1080], "yt": [2560, 1440]}
+- forbid: red, gold, purple-blend, navy-accent, rainbow
+- canvas: {"ig": [1080, 1080], "ig_portrait": [1080, 1350], "story": [1080, 1920], "yt": [2560, 1440], "banner": [1920, 640]}
 - url: retardglobal.com
+
+## Techniques
+- `cosmic-void-starfield` — Cosmic void + starfield [procedural] · types: void · era: 2010s, cosmic-horror · tags: stars, void, cosmic, space, abyss, serene
+- `duotone-marble-relief` — Duotone marble relief [grade] · types: sculpture, portrait · era: 1970s, greek · tags: duotone, relief, stone, marble, mono, sculptural
+- `duotone-waterline` — Duotone waterline submerge [composite] · types: sculpture, portrait, landscape · era: 1970s, yacht-rock · tags: duotone, water, submerge, ocean, reflection, mono
+- `gold-mandorla-mosaic` — Gold mandorla (catholic icon) [composite] · types: portrait, sculpture · era: 1930s, byzantine, icon · tags: gold, mosaic, icon, halo, sacred, mandorla
+- `organic-computer-screen-blend` — Organic computer (circuit × coral screen blend) [composite] · types: texture · era: 2010s, biopunk · tags: circuit, coral, machine, organic, screen, double-exposure, signal
+- `solarized-specter` — Solarized specter (ghost body) [glitch] · types: sculpture, portrait · era: 1970s, psychedelic · tags: solarize, anaglyph, ghost, violet, offset, dream
+- `vaporwave-crt-grid` — Vaporwave CRT perspective grid [texture] · types: sculpture, portrait, landscape · era: 1980s, vaporwave, synthwave · tags: vaporwave, crt, grid, retro, purple, scanline
+- `xerox-torn-ghost` — Xerox saint (torn photocopy ghost) [glitch] · types: sculpture, portrait · era: 1990s, grunge, zine · tags: xerox, photocopy, torn, ghost, 1-bit, zine, punk

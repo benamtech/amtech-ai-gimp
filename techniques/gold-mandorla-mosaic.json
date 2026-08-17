@@ -1,0 +1,15 @@
+{
+  "id": "gold-mandorla-mosaic",
+  "title": "Gold mandorla (catholic icon)",
+  "family": "composite",
+  "era": ["1930s", "byzantine", "icon"],
+  "image_types": ["portrait", "sculpture"],
+  "tags": ["gold", "mosaic", "icon", "halo", "sacred", "mandorla"],
+  "effects": [
+    {"name": "mosaic", "param": {"tile": 20}},
+    {"name": "duotone", "param": {"dark": "#0E2A47", "light": "#E8C76A"}},
+    {"name": "vignette", "param": {"strength": 0.55, "color": "#000000"}}
+  ],
+  "note": "The soul in a gold mandorla: mosaic the plate, duotone to gold, vignette to hold the center. Draw the ellipse keyline by hand.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "Byzantine mosaic (public domain still)"}
+}

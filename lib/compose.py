@@ -238,7 +238,7 @@ def build_project(resolved: dict, panel: Path) -> dict:
                    "color_mode": "RGB", "dpi": 72},
         "layers": [photo_layer, copy_layer],
         "guides": [], "selection": None,
-        "metadata": {"software": "amtech-computer-use-graphics 0.1.2"},
+        "metadata": {"software": "amtech-computer-use-graphics 0.2.0"},
     }
 
 

@@ -1,6 +1,6 @@
 # amtech-computer-use-graphics
 
-**v0.1.2** — AMTECH · Benjamin Palaskas <ben@amtechai.com> · https://amtechai.com
+**v0.2.0** — AMTECH · Benjamin Palaskas <ben@amtechai.com> · https://amtechai.com
 
 The program composes images. It is deterministic. It does not use diffusion.
 It does not call a large language model at render time.
@@ -67,13 +67,14 @@ Requirements: Python 3.10 or newer. Pillow is the only hard dependency.
 
 Do these steps in order when you enter the folder:
 
-1. Read `skills/meme-maker/SKILL.md`. It is the canonical playbook.
+1. Read `skills/computer-use-graphics/SKILL.md`. It is the canonical playbook.
 2. Read `AGENTS.md`. It is the working agreement.
 3. Run `python3 run.py doctor`.
 4. Run `python3 run.py bootstrap`.
 5. Run `python3 run.py styles --family viral`.
 6. Run `python3 run.py brands`.
-7. Run one smoke render:
+7. Run `python3 run.py techniques` (the growing effect-pipeline catalog).
+8. Run one smoke render:
 
    ```bash
    python3 run.py compose --style instagram-ragebait \
@@ -86,15 +87,21 @@ Every subcommand takes `--help`. All output is plain text or `--json`.
 
 ## The loop
 
-The loop has five steps:
+The human gives a **vision**, not a spec. Translate "an old punk zine" or
+"clean and swiss" into a canvas, era, palette, and type yourself.
 
-1. Read the ask. Infer the canvas, the style, the brand, and the sources.
-   Do not make the user name scripts or font paths.
+1. Hear the vision. Infer canvas, movement/era, palette, sources, copy.
+   Never make the user name a style, font, or flag.
 2. Get stills. See the image-search playbook (`references/image-search.md`).
 3. Compose. Use `compose` for a recipe render, or `generate` to emit and run
-   a one-shot script.
-4. Render to a PNG.
+   a one-shot script. Reach for `run.py techniques` when the look is an effect
+   pipeline, not a layout.
+4. Review, then push. `run.py review --style … --image-type …` flags weak
+   contrast/hierarchy/color-count. Then push one axis further and render again.
 5. Verify with vision. Read every string. Iterate until it is correct.
+
+For taste and "which look fits", read `references/design-canon.md` (a century
+of movements, 1930s–2010s).
 
 ## Commands
 
@@ -110,7 +117,9 @@ The loop has five steps:
 | `tag --src P --tags T --url U` | Tag a still into the registry. |
 | `search-still --query Q` | Search images across engines. |
 | `catalog` | Regenerate catalog.md and catalog.json. |
-| `review` | Design-rule review (contrast/harmony/pairing/variant checks). |
+| `techniques [--tag/--image-type/--era/--show]` | List/search the effect-pipeline catalog. |
+| `technique-new --id X --title Y ...` | Add a reusable technique to the catalog. |
+| `review` | Design-rule review (contrast/harmony/hierarchy/pairing/variant). |
 | `compose` | Render a still from a recipe. |
 | `generate` | Emit and run a one-shot script. |
 | `batch` | Render many stills from one template. |
@@ -305,11 +314,12 @@ palette, font, and effects.
 amtech-computer-use-graphics/
 ├── run.py                entry point
 ├── lib/                  the program
-├── skills/meme-maker/    the canonical agent skill
+├── skills/computer-use-graphics/    the canonical agent skill
 ├── brands/               brand-lock JSON
 ├── styles/               style recipes (70+)
 ├── sources/              bundled stills + registry
-├── references/           technique corpus + image-search playbook
+├── references/           technique corpus + design canon + image-search playbook
+├── techniques/           the growing reusable effect-pipeline catalog
 ├── schemas/              JSON Schemas
 ├── templates/            compose templates
 ├── scripts/              legacy image-compose skill scripts (brand.py,
@@ -317,7 +327,7 @@ amtech-computer-use-graphics/
 ├── examples/             proven one-shot scripts + batch manifest
 ├── assets/fonts/         bundled fonts
 ├── out/                  generated stills + emitted scripts
-├── catalog.md/json       styles ↔ brands ↔ families map
+├── catalog.md/json       styles ↔ brands ↔ families ↔ techniques map
 ├── CHANGELOG.md          version history
 └── AGENTS.md / AUTHORITY.md / CODEGRAPH.md
 ```

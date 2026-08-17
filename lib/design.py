@@ -255,3 +255,66 @@ def review_brand(brand: dict) -> list[str]:
                     f"palette color {h} has no legible partner in the palette"
                 )
     return findings
+
+
+# ── 5. compositional taste (structure checks on a resolved dict) ─────────────
+
+def _text_sizes(resolved: dict) -> list[int]:
+    """All text sizes in a resolved composition (stack lines + plain text)."""
+    sizes = []
+    for t in resolved.get("texts", []):
+        if t.get("type") == "stack":
+            sizes.extend(int(ln.get("size", 0)) for ln in t.get("lines", []))
+        else:
+            sizes.append(int(t.get("size", 0)))
+    return sizes
+
+
+def hierarchy_ok(resolved: dict) -> tuple[bool, str]:
+    """A clear visual hierarchy: the largest text should clearly dominate.
+
+    Heuristic: the top text is ≥ 1.5× the second-largest (a real headline),
+    and there are not more than ~4 distinct sizes fighting for attention.
+    """
+    sizes = sorted((s for s in _text_sizes(resolved) if s > 0), reverse=True)
+    if not sizes:
+        return True, "no text to judge"
+    if len(sizes) >= 2 and sizes[0] < sizes[1] * 1.5:
+        return False, (f"weak hierarchy: headline {sizes[0]}px vs next {sizes[1]}px "
+                       f"(need ≥1.5×)")
+    distinct = len(set(sizes))
+    if distinct > 5:
+        return False, f"too many type sizes ({distinct}); aim for ≤ 4 (kicker/head/deck/credit)"
+    return True, f"hierarchy ok (headline {sizes[0]}px, {distinct} sizes)"
+
+
+def palette_size_ok(resolved: dict, max_colors: int = 4) -> tuple[bool, str]:
+    """Count distinct non-background colors in the composition (≤ ~4 reads clean)."""
+    bg = resolved.get("background")
+    colors = set()
+    for r in resolved.get("rects", []):
+        colors.add(r.get("fill"))
+    for t in resolved.get("texts", []):
+        if t.get("type") == "stack":
+            colors.update(ln.get("color") for ln in t.get("lines", []))
+        else:
+            colors.add(t.get("color"))
+    colors.discard(bg)
+    colors.discard(None)
+    colors.discard("#000000")   # black stroke/panel is neutral
+    colors.discard("#FFFFFF")   # white is neutral
+    if len(colors) > max_colors:
+        return False, f"too many colors in play ({len(colors)}): {sorted(colors)}"
+    return True, f"{len(colors)} accent colors (≤ {max_colors})"
+
+
+def review_composition(resolved: dict, image_type: str | None = None) -> list[str]:
+    """Full taste review: contrast + harmony + pairing + hierarchy + color count."""
+    findings = review_resolved(resolved, image_type=image_type)
+    ok, msg = hierarchy_ok(resolved)
+    if not ok:
+        findings.append(f"hierarchy: {msg}")
+    ok, msg = palette_size_ok(resolved)
+    if not ok:
+        findings.append(f"palette: {msg}")
+    return findings

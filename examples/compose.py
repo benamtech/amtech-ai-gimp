@@ -13,7 +13,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-OUT = Path("/home/georgej/Pictures/cli-anything-poster")
+OUT = Path.home() / "Pictures" / "cli-anything-poster"
 OUT.mkdir(parents=True, exist_ok=True)
 SRC = OUT / "sholes_typewriter_source.jpg"
 PHOTO = OUT / "sholes_panel.jpg"

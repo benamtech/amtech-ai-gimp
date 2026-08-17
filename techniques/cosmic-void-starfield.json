@@ -1,0 +1,15 @@
+{
+  "id": "cosmic-void-starfield",
+  "title": "Cosmic void + starfield",
+  "family": "procedural",
+  "era": ["2010s", "cosmic-horror"],
+  "image_types": ["void"],
+  "tags": ["stars", "void", "cosmic", "space", "abyss", "serene"],
+  "effects": [
+    {"name": "tint", "param": {"color": "#0A0E1A", "amount": 0.6}},
+    {"name": "starfield", "param": {"n": 900, "seed": 7, "color": "#F0EBDF", "max_a": 120, "y_frac": 0.7}},
+    {"name": "vignette", "param": {"strength": 0.45, "color": "#000000"}}
+  ],
+  "note": "Serene cosmic absence: darken, scatter stars, vignette. Add a tiny figure for scale/sanctity.",
+  "source": {"provenance": "amtech 'absence' campaign", "credit": "Milky Way (public domain still)"}
+}
