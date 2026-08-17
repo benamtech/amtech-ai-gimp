@@ -1,0 +1,45 @@
+{
+  "id": "newspaper-clipping",
+  "family": "viral",
+  "title": "Torn clipping",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#d9d0c0",
+  "photo": {
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "filters": [
+    {
+      "name": "grayscale"
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.25
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "THEY OPENED THE BAY AND LEFT THE LIGHT ON",
+      "THIS PHOTO WAS NEVER SUPPOSED TO LEAK",
+      "THE STATION SAID NOTHING. THE CREW LOOKED BACK.",
+      "ONE IMAGE. THREE HOURS. NO COMMENT.",
+      "EVERYONE SAW IT. NO ONE FILED IT."
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 40,
+      "y": 48,
+      "size": 28,
+      "color": "#1a1a1a"
+    }
+  ]
+}

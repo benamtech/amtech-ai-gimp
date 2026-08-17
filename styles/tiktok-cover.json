@@ -1,0 +1,42 @@
+{
+  "id": "tiktok-cover",
+  "family": "viral",
+  "title": "TikTok cover",
+  "canvas": [
+    1080,
+    1920
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      40,
+      160
+    ]
+  },
+  "filters": [
+    {
+      "name": "saturation",
+      "param": {
+        "factor": 1.3
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "WAIT FOR IT",
+      "THEY LIED",
+      "WATCH THIS",
+      "I WAS WRONG",
+      "DO THIS NEXT"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 220,
+      "size": 52,
+      "color": "#ffffff"
+    }
+  ]
+}

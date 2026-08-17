@@ -1,0 +1,31 @@
+{
+  "id": "grain-extract",
+  "family": "photo",
+  "title": "Grain extract",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#777",
+  "photo": {
+    "blend": "grain_extract",
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "copy": {
+    "head": [
+      "EXTRACT"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 48,
+      "size": 28,
+      "color": "#111111"
+    }
+  ]
+}

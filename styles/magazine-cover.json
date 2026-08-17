@@ -1,0 +1,110 @@
+{
+  "id": "magazine-cover",
+  "family": "editorial",
+  "title": "Magazine cover",
+  "canvas": {
+    "choices": [
+      [
+        1080,
+        1350
+      ],
+      [
+        1600,
+        2000
+      ]
+    ]
+  },
+  "background": "#111111",
+  "photo": {
+    "offset_jitter": [
+      60,
+      80
+    ]
+  },
+  "filters": [
+    {
+      "name": "contrast",
+      "param": {
+        "factor": {
+          "range": [
+            1.05,
+            1.25
+          ]
+        }
+      }
+    }
+  ],
+  "copy": {
+    "kicker": [
+      "VOL. 08",
+      "ISSUE 12",
+      "FIELD NOTES",
+      "DISPATCH",
+      "SPECIAL"
+    ],
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ],
+    "deck": [
+      "The still is older than the software that prints it."
+    ],
+    "masthead": [
+      "ORBIT",
+      "SIGNAL",
+      "BAY",
+      "ATLAS"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H*0.72)",
+      "x2": "W",
+      "y2": "H",
+      "fill": "#0b1220"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{masthead}",
+      "x": 48,
+      "y": 56,
+      "size": {
+        "range": [
+          54,
+          72
+        ]
+      },
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{kicker}",
+      "x": 48,
+      "y": "int(H*0.74)",
+      "size": 18,
+      "color": "#f4d27a"
+    },
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "int(H*0.78)",
+      "size": {
+        "range": [
+          28,
+          40
+        ]
+      },
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{deck}",
+      "x": 48,
+      "y": "int(H*0.92)",
+      "size": 16,
+      "color": "#d7dde8"
+    }
+  ]
+}

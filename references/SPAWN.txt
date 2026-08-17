@@ -1,0 +1,13 @@
+STILL JOB
+load: image-compose, cli-anything-gimp
+brand?: brands/<id>.json (cwd → Pictures/cli-anything-poster/brands → skill)
+face?: scrape real still. no stock stand-in. no Commons-first.
+canvas: infer (IG sq 1080² / portrait 1080×1350)
+recipe fit? run_style --font Impact --brand <id>
+else: write compose_<job>.py (may emit more .py). import brand + stack_lines. catalog = floor.
+type: Impact if viral. never Anton-as-Impact.
+stack: glyph+stroke. no underlap.
+out: ~/Pictures/cli-anything-poster/
+then vision_analyze. iterate till every string is on-canvas + spaced.
+no leftover Rizzler/NASA/PUFFY copy. no extra refusals.
+job: {PICTURE} | {BRAND?} | {N stills}

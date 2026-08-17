@@ -1,0 +1,82 @@
+{
+  "id": "swiss-poster",
+  "family": "editorial",
+  "title": "Swiss / International Typographic",
+  "canvas": {
+    "choices": [
+      [
+        1600,
+        1600
+      ],
+      [
+        1080,
+        1350
+      ],
+      [
+        1600,
+        900
+      ]
+    ]
+  },
+  "background": {
+    "choices": [
+      "#e10600",
+      "#111111",
+      "#f4d27a",
+      "#0033a0"
+    ]
+  },
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ],
+    "opacity": {
+      "range": [
+        0.35,
+        0.7
+      ]
+    }
+  },
+  "copy": {
+    "num": [
+      "03",
+      "17",
+      "125",
+      "72"
+    ],
+    "word": [
+      "UNDOCK",
+      "ORBIT",
+      "GRID",
+      "SIGNAL"
+    ]
+  },
+  "rects": [],
+  "texts": [
+    {
+      "text": "{num}",
+      "x": 48,
+      "y": 40,
+      "size": {
+        "range": [
+          140,
+          200
+        ]
+      },
+      "color": "#ffffff"
+    },
+    {
+      "text": "{word}",
+      "x": 48,
+      "y": "int(H*0.72)",
+      "size": {
+        "range": [
+          48,
+          72
+        ]
+      },
+      "color": "#ffffff"
+    }
+  ]
+}

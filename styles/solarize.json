@@ -1,0 +1,43 @@
+{
+  "id": "solarize",
+  "family": "photo",
+  "title": "Solarize",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "filters": [
+    {
+      "name": "solarize",
+      "param": {
+        "threshold": {
+          "range": [
+            80,
+            180
+          ]
+        }
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "NEGATIVE SUN"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 48,
+      "size": 32,
+      "color": "#f4d27a"
+    }
+  ]
+}

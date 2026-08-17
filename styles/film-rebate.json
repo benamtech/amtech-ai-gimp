@@ -1,0 +1,40 @@
+{
+  "id": "film-rebate",
+  "family": "photo",
+  "title": "Film rebate still",
+  "canvas": [
+    1600,
+    1100
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_y": 80,
+    "offset_jitter": [
+      20,
+      0
+    ]
+  },
+  "copy": {
+    "code": [
+      "KOD-17",
+      "5219",
+      "HP5"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{code}",
+      "x": 40,
+      "y": 24,
+      "size": 18,
+      "color": "#f4d27a"
+    },
+    {
+      "text": "{code}",
+      "x": 40,
+      "y": "H-48",
+      "size": 18,
+      "color": "#f4d27a"
+    }
+  ]
+}

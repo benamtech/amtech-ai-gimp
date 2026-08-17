@@ -1,0 +1,48 @@
+{
+  "id": "listicle-cover",
+  "family": "viral",
+  "title": "Listicle cover",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_jitter": [
+      40,
+      40
+    ]
+  },
+  "copy": {
+    "head": [
+      "7 THINGS IN THE BAY",
+      "5 STILLS THEY CUT",
+      "9 SIGNALS LEFT ON"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 40,
+      "y1": 40,
+      "x2": 160,
+      "y2": 160,
+      "fill": "#f4d27a"
+    }
+  ],
+  "texts": [
+    {
+      "text": "#",
+      "x": 70,
+      "y": 60,
+      "size": 64,
+      "color": "#111111"
+    },
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-200",
+      "size": 36,
+      "color": "#ffffff"
+    }
+  ]
+}

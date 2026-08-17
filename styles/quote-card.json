@@ -1,0 +1,45 @@
+{
+  "id": "quote-card",
+  "family": "viral",
+  "title": "Quote card",
+  "canvas": [
+    1080,
+    1080
+  ],
+  "background": "#0b1220",
+  "photo": {
+    "opacity": 0.35,
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "copy": {
+    "quote": [
+      "The bay is empty.",
+      "The crew looks back once.",
+      "Already gone from the window."
+    ],
+    "attr": [
+      "\u2014 ATLANTIS",
+      "\u2014 CAPCOM",
+      "\u2014 UNNAMED"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{quote}",
+      "x": 64,
+      "y": "int(H*0.38)",
+      "size": 36,
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{attr}",
+      "x": 64,
+      "y": "int(H*0.62)",
+      "size": 20,
+      "color": "#f4d27a"
+    }
+  ]
+}

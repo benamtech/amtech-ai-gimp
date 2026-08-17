@@ -1,0 +1,35 @@
+{
+  "id": "emboss-relief",
+  "family": "photo",
+  "title": "Emboss",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#888",
+  "photo": {
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "filters": [
+    {
+      "name": "emboss"
+    }
+  ],
+  "copy": {
+    "head": [
+      "RELIEF"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 48,
+      "size": 32,
+      "color": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "instagram-ragebait-warhol-glitch",
+  "family": "viral",
+  "title": "Ragebait + Warhol flats + glitch offset",
+  "canvas": [1080, 1350],
+  "background": "#120018",
+  "font": "Impact",
+  "photo": {"offset_x": {"range": [-18, 18]}, "offset_y": {"range": [-8, 8]}, "offset_jitter": [0, 0]},
+  "filters": [
+    {"name": "posterize", "param": {"bits": {"choices": [2, 3]}}},
+    {"name": "saturation", "param": {"factor": {"range": [1.4, 1.8]}}},
+    {"name": "contrast", "param": {"factor": 1.35}}
+  ],
+  "pillow": {
+    "contrast": 1.3,
+    "color": 1.4,
+    "bottom_lift": true,
+    "lift_start": 0.40,
+    "circle_inset": {
+      "d": 0.28,
+      "cx": 0.80,
+      "cy": 0.18,
+      "ring": 12,
+      "ring_color": "#ff2bd6"
+    }
+  },
+  "copy": {
+    "handle": ["@ORBITFEED", "@BAYWATCHER"],
+    "pill": ["NEWS", "BREAKING"],
+    "l1": ["NASA SAYS ITS 'HIGHLY LIKELY'"],
+    "l2": ["THE BLUE MARBLE WAS"],
+    "l3": ["BEHIND THE EMPTY BAY"]
+  },
+  "rects": [
+    {"x1": 0, "y1": 0, "x2": "int(W*0.08)", "y2": "H", "fill": "#ffe600"},
+    {"x1": "int(W*0.36)", "y1": "int(H*0.52)", "x2": "int(W*0.64)", "y2": "int(H*0.575)", "fill": "#ff2bd6"}
+  ],
+  "texts": [
+    {"text": "{handle}", "x": "int(W*0.58)", "y": 16, "size": 18, "color": "#00ffff"},
+    {"text": "{pill}", "x": "int(W*0.42)", "y": "int(H*0.528)", "size": 20, "color": "#ffffff"},
+    {"text": "{l1}", "x": 24, "y": "int(H*0.60)", "size": 34, "color": "#ffe600"},
+    {"text": "{l2}", "x": 24, "y": "int(H*0.69)", "size": 42, "color": "#ffffff"},
+    {"text": "{l3}", "x": 24, "y": "int(H*0.79)", "size": 34, "color": "#ff2bd6"}
+  ]
+}

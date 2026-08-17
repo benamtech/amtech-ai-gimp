@@ -1,0 +1,54 @@
+{
+  "id": "book-cover",
+  "family": "cover",
+  "title": "Trade book cover",
+  "canvas": [
+    1600,
+    2560
+  ],
+  "background": "#0b1220",
+  "photo": {
+    "offset_jitter": [
+      40,
+      80
+    ]
+  },
+  "copy": {
+    "title": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ],
+    "author": [
+      "A. ORBIT",
+      "N. BAY",
+      "R. EVANS"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H*0.62)",
+      "x2": "W",
+      "y2": "H",
+      "fill": "#0b1220"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{title}",
+      "x": 64,
+      "y": "int(H*0.66)",
+      "size": 40,
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{author}",
+      "x": 64,
+      "y": "H-120",
+      "size": 22,
+      "color": "#f4d27a"
+    }
+  ]
+}

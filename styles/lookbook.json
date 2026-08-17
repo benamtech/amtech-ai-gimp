@@ -1,0 +1,55 @@
+{
+  "id": "lookbook",
+  "family": "editorial",
+  "title": "Fashion lookbook plate",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#f7f4ef",
+  "photo": {
+    "offset_jitter": [
+      30,
+      80
+    ]
+  },
+  "filters": [
+    {
+      "name": "saturation",
+      "param": {
+        "factor": {
+          "range": [
+            0.7,
+            0.95
+          ]
+        }
+      }
+    }
+  ],
+  "copy": {
+    "kicker": [
+      "SS26",
+      "LOOK 04",
+      "ATELIER"
+    ],
+    "head": [
+      "SILENCE IN ORBIT"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{kicker}",
+      "x": 48,
+      "y": 48,
+      "size": 14,
+      "color": "#111111"
+    },
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-80",
+      "size": 18,
+      "color": "#111111"
+    }
+  ]
+}

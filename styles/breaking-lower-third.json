@@ -1,0 +1,83 @@
+{
+  "id": "breaking-lower-third",
+  "family": "viral",
+  "title": "Lower-third breaking",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "#05080e",
+  "photo": {
+    "offset_jitter": [
+      80,
+      20
+    ]
+  },
+  "copy": {
+    "kicker": [
+      "BREAKING",
+      "LIVE",
+      "DEVELOPING",
+      "JUST IN",
+      "EXCLUSIVE"
+    ],
+    "head": [
+      "THEY OPENED THE BAY AND LEFT THE LIGHT ON",
+      "THIS PHOTO WAS NEVER SUPPOSED TO LEAK",
+      "THE STATION SAID NOTHING. THE CREW LOOKED BACK.",
+      "ONE IMAGE. THREE HOURS. NO COMMENT.",
+      "EVERYONE SAW IT. NO ONE FILED IT."
+    ],
+    "ticker": [
+      "MORE AT 11  \u00b7  CREW SAFE  \u00b7  ORBIT HOLDS  \u00b7  NO COMMENT",
+      "SOURCE: UNNAMED  \u00b7  IMAGE UNVERIFIED  \u00b7  WATCH LIVE",
+      "UPDATE IN 4 MIN  \u00b7  FEED UNSTABLE  \u00b7  STAY WITH US"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "H-280",
+      "x2": 220,
+      "y2": "H-200",
+      "fill": "#c1121f"
+    },
+    {
+      "x1": 220,
+      "y1": "H-280",
+      "x2": "W",
+      "y2": "H-200",
+      "fill": "#111111"
+    },
+    {
+      "x1": 0,
+      "y1": "H-200",
+      "x2": "W",
+      "y2": "H-150",
+      "fill": "#0a0a0a"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{kicker}",
+      "x": 24,
+      "y": "H-268",
+      "size": 28,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{head}",
+      "x": 240,
+      "y": "H-268",
+      "size": 28,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{ticker}",
+      "x": 24,
+      "y": "H-190",
+      "size": 16,
+      "color": "#d7dde8"
+    }
+  ]
+}

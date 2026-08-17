@@ -1,0 +1,54 @@
+{
+  "id": "concert-flyer",
+  "family": "cover",
+  "title": "Concert flyer",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#12020a",
+  "photo": {
+    "offset_jitter": [
+      80,
+      40
+    ],
+    "blend": "screen",
+    "opacity": 0.85
+  },
+  "filters": [
+    {
+      "name": "saturation",
+      "param": {
+        "factor": 1.4
+      }
+    }
+  ],
+  "copy": {
+    "act": [
+      "VOID CREW",
+      "BAY 12",
+      "REENTRY"
+    ],
+    "when": [
+      "SAT 03:00",
+      "ALL NIGHT",
+      "DOOR 22:00"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{act}",
+      "x": 40,
+      "y": 60,
+      "size": 64,
+      "color": "#ff2d55"
+    },
+    {
+      "text": "{when}",
+      "x": 40,
+      "y": "H-100",
+      "size": 28,
+      "color": "#ffffff"
+    }
+  ]
+}

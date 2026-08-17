@@ -1,0 +1,49 @@
+{
+  "id": "reaction-split",
+  "family": "viral",
+  "title": "Reaction / two-panel",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_jitter": [
+      20,
+      100
+    ]
+  },
+  "copy": {
+    "top": [
+      "THE CLAIM"
+    ],
+    "bot": [
+      "THE PHOTO"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H/2-4)",
+      "x2": "W",
+      "y2": "int(H/2+4)",
+      "fill": "#ffffff"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{top}",
+      "x": 32,
+      "y": 32,
+      "size": 28,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{bot}",
+      "x": 32,
+      "y": "int(H/2+24)",
+      "size": 28,
+      "color": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amtechai.com/schemas/recipe.schema.json",
+  "title": "Recipe",
+  "description": "The top-level inputs to compose/generate: which style, brand, source, copy, seed, engine.",
+  "type": "object",
+  "required": ["style_id"],
+  "properties": {
+    "style_id": {"type": "string", "description": "Style recipe id (styles/<id>.json)."},
+    "brand_id": {"type": ["string", "null"], "description": "Brand lock id (brands/<id>.json)."},
+    "source": {"type": ["string", "null"], "description": "Local path, URL, File: Commons title, or bundled name."},
+    "copy_overrides": {
+      "type": "object",
+      "description": "slot -> text, overrides the style's copy defaults.",
+      "additionalProperties": {"type": "string"}
+    },
+    "font_override": {"type": ["string", "null"]},
+    "seed": {"type": ["integer", "null"], "description": "Deterministic seed."},
+    "engine": {"enum": ["pillow", "gimp_native", "cli_anything_gimp", "auto"], "default": "pillow"},
+    "out_dir": {"type": "string"}
+  }
+}

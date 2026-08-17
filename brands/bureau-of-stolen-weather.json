@@ -1,0 +1,16 @@
+{
+  "id": "bureau-of-stolen-weather",
+  "name": "BUREAU OF STOLEN WEATHER",
+  "url": "bosw.archive",
+  "lock": "RECOVERED · AUTHENTICATED · ARCHIVED",
+  "tag": "BUREAU OF STOLEN WEATHER · OFFICE OF METEOROLOGICAL RECOVERY",
+  "hat": "BOSW",
+  "font": "Archivo Black",
+  "canvas": {"a4": [2480, 3508], "letter": [2550, 3300], "card": [1050, 600], "square": [1080, 1080], "social": [1200, 630], "spec": [2400, 3000], "plaque": [1600, 1000]},
+  "c": {"paper": "#E8E4D8", "ink": "#1A1C1E", "fog": "#5B7A8C", "storm": "#1F4E5A", "rust": "#C4552A", "brass": "#B08D57"},
+  "role": {"paper": "background", "ink": "headline/type/linework", "fog": "watermark/shadow/secondary-type", "storm": "deep-accents/plates/borders", "rust": "classification-marks/stamps/alerts", "brass": "registration/filigree/rules"},
+  "mix": {"paper": [60, 75], "ink": [15, 25], "fog": [8, 15], "storm": [4, 10], "rust": [1, 5], "brass": [0, 3]},
+  "type": {"on_sat": "ink", "on_k": "paper", "stroke": "ink", "keyline": "ink"},
+  "forbid": ["neon", "rainbow", "pastel", "candy-gradients", "comic", "social-media-energy", "red-as-primary", "lime", "magenta", "cyan-drop", "impact-font", "white-bg", "pure-black-bg"],
+  "fx": ["scan", "xerox", "grain", "halftone", "torn", "vignette", "posterize", "channel_offset", "duotone", "sepia", "bottom_lift", "find_edges", "emboss"]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "portrait-story",
+  "family": "editorial",
+  "title": "Portrait story 4:5",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#05080e",
+  "photo": {
+    "offset_jitter": [
+      40,
+      60
+    ]
+  },
+  "copy": {
+    "kicker": [
+      "TWO MACHINES  \u00b7  ONE SKY"
+    ],
+    "h1": [
+      "WE SENT A CRAFT"
+    ],
+    "h2": [
+      "PAST THE LAST PLANET"
+    ],
+    "h3": [
+      "AND LEFT THE LIGHT ON"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H*0.58)",
+      "x2": "W",
+      "y2": "H",
+      "fill": "#05080e"
+    },
+    {
+      "x1": 0,
+      "y1": "int(H*0.58)",
+      "x2": "W",
+      "y2": "int(H*0.58)+8",
+      "fill": "#f4d27a"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{kicker}",
+      "x": 48,
+      "y": "int(H*0.61)",
+      "size": 16,
+      "color": "#f4d27a"
+    },
+    {
+      "text": "{h1}",
+      "x": 48,
+      "y": "int(H*0.66)",
+      "size": 36,
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{h2}",
+      "x": 48,
+      "y": "int(H*0.72)",
+      "size": 36,
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{h3}",
+      "x": 48,
+      "y": "int(H*0.78)",
+      "size": 36,
+      "color": "#f6f1e8"
+    }
+  ]
+}

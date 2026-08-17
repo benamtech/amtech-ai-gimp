@@ -1,0 +1,67 @@
+{
+  "id": "yt-thumb",
+  "family": "viral",
+  "title": "YouTube thumbnail",
+  "canvas": [
+    1280,
+    720
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      100,
+      40
+    ]
+  },
+  "filters": [
+    {
+      "name": "contrast",
+      "param": {
+        "factor": {
+          "range": [
+            1.2,
+            1.5
+          ]
+        }
+      }
+    },
+    {
+      "name": "saturation",
+      "param": {
+        "factor": {
+          "range": [
+            1.1,
+            1.4
+          ]
+        }
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "WAIT FOR IT",
+      "THEY LIED",
+      "WATCH THIS",
+      "I WAS WRONG",
+      "DO THIS NEXT"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 40,
+      "y1": "H-200",
+      "x2": "W-40",
+      "y2": "H-60",
+      "fill": "#c1121f"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 64,
+      "y": "H-170",
+      "size": 56,
+      "color": "#ffffff"
+    }
+  ]
+}

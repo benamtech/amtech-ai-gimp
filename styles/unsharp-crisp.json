@@ -1,0 +1,43 @@
+{
+  "id": "unsharp-crisp",
+  "family": "photo",
+  "title": "Unsharp punch",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "filters": [
+    {
+      "name": "unsharp_mask",
+      "param": {
+        "radius": 2,
+        "percent": 180,
+        "threshold": 2
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-80",
+      "size": 28,
+      "color": "#ffffff"
+    }
+  ]
+}

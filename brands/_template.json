@@ -1,0 +1,23 @@
+{
+  "id": "template",
+  "name": "TEMPLATE BRAND",
+  "url": "template.com",
+  "lock": "",
+  "tag": "",
+  "hat": "",
+  "font": "Impact",
+  "canvas": {"ig": [1080, 1080], "yt": [2560, 1440]},
+  "c": {
+    "k": "#000000",
+    "w": "#FFFFFF"
+  },
+  "role": {
+    "k": "headline/band",
+    "w": "strap/alert"
+  },
+  "mix": {},
+  "type": {"on_sat": "k", "on_k": "w", "stroke": "k", "keyline": "w"},
+  "forbid": [],
+  "fx": [],
+  "cta": []
+}

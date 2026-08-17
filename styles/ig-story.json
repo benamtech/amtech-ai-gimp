@@ -1,0 +1,57 @@
+{
+  "id": "ig-story",
+  "family": "viral",
+  "title": "Story 9:16",
+  "canvas": [
+    1080,
+    1920
+  ],
+  "background": "#050505",
+  "photo": {
+    "offset_jitter": [
+      20,
+      120
+    ]
+  },
+  "copy": {
+    "kicker": [
+      "BREAKING",
+      "LIVE",
+      "DEVELOPING",
+      "JUST IN",
+      "EXCLUSIVE"
+    ],
+    "head": [
+      "WAIT FOR IT",
+      "THEY LIED",
+      "WATCH THIS",
+      "I WAS WRONG",
+      "DO THIS NEXT"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": 160,
+      "x2": "W",
+      "y2": 260,
+      "fill": "#c1121f"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{kicker}",
+      "x": 40,
+      "y": 180,
+      "size": 28,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{head}",
+      "x": 40,
+      "y": "H-400",
+      "size": 48,
+      "color": "#ffffff"
+    }
+  ]
+}

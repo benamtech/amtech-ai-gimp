@@ -1,0 +1,49 @@
+{
+  "id": "diptych",
+  "family": "photo",
+  "title": "Diptych",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "#050505",
+  "photo": {
+    "offset_jitter": [
+      80,
+      20
+    ]
+  },
+  "copy": {
+    "left": [
+      "THEN"
+    ],
+    "right": [
+      "NOW"
+    ]
+  },
+  "rects": [
+    {
+      "x1": "int(W/2-2)",
+      "y1": 0,
+      "x2": "int(W/2+2)",
+      "y2": "H",
+      "fill": "#f4d27a"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{left}",
+      "x": 40,
+      "y": 40,
+      "size": 24,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{right}",
+      "x": "int(W/2+40)",
+      "y": 40,
+      "size": 24,
+      "color": "#ffffff"
+    }
+  ]
+}

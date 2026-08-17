@@ -1,0 +1,52 @@
+{
+  "id": "album-cover",
+  "family": "cover",
+  "title": "Square album",
+  "canvas": [
+    3000,
+    3000
+  ],
+  "background": "#050505",
+  "photo": {
+    "offset_jitter": [
+      120,
+      120
+    ]
+  },
+  "filters": [
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.2
+      }
+    }
+  ],
+  "copy": {
+    "title": [
+      "UNDOCK",
+      "REENTRY",
+      "DARK BAY"
+    ],
+    "act": [
+      "ATLANTIS",
+      "VOYAGER",
+      "CREW"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{act}",
+      "x": 80,
+      "y": 80,
+      "size": 36,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{title}",
+      "x": 80,
+      "y": "H-200",
+      "size": 72,
+      "color": "#ffffff"
+    }
+  ]
+}

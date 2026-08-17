@@ -1,0 +1,51 @@
+{
+  "id": "halftone-poster",
+  "family": "photo",
+  "title": "Posterize / pop",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "filters": [
+    {
+      "name": "posterize",
+      "param": {
+        "bits": {
+          "choices": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "name": "saturation",
+      "param": {
+        "factor": 1.4
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "POP",
+      "BAY",
+      "NOW"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 40,
+      "y": 40,
+      "size": 96,
+      "color": "#ffffff"
+    }
+  ]
+}

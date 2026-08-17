@@ -1,0 +1,48 @@
+{
+  "id": "live-badge",
+  "family": "viral",
+  "title": "LIVE pill on still",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      40,
+      40
+    ]
+  },
+  "copy": {
+    "viewers": [
+      "24.1K WATCHING",
+      "1.2M WATCHING",
+      "882 WATCHING"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 40,
+      "y1": 40,
+      "x2": 180,
+      "y2": 100,
+      "fill": "#c1121f"
+    }
+  ],
+  "texts": [
+    {
+      "text": "LIVE",
+      "x": 58,
+      "y": 50,
+      "size": 28,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{viewers}",
+      "x": 200,
+      "y": 54,
+      "size": 22,
+      "color": "#ffffff"
+    }
+  ]
+}

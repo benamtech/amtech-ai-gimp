@@ -1,0 +1,31 @@
+{
+  "id": "screen-glow",
+  "family": "photo",
+  "title": "Screen glow plate",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#000",
+  "photo": {
+    "blend": "screen",
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "copy": {
+    "head": [
+      "GLOW"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 48,
+      "size": 48,
+      "color": "#ffffff"
+    }
+  ]
+}

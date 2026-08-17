@@ -1,0 +1,33 @@
+{
+  "id": "ig-post",
+  "family": "viral",
+  "title": "Instagram 1:1",
+  "canvas": [
+    1080,
+    1080
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_jitter": [
+      40,
+      40
+    ]
+  },
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-120",
+      "size": 28,
+      "color": "#ffffff"
+    }
+  ]
+}

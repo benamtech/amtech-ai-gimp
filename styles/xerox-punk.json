@@ -1,0 +1,49 @@
+{
+  "id": "xerox-punk",
+  "family": "photo",
+  "title": "High contrast xerox",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#fff",
+  "photo": {
+    "offset_jitter": [
+      80,
+      80
+    ]
+  },
+  "filters": [
+    {
+      "name": "grayscale"
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.8
+      }
+    },
+    {
+      "name": "posterize",
+      "param": {
+        "bits": 2
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "XEROX",
+      "PUNK",
+      "COPY"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 32,
+      "y": "H-140",
+      "size": 64,
+      "color": "#000000"
+    }
+  ]
+}

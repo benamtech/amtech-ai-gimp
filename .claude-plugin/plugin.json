@@ -1,0 +1,12 @@
+{
+  "name": "amtech-computer-use-graphics",
+  "description": "Deterministic, non-generative image composer + brand/style authoring. Drives Pillow (primary), native GIMP 3 batch, and the cli-anything-gimp CLI. Read AGENTS.md for the working agreement.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Benjamin Palaskas",
+    "email": "ben@amtechai.com"
+  },
+  "license": "MIT",
+  "repository": "",
+  "homepage": "https://amtechai.com"
+}

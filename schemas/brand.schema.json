@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amtechai.com/schemas/brand.schema.json",
+  "title": "Brand",
+  "description": "A compact brand-lock document: palette, typeface, canvas presets, color roles, forbidden hues, and an effect vocabulary.",
+  "type": "object",
+  "required": ["id", "name"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Lowercase slug used as the filename and CLI id."
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name (e.g. RETARD GLOBAL)."
+    },
+    "url": {
+      "type": "string",
+      "description": "Masthead URL / domain."
+    },
+    "lock": {
+      "type": "string",
+      "description": "Footer plate text (e.g. ONLY ON RETARDGLOBAL.COM). Optional."
+    },
+    "tag": {
+      "type": "string",
+      "description": "Optional subtitle/tagline. Never used as a masthead."
+    },
+    "hat": {
+      "type": "string",
+      "description": "Optional short logo word."
+    },
+    "font": {
+      "type": "string",
+      "default": "Impact",
+      "description": "Primary typeface family name or TTF path."
+    },
+    "canvas": {
+      "type": "object",
+      "description": "Named canvas presets, e.g. {\"ig\": [1080,1080], \"yt\": [2560,1440]}.",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "integer"},
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "c": {
+      "type": "object",
+      "description": "Named palette: name -> #rrggbb.",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^#[0-9a-fA-F]{6}$"
+      }
+    },
+    "role": {
+      "type": "object",
+      "description": "Color name -> semantic role (headline/band, strap/alert, cta/url/frame...).",
+      "additionalProperties": {"type": "string"}
+    },
+    "mix": {
+      "type": "object",
+      "description": "Color name -> [min,max] usage weight (percent).",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "number"},
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "type": {
+      "type": "object",
+      "description": "Type-on-surface rules.",
+      "properties": {
+        "on_sat": {"type": "string"},
+        "on_k": {"type": "string"},
+        "stroke": {"type": "string"},
+        "keyline": {"type": "string"}
+      }
+    },
+    "forbid": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Hues/words to avoid (e.g. red, gold, orange)."
+    },
+    "fx": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Allowed effect vocabulary (torn, halftone, xerox, scan, crt, ...)."
+    },
+    "cta": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Optional call-to-action options."
+    }
+  }
+}

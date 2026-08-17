@@ -1,0 +1,53 @@
+{
+  "id": "risograph",
+  "family": "photo",
+  "title": "Riso misregister feel",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#efe6d6",
+  "photo": {
+    "offset_x": {
+      "range": [
+        -12,
+        12
+      ]
+    },
+    "offset_y": {
+      "range": [
+        -8,
+        8
+      ]
+    },
+    "blend": "multiply",
+    "offset_jitter": [
+      0,
+      0
+    ]
+  },
+  "filters": [
+    {
+      "name": "posterize",
+      "param": {
+        "bits": 3
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "RISO",
+      "OFFSET",
+      "LAYER"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 48,
+      "size": 64,
+      "color": "#d0103a"
+    }
+  ]
+}

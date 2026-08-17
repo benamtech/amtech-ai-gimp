@@ -1,0 +1,53 @@
+{
+  "id": "vs-thumb",
+  "family": "viral",
+  "title": "VS split thumbnail",
+  "canvas": [
+    1280,
+    720
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      120,
+      20
+    ]
+  },
+  "copy": {
+    "left": [
+      "OLD",
+      "THEM",
+      "BEFORE"
+    ],
+    "right": [
+      "NEW",
+      "US",
+      "AFTER"
+    ]
+  },
+  "rects": [
+    {
+      "x1": "int(W/2-6)",
+      "y1": 0,
+      "x2": "int(W/2+6)",
+      "y2": "H",
+      "fill": "#ffffff"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{left}",
+      "x": 60,
+      "y": "H-140",
+      "size": 48,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{right}",
+      "x": "int(W/2+40)",
+      "y": "H-140",
+      "size": 48,
+      "color": "#ffffff"
+    }
+  ]
+}

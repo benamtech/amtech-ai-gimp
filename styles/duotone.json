@@ -1,0 +1,54 @@
+{
+  "id": "duotone",
+  "family": "photo",
+  "title": "Duotone punch",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#120018",
+  "photo": {
+    "blend": "multiply",
+    "offset_jitter": [
+      30,
+      30
+    ]
+  },
+  "filters": [
+    {
+      "name": "grayscale"
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.3
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": 0,
+      "x2": "W",
+      "y2": "H",
+      "fill": "#6a00ff"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-160",
+      "size": 36,
+      "color": "#f4d27a"
+    }
+  ]
+}

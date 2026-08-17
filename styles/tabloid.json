@@ -1,0 +1,74 @@
+{
+  "id": "tabloid",
+  "family": "editorial",
+  "title": "Tabloid scream",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_jitter": [
+      80,
+      80
+    ]
+  },
+  "filters": [
+    {
+      "name": "saturation",
+      "param": {
+        "factor": {
+          "range": [
+            1.2,
+            1.6
+          ]
+        }
+      }
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.3
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "THEY OPENED THE BAY AND LEFT THE LIGHT ON",
+      "THIS PHOTO WAS NEVER SUPPOSED TO LEAK",
+      "THE STATION SAID NOTHING. THE CREW LOOKED BACK.",
+      "ONE IMAGE. THREE HOURS. NO COMMENT.",
+      "EVERYONE SAW IT. NO ONE FILED IT."
+    ],
+    "kicker": [
+      "SHOCK",
+      "OUTRAGE",
+      "LEAKED"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": 0,
+      "x2": "W",
+      "y2": 110,
+      "fill": "#c1121f"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{kicker}",
+      "x": 32,
+      "y": 28,
+      "size": 48,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{head}",
+      "x": 32,
+      "y": "H-220",
+      "size": 36,
+      "color": "#ffffff"
+    }
+  ]
+}

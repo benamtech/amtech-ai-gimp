@@ -1,0 +1,51 @@
+{
+  "id": "lower-third-sport",
+  "family": "viral",
+  "title": "Sports lower third",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      40,
+      20
+    ]
+  },
+  "copy": {
+    "name": [
+      "ATLANTIS"
+    ],
+    "stat": [
+      "STS-115",
+      "00:17:09",
+      "UNDOCK"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 80,
+      "y1": "H-220",
+      "x2": 700,
+      "y2": "H-80",
+      "fill": "#0033a0"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{name}",
+      "x": 100,
+      "y": "H-200",
+      "size": 36,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{stat}",
+      "x": 100,
+      "y": "H-140",
+      "size": 20,
+      "color": "#f4d27a"
+    }
+  ]
+}

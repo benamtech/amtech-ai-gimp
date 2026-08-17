@@ -1,0 +1,34 @@
+{
+  "id": "big-type-only",
+  "family": "type",
+  "title": "Type-led field",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#0b1220",
+  "photo": {
+    "opacity": 0.25,
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 40,
+      "y": "int(H*0.35)",
+      "size": 56,
+      "color": "#f6f1e8"
+    }
+  ]
+}

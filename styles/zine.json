@@ -1,0 +1,58 @@
+{
+  "id": "zine",
+  "family": "editorial",
+  "title": "Xerox zine cover",
+  "canvas": [
+    1080,
+    1440
+  ],
+  "background": "#f5f0e6",
+  "photo": {
+    "offset_jitter": [
+      100,
+      100
+    ],
+    "blend": {
+      "choices": [
+        "multiply",
+        "hard_light"
+      ]
+    }
+  },
+  "filters": [
+    {
+      "name": "posterize",
+      "param": {
+        "bits": {
+          "choices": [
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.4
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "NO MAPS",
+      "CUT HERE",
+      "WRONG BAY"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 40,
+      "y": "H-160",
+      "size": 56,
+      "color": "#111111"
+    }
+  ]
+}

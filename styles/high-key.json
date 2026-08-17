@@ -1,0 +1,52 @@
+{
+  "id": "high-key",
+  "family": "photo",
+  "title": "High key",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#f5f5f5",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "filters": [
+    {
+      "name": "brightness",
+      "param": {
+        "factor": {
+          "range": [
+            1.2,
+            1.45
+          ]
+        }
+      }
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 0.9
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 48,
+      "size": 28,
+      "color": "#111111"
+    }
+  ]
+}

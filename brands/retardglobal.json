@@ -1,0 +1,17 @@
+{
+  "id": "retardglobal",
+  "name": "RETARD GLOBAL",
+  "url": "retardglobal.com",
+  "lock": "ONLY ON RETARDGLOBAL.COM",
+  "tag": "",
+  "hat": "RETARD",
+  "font": "Impact",
+  "canvas": {"ig": [1080, 1080], "yt": [2560, 1440]},
+  "c": {"lime": "#DEFF2E", "mag": "#FD2EFF", "cyan": "#2FF3FF", "k": "#000000", "w": "#FFFFFF"},
+  "role": {"lime": "headline/band", "mag": "strap/alert", "cyan": "cta/url/frame"},
+  "mix": {"lime": [45, 55], "mag": [25, 35], "cyan": [15, 25]},
+  "type": {"on_sat": "k", "on_k": "w", "stroke": "k", "keyline": "w"},
+  "forbid": ["red", "gold", "orange", "navy-accent", "purple-blend", "rainbow"],
+  "fx": ["torn", "halftone", "xerox", "scan", "crt", "splatter-3only", "offset", "posterize"],
+  "cta": ["REAL OR FAKE", "BELIEVE THIS", "HOT OR NOT"]
+}

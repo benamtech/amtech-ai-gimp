@@ -1,0 +1,41 @@
+{
+  "id": "triptych",
+  "family": "photo",
+  "title": "Triptych bars",
+  "canvas": [
+    1920,
+    800
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      100,
+      10
+    ]
+  },
+  "rects": [
+    {
+      "x1": "int(W/3-2)",
+      "y1": 0,
+      "x2": "int(W/3+2)",
+      "y2": "H",
+      "fill": "#ffffff"
+    },
+    {
+      "x1": "int(2*W/3-2)",
+      "y1": 0,
+      "x2": "int(2*W/3+2)",
+      "y2": "H",
+      "fill": "#ffffff"
+    }
+  ],
+  "texts": [
+    {
+      "text": "I",
+      "x": 24,
+      "y": 24,
+      "size": 18,
+      "color": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "tweet-card",
+  "family": "viral",
+  "title": "Landscape card 16:9",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#0b1220",
+  "photo": {
+    "offset_jitter": [
+      80,
+      20
+    ]
+  },
+  "copy": {
+    "head": [
+      "THEY OPENED THE BAY AND LEFT THE LIGHT ON",
+      "THIS PHOTO WAS NEVER SUPPOSED TO LEAK",
+      "THE STATION SAID NOTHING. THE CREW LOOKED BACK.",
+      "ONE IMAGE. THREE HOURS. NO COMMENT.",
+      "EVERYONE SAW IT. NO ONE FILED IT."
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "H-180",
+      "x2": "W",
+      "y2": "H",
+      "fill": "#0b1220"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-130",
+      "size": 28,
+      "color": "#f6f1e8"
+    }
+  ]
+}

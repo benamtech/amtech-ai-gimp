@@ -1,0 +1,47 @@
+{
+  "id": "dutch-angle",
+  "family": "photo",
+  "title": "Dutch angle",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "filters": [
+    {
+      "name": "rotate",
+      "param": {
+        "angle": {
+          "range": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "WAIT FOR IT",
+      "THEY LIED",
+      "WATCH THIS",
+      "I WAS WRONG",
+      "DO THIS NEXT"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-80",
+      "size": 28,
+      "color": "#ffffff"
+    }
+  ]
+}

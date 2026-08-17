@@ -1,0 +1,62 @@
+{
+  "id": "movie-poster",
+  "family": "cover",
+  "title": "One-sheet",
+  "canvas": [
+    1600,
+    2400
+  ],
+  "background": "#05080e",
+  "photo": {
+    "offset_jitter": [
+      40,
+      100
+    ]
+  },
+  "copy": {
+    "title": [
+      "REENTRY",
+      "THE LAST BAY",
+      "STATION KEEP"
+    ],
+    "tag": [
+      "THEY LEFT THE LIGHT ON.",
+      "NO ONE COMES BACK CLEAN."
+    ],
+    "credits": [
+      "A HERMES STILL  \u00b7  NASA GLASS  \u00b7  NO STUDIO"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H*0.78)",
+      "x2": "W",
+      "y2": "H",
+      "fill": "#05080e"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{title}",
+      "x": 48,
+      "y": "int(H*0.80)",
+      "size": 44,
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{tag}",
+      "x": 48,
+      "y": "int(H*0.88)",
+      "size": 18,
+      "color": "#d7dde8"
+    },
+    {
+      "text": "{credits}",
+      "x": 48,
+      "y": "H-56",
+      "size": 12,
+      "color": "#9aa4b2"
+    }
+  ]
+}

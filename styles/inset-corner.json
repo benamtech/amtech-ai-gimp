@@ -1,0 +1,59 @@
+{
+  "id": "inset-corner",
+  "family": "photo",
+  "title": "Tiny inset + type field",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "#071018",
+  "photo": {
+    "offset_x": {
+      "range": [
+        -40,
+        20
+      ]
+    },
+    "offset_y": {
+      "range": [
+        500,
+        700
+      ]
+    },
+    "offset_jitter": [
+      0,
+      0
+    ]
+  },
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ],
+    "kicker": [
+      "VOL. 08",
+      "ISSUE 12",
+      "FIELD NOTES",
+      "DISPATCH",
+      "SPECIAL"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{kicker}",
+      "x": 560,
+      "y": 220,
+      "size": 18,
+      "color": "#f4d27a"
+    },
+    {
+      "text": "{head}",
+      "x": 560,
+      "y": 280,
+      "size": 44,
+      "color": "#f6f1e8"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "kinetic-echo",
+  "family": "type",
+  "title": "Kinetic echo type",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#050505",
+  "photo": {
+    "opacity": 0.3,
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "copy": {
+    "head": [
+      "UNDOCK"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 40,
+      "y": 200,
+      "size": 72,
+      "color": "#333333"
+    },
+    {
+      "text": "{head}",
+      "x": 52,
+      "y": 214,
+      "size": 72,
+      "color": "#666666"
+    },
+    {
+      "text": "{head}",
+      "x": 64,
+      "y": 228,
+      "size": 72,
+      "color": "#f6f1e8"
+    }
+  ]
+}

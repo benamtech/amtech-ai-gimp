@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amtechai.com/schemas/style.schema.json",
+  "title": "Style recipe",
+  "description": "A layout recipe: canvas, background, font, photo placement, filters, pillow ops, copy slots, rectangles, and text blocks. A recipe is a floor, not a lock.",
+  "type": "object",
+  "required": ["id", "canvas"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {"type": "string", "description": "Style id (also the filename)."},
+    "family": {"type": "string", "description": "Grouping: viral, cover, type, photo, etc."},
+    "title": {"type": "string"},
+    "canvas": {
+      "oneOf": [
+        {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+        {"type": "object", "description": "spec: {choices:[[w,h],...]} or {range:[...]}"}
+      ]
+    },
+    "background": {"type": ["string", "object"], "description": "#rrggbb or a spec."},
+    "font": {"type": "string", "description": "Family name or TTF path."},
+    "photo": {
+      "type": "object",
+      "description": "Photo placement: offset_x, offset_y, offset_jitter, blend, opacity (each a value or spec).",
+      "additionalProperties": true
+    },
+    "filters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "param": {"type": "object", "additionalProperties": true}
+        },
+        "required": ["name"]
+      }
+    },
+    "pillow": {
+      "type": "object",
+      "description": "Pillow pre-pass ops: contrast, color, bottom_lift, lift_start, circle_inset{...}.",
+      "additionalProperties": true
+    },
+    "copy": {
+      "type": "object",
+      "description": "Named copy slots; values are a list of choices or a {choices/range} spec.",
+      "additionalProperties": {"type": ["array", "object", "string"]}
+    },
+    "rects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "x1": {}, "y1": {}, "x2": {}, "y2": {},
+          "fill": {"type": "string"}
+        },
+        "required": ["x1", "y1", "x2", "y2", "fill"]
+      }
+    },
+    "texts": {
+      "type": "array",
+      "description": "Text blocks. A plain block has text/x/y/size/color (+ anchor/stroke/stroke_color). A stacked block has type:'stack' with cx/y0/max_w/bottom/stroke and a lines[] list of {text,color,size}.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {"enum": ["text", "stack"], "description": "Default 'text'. 'stack' renders lines[] with glyph metrics."},
+          "text": {"type": "string"},
+          "x": {}, "y": {},
+          "cx": {}, "y0": {}, "max_w": {}, "bottom": {},
+          "size": {},
+          "color": {"type": "string"},
+          "font": {"type": "string"},
+          "anchor": {"type": "string", "description": "Pillow anchor: la, lm, mm, rm, ra, ... (default 'la')."},
+          "stroke": {"type": "number", "description": "Stroke width in px; 0 = no stroke."},
+          "stroke_color": {"type": "string"},
+          "lines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {"type": "string"},
+                "color": {"type": "string"},
+                "size": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "brand": {"type": "string", "description": "Optional brand id this style pairs with."}
+  }
+}

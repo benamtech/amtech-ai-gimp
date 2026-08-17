@@ -1,0 +1,33 @@
+{
+  "id": "thirds-poster",
+  "family": "photo",
+  "title": "Rule-of-thirds type",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      80,
+      40
+    ]
+  },
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": "int(W/3)",
+      "y": "int(H/3)",
+      "size": 32,
+      "color": "#ffffff"
+    }
+  ]
+}

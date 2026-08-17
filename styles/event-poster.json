@@ -1,0 +1,43 @@
+{
+  "id": "event-poster",
+  "family": "cover",
+  "title": "Event / lecture poster",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#0b1220",
+  "copy": {
+    "head": [
+      "A TALK ON LEAVING"
+    ],
+    "sub": [
+      "ROOM 4B  \u00b7  19:00  \u00b7  FREE"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": 0,
+      "x2": 16,
+      "y2": "H",
+      "fill": "#f4d27a"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 80,
+      "size": 40,
+      "color": "#f6f1e8"
+    },
+    {
+      "text": "{sub}",
+      "x": 48,
+      "y": "H-80",
+      "size": 18,
+      "color": "#f4d27a"
+    }
+  ]
+}

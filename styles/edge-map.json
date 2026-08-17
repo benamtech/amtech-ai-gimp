@@ -1,0 +1,35 @@
+{
+  "id": "edge-map",
+  "family": "photo",
+  "title": "Find edges",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "filters": [
+    {
+      "name": "find_edges"
+    }
+  ],
+  "copy": {
+    "head": [
+      "WIREFRAME WORLD"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 48,
+      "size": 28,
+      "color": "#00ffcc"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amtechai.com/schemas/source.schema.json",
+  "title": "Image registry entry",
+  "description": "One tagged still in the agent-searchable image registry (sources/registry.json).",
+  "type": "object",
+  "required": ["file", "tags"],
+  "properties": {
+    "file": {"type": "string", "description": "Filename (slug + hash)."},
+    "slug": {"type": "string"},
+    "tags": {"type": "array", "items": {"type": "string"}, "description": "Agent-first descriptors."},
+    "note": {"type": "string"},
+    "source_url": {"type": "string", "description": "The URL actually fetched."},
+    "added": {"type": "string", "description": "ISO timestamp."},
+    "width": {"type": "integer"},
+    "height": {"type": "integer"},
+    "format": {"type": "string"}
+  }
+}

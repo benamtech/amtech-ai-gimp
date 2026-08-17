@@ -1,0 +1,76 @@
+{
+  "id": "newspaper-front",
+  "family": "editorial",
+  "title": "Broadsheet front",
+  "canvas": [
+    1600,
+    2000
+  ],
+  "background": "#f3efe4",
+  "photo": {
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "filters": [
+    {
+      "name": "grayscale"
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.2
+      }
+    }
+  ],
+  "copy": {
+    "flag": [
+      "THE ORBITAL TIMES",
+      "BAY CHRONICLE",
+      "STATION RECORD"
+    ],
+    "head": [
+      "THEY OPENED THE BAY AND LEFT THE LIGHT ON",
+      "THIS PHOTO WAS NEVER SUPPOSED TO LEAK",
+      "THE STATION SAID NOTHING. THE CREW LOOKED BACK.",
+      "ONE IMAGE. THREE HOURS. NO COMMENT.",
+      "EVERYONE SAW IT. NO ONE FILED IT."
+    ],
+    "deck": [
+      "Crew looked back once. The bay was empty."
+    ]
+  },
+  "rects": [
+    {
+      "x1": 48,
+      "y1": 140,
+      "x2": "W-48",
+      "y2": 148,
+      "fill": "#111111"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{flag}",
+      "x": 48,
+      "y": 40,
+      "size": 44,
+      "color": "#111111"
+    },
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": 170,
+      "size": 32,
+      "color": "#111111"
+    },
+    {
+      "text": "{deck}",
+      "x": 48,
+      "y": "H-80",
+      "size": 16,
+      "color": "#333333"
+    }
+  ]
+}

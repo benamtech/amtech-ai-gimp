@@ -1,0 +1,41 @@
+{
+  "id": "meme-impact",
+  "family": "viral",
+  "title": "Impact / top-bottom meme",
+  "canvas": [
+    1080,
+    1080
+  ],
+  "background": "#000",
+  "font": "Impact",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "copy": {
+    "top": [
+      "WHEN THE STATION UNDOCKS"
+    ],
+    "bot": [
+      "AND YOU LEFT THE LIGHT ON"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{top}",
+      "x": 40,
+      "y": 40,
+      "size": 36,
+      "color": "#ffffff"
+    },
+    {
+      "text": "{bot}",
+      "x": 40,
+      "y": "H-100",
+      "size": 36,
+      "color": "#ffffff"
+    }
+  ]
+}

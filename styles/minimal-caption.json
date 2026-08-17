@@ -1,0 +1,30 @@
+{
+  "id": "minimal-caption",
+  "family": "photo",
+  "title": "Quiet caption",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "copy": {
+    "cap": [
+      "Atlantis leaves. The station keeps its orbit."
+    ]
+  },
+  "texts": [
+    {
+      "text": "{cap}",
+      "x": 48,
+      "y": "H-48",
+      "size": 16,
+      "color": "#d7dde8"
+    }
+  ]
+}

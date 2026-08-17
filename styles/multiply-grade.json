@@ -1,0 +1,34 @@
+{
+  "id": "multiply-grade",
+  "family": "photo",
+  "title": "Multiply grade plate",
+  "canvas": [
+    1600,
+    900
+  ],
+  "background": "#1a0a00",
+  "photo": {
+    "blend": "multiply",
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-80",
+      "size": 28,
+      "color": "#f4d27a"
+    }
+  ]
+}

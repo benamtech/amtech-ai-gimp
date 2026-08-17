@@ -1,0 +1,54 @@
+{
+  "id": "wanted-poster",
+  "family": "cover",
+  "title": "Wanted / broadside",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#e8d9b0",
+  "photo": {
+    "offset_jitter": [
+      10,
+      10
+    ]
+  },
+  "filters": [
+    {
+      "name": "sepia",
+      "param": {
+        "strength": 0.7
+      }
+    },
+    {
+      "name": "contrast",
+      "param": {
+        "factor": 1.2
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "WANTED"
+    ],
+    "sub": [
+      "FOR LEAVING THE BAY"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 80,
+      "y": 40,
+      "size": 72,
+      "color": "#3a1d0b"
+    },
+    {
+      "text": "{sub}",
+      "x": 80,
+      "y": "H-100",
+      "size": 24,
+      "color": "#3a1d0b"
+    }
+  ]
+}

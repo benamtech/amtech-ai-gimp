@@ -1,0 +1,42 @@
+{
+  "id": "propaganda",
+  "family": "cover",
+  "title": "Propaganda poster",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#8b0000",
+  "photo": {
+    "blend": "multiply",
+    "opacity": 0.7,
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "copy": {
+    "head": [
+      "KEEP THE LIGHT ON"
+    ],
+    "sub": [
+      "FOR THE STATION"
+    ]
+  },
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 40,
+      "y": 80,
+      "size": 48,
+      "color": "#f4d27a"
+    },
+    {
+      "text": "{sub}",
+      "x": 40,
+      "y": "H-120",
+      "size": 28,
+      "color": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# Bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Generated output (regenerable)
+out/
+cache/
+
+# Environments
+.venv/
+venv/
+env/
+.eggs/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Secrets — never commit these
+.env
+.env.*
+*.pem
+*.key
+*.token
+credentials*.json
+secrets*.json
+*.local.json

@@ -1,0 +1,40 @@
+Load skill `agent-native-image-compose` first, then `cli-anything-gimp`. Follow that method. Do not pixel-click GIMP. Do not rebuild the existing Sholes typewriter poster.
+
+GOAL
+Stress-test the skill until something breaks, then recover using the skill's own loop (one compose script → harness render → vision_analyze the PNG → one more script pass). Deliver three real PNGs plus an honest limits report.
+
+HARD RULES
+- Hermes writes original copy. The harness only prints.
+- One composed Python script per poster (adapt templates/compose_poster.py). Do not issue one terminal call per draw command.
+- Always `--json` and absolute paths.
+- Resolve Wikimedia Commons files via the imageinfo API. Never guess `/commons/X/Yz/` hashes.
+- After every `export render`, vision_analyze the PNG. If any intended string is missing, assume layer-local coordinates first.
+- If `gimp -i -b` / Script-Fu hangs, do not retry. Stay on the harness Pillow path (draw ops present).
+- Public-domain or clearly licensed sources only. Credit line must name file + license.
+- Write outputs under ~/Pictures/cli-anything-poster/limits/ (create it).
+
+MAKE THESE THREE POSTERS
+
+1) LANDSCAPE COLLISION — canvas 1600x900, source File:STS-125_Atlantis_undocking.jpg (or another wide Commons NASA PD photo if that title 404s). Photo must fill the full width. Overlay a long single-line headline that will overflow unless you wrap it yourself (the harness does not wrap). Headline about docking / leaving a station, written by you. This tests: landscape crop, text overflow, overlay-on-full-bleed photo, contrast on a busy image.
+
+2) TINY LAYER TRAP — canvas 1920x1080, source File:The_Earth_seen_from_Apollo_17.jpg. Place the photo as a small inset (about 480px tall) in the lower-left with a negative or near-edge offset. Put ALL type on a separate full-canvas transparent overlay. First render MUST deliberately draw the headline onto the photo layer at x=800 (this should vanish). vision_analyze must catch the missing type. Second pass moves the same strings onto the overlay. This tests: the exact failure the skill warns about, and whether you actually look at pixels.
+
+3) STACK + SESSION — canvas 1080x1350 (portrait story). Two Commons stills composited (Earth from #2 plus a second PD object, e.g. File:Voyager_spacecraft.jpg or similar). Dark gradient/rect panel, kicker, 3-line headline, deck, dual credit lines. After a good render, run `session undo` then re-render and confirm the PNG actually changed, then redo and re-render. This tests: multi-image stack, portrait canvas, undo/redo truth, credit density.
+
+LIMITS YOU MUST PROBE (log pass/fail with evidence)
+- cli-anything-gimp present; `project new --help` and `draw text --help` match the skill reference
+- Commons API vs guessed hash (do one intentional wrong hash once, show the 404, then API)
+- Draw ops on a small photo layer vs overlay (poster 2)
+- Native `gimp -i -b` / gimp-console batch: one bounded attempt only (timeout ≤ 20s). Record hang/fail/success. Do not block the job on it.
+- vision_analyze vs project JSON disagreement
+- Long unwrapped headline clipping
+- Negative offset_x / offset_y
+- session undo/redo actually changing pixels
+- Whether `export render` reports method=pillow when draw_ops exist
+
+DELIVER
+- Three final PNGs + their .gimp-cli.json and compose scripts
+- A short LIMITS.md in that folder: what the skill handled, what the harness cannot do, what you had to work around, and one proposed skill patch if the instructions were wrong or incomplete
+- Do not stop at a plan. Exercise the code.
+
+You are the creative source. The posters should not look like the Sholes one. Different type, different idea, same method.

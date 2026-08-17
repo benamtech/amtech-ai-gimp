@@ -1,0 +1,39 @@
+{
+  "id": "alert-banner",
+  "family": "viral",
+  "title": "Amber / alert banner",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "copy": {
+    "head": [
+      "ALERT  \u00b7  STAY IN FRAME  \u00b7  DO NOT LOOK AWAY"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H*0.42)",
+      "x2": "W",
+      "y2": "int(H*0.58)",
+      "fill": "#e87722"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "int(H*0.46)",
+      "size": 32,
+      "color": "#111111"
+    }
+  ]
+}

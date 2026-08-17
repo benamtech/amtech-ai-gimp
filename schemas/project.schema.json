@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amtechai.com/schemas/project.schema.json",
+  "title": "Project",
+  "description": "A composable image project (cli-anything-gimp compatible): canvas + layers with deferred draw ops and filters. Rendered by lib/render.py.",
+  "type": "object",
+  "required": ["canvas", "layers"],
+  "properties": {
+    "name": {"type": "string"},
+    "version": {"type": "string"},
+    "canvas": {
+      "type": "object",
+      "properties": {
+        "width": {"type": "integer"},
+        "height": {"type": "integer"},
+        "background": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"},
+        "color_mode": {"type": "string", "default": "RGB"},
+        "dpi": {"type": "integer", "default": 72}
+      },
+      "required": ["width", "height"]
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "integer"},
+          "name": {"type": "string"},
+          "type": {"type": "string", "default": "image"},
+          "source": {"type": ["string", "null"]},
+          "width": {"type": "integer"},
+          "height": {"type": "integer"},
+          "offset_x": {"type": "integer", "default": 0},
+          "offset_y": {"type": "integer", "default": 0},
+          "opacity": {"type": "number", "default": 1.0},
+          "visible": {"type": "boolean", "default": true},
+          "blend_mode": {"type": "string", "default": "normal"},
+          "fill": {"type": ["string", "null"]},
+          "filters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string"},
+                "param": {"type": "object", "additionalProperties": true}
+              },
+              "required": ["name"]
+            }
+          },
+          "draw_ops": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "oneOf": [
+                {
+                  "properties": {
+                    "type": {"const": "text"},
+                    "text": {"type": "string"},
+                    "x": {"type": "integer"}, "y": {"type": "integer"},
+                    "size": {"type": "integer"},
+                    "color": {"type": "string"},
+                    "font": {"type": "string"},
+                    "anchor": {"type": "string"}
+                  },
+                  "required": ["type", "text"]
+                },
+                {
+                  "properties": {
+                    "type": {"const": "rect"},
+                    "x1": {"type": "integer"}, "y1": {"type": "integer"},
+                    "x2": {"type": "integer"}, "y2": {"type": "integer"},
+                    "fill": {"type": "string"}
+                  },
+                  "required": ["type", "x1", "y1", "x2", "y2"]
+                },
+                {
+                  "properties": {
+                    "type": {"const": "stroke_text"},
+                    "text": {"type": "string"},
+                    "x": {"type": "integer"}, "y": {"type": "integer"},
+                    "size": {"type": "integer"},
+                    "color": {"type": "string"},
+                    "stroke": {"type": "integer"}
+                  },
+                  "required": ["type", "text"]
+                }
+              ]
+            }
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    "guides": {"type": "array"},
+    "selection": {"type": ["object", "null"]},
+    "metadata": {"type": "object"}
+  }
+}

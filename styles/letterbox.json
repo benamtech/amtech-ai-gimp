@@ -1,0 +1,46 @@
+{
+  "id": "letterbox",
+  "family": "photo",
+  "title": "Cinema letterbox",
+  "canvas": [
+    1920,
+    800
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      40,
+      10
+    ]
+  },
+  "copy": {
+    "head": [
+      "SCOPE"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": 0,
+      "x2": "W",
+      "y2": 40,
+      "fill": "#000000"
+    },
+    {
+      "x1": 0,
+      "y1": "H-40",
+      "x2": "W",
+      "y2": "H",
+      "fill": "#000000"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "H-36",
+      "size": 16,
+      "color": "#f4d27a"
+    }
+  ]
+}

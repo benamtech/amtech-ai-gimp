@@ -1,0 +1,54 @@
+{
+  "id": "stack-dual",
+  "family": "photo",
+  "title": "Dual stack panel",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#05080e",
+  "photo": {
+    "offset_x": {
+      "range": [
+        -80,
+        40
+      ]
+    },
+    "offset_y": {
+      "range": [
+        -40,
+        20
+      ]
+    },
+    "offset_jitter": [
+      0,
+      0
+    ]
+  },
+  "copy": {
+    "head": [
+      "THE MACHINE WAS NEVER THE KEYBOARD",
+      "WE SENT A CRAFT PAST THE LAST PLANET",
+      "THE BLUE MARBLE WAS NEVER SMALL",
+      "SLOW, EXACT, AND ALREADY GONE"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H*0.62)",
+      "x2": "W",
+      "y2": "H",
+      "fill": "#05080e"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 48,
+      "y": "int(H*0.68)",
+      "size": 32,
+      "color": "#f6f1e8"
+    }
+  ]
+}

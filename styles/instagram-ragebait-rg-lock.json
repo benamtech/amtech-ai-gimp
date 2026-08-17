@@ -1,0 +1,49 @@
+{
+  "id": "instagram-ragebait-rg-lock",
+  "family": "viral",
+  "title": "Ragebait + Warhol flats + RG lime/mag/cyan lock, 1:1",
+  "canvas": [1080, 1080],
+  "background": "#000000",
+  "font": "Impact",
+  "brand": "retardglobal",
+  "photo": {"offset_x": {"range": [-14, 14]}, "offset_y": {"range": [-8, 8]}, "offset_jitter": [0, 0]},
+  "filters": [
+    {"name": "posterize", "param": {"bits": {"choices": [3, 4]}}},
+    {"name": "saturation", "param": {"factor": {"range": [1.25, 1.55]}}},
+    {"name": "contrast", "param": {"factor": 1.28}}
+  ],
+  "pillow": {
+    "contrast": 1.25,
+    "color": 1.3,
+    "bottom_lift": true,
+    "lift_start": 0.42,
+    "circle_inset": {
+      "d": 0.26,
+      "cx": 0.82,
+      "cy": 0.16,
+      "ring": 12,
+      "ring_color": "#FD2EFF"
+    }
+  },
+  "copy": {
+    "handle": ["@RETARDGLOBAL"],
+    "pill": ["BREAKING"],
+    "l1": ["FUJIMOTO"],
+    "l2": ["DRINKS THE LAST"],
+    "l3": ["GRIMACE SHAKE"],
+    "url": ["RETARDGLOBAL.COM"]
+  },
+  "rects": [
+    {"x1": 0, "y1": 0, "x2": "int(W*0.07)", "y2": "H", "fill": "#DEFF2E"},
+    {"x1": "int(W*0.32)", "y1": "int(H*0.46)", "x2": "int(W*0.68)", "y2": "int(H*0.52)", "fill": "#FD2EFF"},
+    {"x1": "int(W*0.28)", "y1": "H-48", "x2": "int(W*0.72)", "y2": "H-8", "fill": "#2FF3FF"}
+  ],
+  "texts": [
+    {"text": "{handle}", "x": "int(W*0.12)", "y": 18, "size": 22, "color": "#2FF3FF"},
+    {"text": "{pill}", "x": "int(W*0.40)", "y": "int(H*0.468)", "size": 28, "color": "#000000"},
+    {"text": "{l1}", "x": 88, "y": "int(H*0.55)", "size": 72, "color": "#DEFF2E"},
+    {"text": "{l2}", "x": 88, "y": "int(H*0.67)", "size": 46, "color": "#FFFFFF"},
+    {"text": "{l3}", "x": 88, "y": "int(H*0.78)", "size": 58, "color": "#FD2EFF"},
+    {"text": "{url}", "x": "int(W*0.34)", "y": "H-42", "size": 22, "color": "#000000"}
+  ]
+}

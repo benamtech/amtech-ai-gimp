@@ -1,0 +1,49 @@
+{
+  "id": "two-panel-choice",
+  "family": "viral",
+  "title": "Drake / choice two-panel",
+  "canvas": [
+    1080,
+    1350
+  ],
+  "background": "#111",
+  "photo": {
+    "offset_jitter": [
+      10,
+      80
+    ]
+  },
+  "copy": {
+    "no": [
+      "THE GUI"
+    ],
+    "yes": [
+      "THE CLI"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": "int(H/2-3)",
+      "x2": "W",
+      "y2": "int(H/2+3)",
+      "fill": "#f4d27a"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{no}",
+      "x": 40,
+      "y": 40,
+      "size": 40,
+      "color": "#c1121f"
+    },
+    {
+      "text": "{yes}",
+      "x": 40,
+      "y": "int(H/2+40)",
+      "size": 40,
+      "color": "#3ddc97"
+    }
+  ]
+}

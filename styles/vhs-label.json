@@ -1,0 +1,57 @@
+{
+  "id": "vhs-label",
+  "family": "photo",
+  "title": "VHS sleeve type",
+  "canvas": [
+    1080,
+    1440
+  ],
+  "background": "#1a1a1a",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "filters": [
+    {
+      "name": "saturation",
+      "param": {
+        "factor": 0.8
+      }
+    }
+  ],
+  "copy": {
+    "head": [
+      "SP  \u00b7  02:17:09"
+    ],
+    "title": [
+      "UNDOCK / REENTRY"
+    ]
+  },
+  "rects": [
+    {
+      "x1": 0,
+      "y1": 0,
+      "x2": "W",
+      "y2": 80,
+      "fill": "#111111"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 24,
+      "y": 24,
+      "size": 18,
+      "color": "#f4d27a"
+    },
+    {
+      "text": "{title}",
+      "x": 24,
+      "y": "H-80",
+      "size": 28,
+      "color": "#ffffff"
+    }
+  ]
+}

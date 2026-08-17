@@ -1,0 +1,50 @@
+{
+  "id": "red-circle-arrow",
+  "family": "viral",
+  "title": "Red circle + slab arrow",
+  "canvas": [
+    1280,
+    720
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      80,
+      40
+    ]
+  },
+  "copy": {
+    "head": [
+      "WAIT FOR IT",
+      "THEY LIED",
+      "WATCH THIS",
+      "I WAS WRONG",
+      "DO THIS NEXT"
+    ]
+  },
+  "rects": [
+    {
+      "x1": "int(W*0.55)",
+      "y1": "int(H*0.20)",
+      "x2": "int(W*0.78)",
+      "y2": "int(H*0.55)",
+      "fill": "#c1121f"
+    },
+    {
+      "x1": 40,
+      "y1": "H-140",
+      "x2": "int(W*0.7)",
+      "y2": "H-50",
+      "fill": "#111111"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{head}",
+      "x": 56,
+      "y": "H-120",
+      "size": 36,
+      "color": "#ffffff"
+    }
+  ]
+}

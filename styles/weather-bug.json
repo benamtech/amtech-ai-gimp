@@ -1,0 +1,41 @@
+{
+  "id": "weather-bug",
+  "family": "viral",
+  "title": "Corner bug + chiron",
+  "canvas": [
+    1920,
+    1080
+  ],
+  "background": "#000",
+  "photo": {
+    "offset_jitter": [
+      20,
+      20
+    ]
+  },
+  "copy": {
+    "bug": [
+      "72\u00b0",
+      "ORBIT",
+      "ISS"
+    ]
+  },
+  "rects": [
+    {
+      "x1": "W-220",
+      "y1": 40,
+      "x2": "W-40",
+      "y2": 140,
+      "fill": "#0b3d91"
+    }
+  ],
+  "texts": [
+    {
+      "text": "{bug}",
+      "x": "W-200",
+      "y": 60,
+      "size": 32,
+      "color": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "instagram-ragebait",
+  "family": "viral",
+  "title": "Instagram portrait ragebait still",
+  "canvas": {"choices": [[1080, 1350], [1080, 1350], [1080, 1440]]},
+  "background": "#000000",
+  "font": "Impact",
+  "photo": {"offset_jitter": [40, 80]},
+  "pillow": {
+    "contrast": 1.25,
+    "color": 1.15,
+    "bottom_lift": true,
+    "lift_start": 0.42,
+    "circle_inset": {
+      "d": 0.30,
+      "cx": 0.80,
+      "cy": 0.20,
+      "ring": 11,
+      "ring_color": "#f15a22"
+    }
+  },
+  "copy": {
+    "handle": ["@ORBITFEED", "@BAYWATCHER", "@SIGNALDESK"],
+    "pill": ["NEWS", "BREAKING", "EXCLUSIVE"],
+    "l1": [
+      "NASA SAYS ITS 'HIGHLY LIKELY'",
+      "CREW CONFIRMS ITS 'BASICALLY OVER'",
+      "STATION SAYS THEY 'SAW EVERYTHING'"
+    ],
+    "l2": [
+      "THE BLUE MARBLE WAS",
+      "ATLANTIS WAS",
+      "VOYAGER WAS"
+    ],
+    "l3": [
+      "BEHIND THE EMPTY BAY",
+      "BEHIND THE LAST UNDOCK",
+      "BEHIND THE LIGHT THEY LEFT ON"
+    ]
+  },
+  "rects": [
+    {
+      "x1": "int(W*0.38)",
+      "y1": "int(H*0.545)",
+      "x2": "int(W*0.62)",
+      "y2": "int(H*0.595)",
+      "fill": "#f15a22"
+    }
+  ],
+  "texts": [
+    {"text": "{handle}", "x": "int(W*0.62)", "y": 18, "size": 16, "color": "#ffffff"},
+    {"text": "{pill}", "x": "int(W*0.43)", "y": "int(H*0.552)", "size": 18, "color": "#ffffff"},
+    {"text": "{l1}", "x": 28, "y": "int(H*0.62)", "size": 36, "color": "#f15a22"},
+    {"text": "{l2}", "x": 28, "y": "int(H*0.70)", "size": 42, "color": "#ffffff"},
+    {"text": "{l3}", "x": 28, "y": "int(H*0.79)", "size": 36, "color": "#f15a22"}
+  ]
+}
