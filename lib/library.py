@@ -114,6 +114,20 @@ def emit_script(resolved: dict, out_dir: Path | None = None, name: str | None = 
     if resolved.get("filters"):
         A("")
 
+    # corner logo badge (brand asset)
+    badge = resolved.get("pillow", {}).get("logo_badge")
+    if badge:
+        asset = badge.get("asset", "worldmap")
+        corner = badge.get("corner", "top_right")
+        size = float(badge.get("size", 0.10))
+        margin = float(badge.get("margin", 0.03))
+        bottom = badge.get("bottom")
+        logo_path = ROOT / "assets" / "logos" / f"logo-{asset}.png"
+        A(f"    im = effects.corner_badge(im, {_py(str(logo_path))}, "
+          f"corner={_py(corner)}, size={size}, margin={margin}, "
+          f"bottom={bottom!r})")
+        A("")
+
     # draw
     A("    draw = ImageDraw.Draw(im)")
     for r in resolved.get("rects", []):
@@ -129,6 +143,7 @@ def emit_script(resolved: dict, out_dir: Path | None = None, name: str | None = 
             stack_literal += "    ]"
             A(f"    effects.stack_lines(draw, {stack_literal}, {t['cx']}, {t['y0']}, "
               f"{t['max_w']}, {t['bottom']}, stroke={t.get('stroke', 7)}, "
+              f"gap={t.get('gap')!r}, fill={t.get('fill', False)}, "
               f"spec={_py(font_path)})")
             continue
         font_path = t.get("font") or resolved["font"]

@@ -76,3 +76,41 @@ Full recipe in `docs/RETARDGLOBAL-MEMES.md` + `skills/computer-use-graphics/SKIL
 5. Image sourcing: real stills only (never stock stand-ins). The Rizzler =
    LADbible/Betches og:image; Chester Stone = therealchesterstone.com store
    triptych. Both tagged into `sources/registry`.
+
+## Reverse-engineering round (the pixels, not a guess)
+
+6. Masthead colors are DERIVED, not guessed (pixel-sampled from the reference
+   JPGs): "RETARD GLOBAL" = **lime** `#DEFF2E`, "RETARDGLOBAL.COM" = **white**,
+   on a **magenta** `#FD2EFF` block. Both text colors were flipped in earlier
+   sessions. The masthead is **text-only** — the logo PNGs are NOT in the meme
+   (they belong to `rg-banner` / standalone badges).
+7. Footer = **white** `RETARDGLOBAL.COM`, not cyan. Cyan's brand role is
+   cta/url/frame; the examples render the footer URL white on black.
+8. The `compose` path's unconditional brand hue-clamp (`clamp_hues` in
+   `prep_panel`) was the deep-fry bug — the `generate` path never did it, so
+   the two paths disagreed. Fixed: gated behind an opt-in `"clamp_hues": true`
+   style flag (default OFF), so clean is the default on both paths. The fried
+   look remains opt-in via `techniques/deep-fried-ragebait.json`.
+
+## Round 2 — text scale, tight stack, and the brand assets (user-corrected)
+
+9. Headline is **large and tightly stacked**, not "first line huge, rest small
+   with gaps". Impact's ascent+descent metrics add ~1.8× dead vertical space per
+   line; `stack_lines` gained a `gap` param (bbox-height + 2×stroke + gap, so
+   lines "touch") and a `fill` param (grow the block uniformly to fill the band
+   down to the footer). Sizes: l1=130, l2+=110 (close in size — deliberately
+   below the 1.5× hierarchy rule, per the user).
+10. Every meme now embeds a **corner logo badge** — the world-map logo (or CRT
+    computer logo) from `assets/logos/`, pasted top-right at ~13% width, its
+    bottom edge aligned with the masthead banner's bottom edge.
+    The masthead stays text-only; the badge is where the brand *assets* land.
+11. **Never use the Jimmy Fallon image** of The Rizzler. Indexed non-Fallon
+    stills: `the-rizzler-origin.jpg`, `the-rizzler-knicks.jpg`,
+    `the-rizzler-superhero.jpg` (red-carpet costume).
+12. All RG brand assets are now bundled in the repo (`assets/logos/`,
+    `assets/banners/`) so scripts reference them deterministically instead of
+    the external `retardglobal-assets/` dir. `rg-banner` uses the actual banner
+    stills as its `source` (seed-sampled lime/orange) via a new style-level
+    `source` field in `resolve()` — no more re-rendering the wordmark as text.
+
+Full spec + pixel evidence: `docs/RG-FORMAT-SPEC.md`.

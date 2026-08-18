@@ -62,8 +62,14 @@ def fit_line(text: str, max_w: int, start: int, min_size: int = 28,
     return font(spec, min_size)
 
 
-def line_advance(fnt: ImageFont.FreeTypeFont, stroke: int = 7, extra: int = 10) -> int:
-    """True glyph height + stroke so stacked Impact lines never collide."""
+def line_advance(fnt: ImageFont.FreeTypeFont, stroke: int = 7, extra: int = 10,
+                 text: str | None = None) -> int:
+    """Vertical advance between stacked lines. With `text`, uses the tight
+    glyph-bbox height (for 'touching' Impact stacks); without it, the font's
+    full ascent+descent (legacy, roomy). Never `y += size`."""
+    if text is not None:
+        bb = fnt.getbbox(text)
+        return (bb[3] - bb[1]) + stroke * 2 + extra
     a, d = fnt.getmetrics()
     return a + d + stroke * 2 + extra
 
@@ -81,23 +87,60 @@ def draw_text_shadow(draw, xy, text, fnt, fill, shadow_offset=(3, 3),
 
 
 def stack_lines(draw, lines, cx: int, y0: int, max_w: int, bottom: int,
-                stroke: int = 7, spec: str | None = None) -> None:
-    """lines = [(text, color, start_size), ...]. Shrinks if the stack hits bottom."""
+                stroke: int = 7, spec: str | None = None,
+                gap: int | None = None, fill: bool = False) -> None:
+    """lines = [(text, color, start_size), ...].
+
+    gap  — tight leading: extra px between stroke edges (default None = roomy
+           ascent+descent stacking). Set 0–2 for the 'touching' Impact look.
+    fill — grow all lines uniformly (capped) to fill [y0, bottom] when there is
+           spare vertical room, so the headline occupies its whole band.
+    Shrinks if the stack still hits bottom."""
     fitted = [
         (t, c, fit_line(t, max_w, s, 26, stroke=stroke, spec=spec), stroke)
         for t, c, s in lines
     ]
-    total = sum(line_advance(f, st) for _, _, f, st in fitted)
-    while total > (bottom - y0) and any(f.size > 28 for _, _, f, _ in fitted):
+
+    def adv(fnt, txt):
+        return line_advance(fnt, stroke, gap if gap is not None else 10,
+                            text=(txt if gap is not None else None))
+
+    def total(fl):
+        return sum(adv(f, t) for t, _, f, _ in fl)
+
+    avail = bottom - y0
+
+    # grow to fill the band (uniform scale, capped so short copy stays sane)
+    if fill:
+        tot = total(fitted)
+        if 0 < tot < avail:
+            scale = min(avail / tot, 1.6)
+            if scale > 1.01:
+                fitted = [
+                    (t, c, fit_line(t, max_w, max(26, int(f.size * scale)), 26,
+                                    stroke=stroke, spec=spec), s)
+                    for t, c, f, s in fitted
+                ]
+
+    # shrink to fit
+    tot = total(fitted)
+    while tot > avail and any(f.size > 26 for _, _, f, _ in fitted):
         fitted = [
             (t, c, fit_line(t, max_w, max(26, f.size - 4), 26, stroke=st, spec=spec), st)
             for t, c, f, st in fitted
         ]
-        total = sum(line_advance(f, st) for _, _, f, st in fitted)
+        tot = total(fitted)
+
     y = y0
     for text, col, fnt, st in fitted:
-        stroke_text(draw, (cx, y + fnt.getmetrics()[0] // 2), text, fnt, col, width=st)
-        y += line_advance(fnt, st)
+        if gap is None:
+            stroke_text(draw, (cx, y + fnt.getmetrics()[0] // 2), text, fnt, col, width=st)
+        else:
+            bb = fnt.getbbox(text)
+            xl = cx - (bb[2] - bb[0]) / 2
+            draw.text((xl, y - bb[1]), text, font=fnt, fill=col,
+                      stroke_width=st, stroke_fill="#000000", anchor="la")
+        y += adv(fnt, text)
 
 
 # ── geometry ──────────────────────────────────────────────────────────────────
@@ -286,7 +329,8 @@ def scanlines(im: Image.Image, gap=4, alpha=70) -> Image.Image:
     ov = Image.new("RGBA", im.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(ov)
     w, h = im.size
-    for y in range(0, h, gap):
+    step = max(1, int(gap))
+    for y in range(0, h, step):
         d.line([(0, y), (w, y)], fill=(0, 0, 0, alpha))
     return Image.alpha_composite(im.convert("RGBA"), ov).convert("RGB")
 
@@ -413,6 +457,41 @@ def url_plate(draw, w: int, h: int, label: str, fill="#2FF3FF", text_fill="#0000
     y1, y2 = h - 52, h - 12
     draw.rectangle([x1, y1, x1 + tw, y2], fill=fill)
     draw.text((w // 2, (y1 + y2) // 2), label, font=f, fill=text_fill, anchor="mm")
+
+
+def corner_badge(im: Image.Image, logo_path: str, corner: str = "top_right",
+                 size: float = 0.10, margin: float = 0.03,
+                 keyline: str = "#000000", keyline_w: int = 2,
+                 bottom: int | None = None) -> Image.Image:
+    """Paste a brand logo in a corner as a badge (≤~14% of width by default).
+
+    Pixel-art logos are resized with NEAREST to stay crisp, and a thin keyline
+    frames the badge so it reads against a photo background. `bottom` (for the
+    top corners) pins the badge's bottom edge to that Y — e.g. matching the
+    masthead banner's bottom edge.
+    """
+    logo = Image.open(logo_path).convert("RGBA")
+    w, h = im.size
+    tw = int(w * size)
+    th = int(tw * logo.height / logo.width)
+    logo = logo.resize((tw, th), Image.Resampling.NEAREST)
+    mx = int(w * margin)
+    my = int(h * margin)
+    if corner == "top_right":
+        x, y = w - tw - mx, (bottom - th if bottom is not None else my)
+    elif corner == "bottom_right":
+        x, y = w - tw - mx, h - th - my
+    elif corner == "top_left":
+        x, y = mx, (bottom - th if bottom is not None else my)
+    else:  # bottom_left
+        x, y = mx, h - th - my
+    base = im.convert("RGBA")
+    if keyline and keyline_w:
+        ImageDraw.Draw(base).rectangle(
+            [x - keyline_w, y - keyline_w, x + tw + keyline_w, y + th + keyline_w],
+            outline=keyline, width=keyline_w)
+    base.alpha_composite(logo, (x, y))
+    return base.convert("RGB")
 
 
 # ── compositing / craft (brand-agnostic, image→image) ────────────────────────

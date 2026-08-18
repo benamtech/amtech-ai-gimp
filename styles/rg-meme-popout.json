@@ -1,7 +1,7 @@
 {
-  "id": "rg-meme",
+  "id": "rg-meme-popout",
   "family": "retardglobal",
-  "title": "RETARD GLOBAL meme card (1:1) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge",
+  "title": "RETARD GLOBAL meme card (1:1) — clean photo + bottom fade + magenta masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring",
   "canvas": [1080, 1080],
   "background": "#000000",
   "font": "Impact",
@@ -10,7 +10,8 @@
   "technique": "clean-tabloid",
   "filters": [],
   "pillow": {
-    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112}
+    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112},
+    "circle_inset": {"d": 0.24, "cx": 0.76, "cy": 0.30, "ring": 12, "ring_color": "#FD2EFF"}
   },
   "copy": {
     "l1": ["THE RIZZLER"],

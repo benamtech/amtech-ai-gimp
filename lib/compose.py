@@ -17,7 +17,7 @@ from __future__ import annotations
 import random
 from pathlib import Path
 
-from . import OUT_DIR
+from . import OUT_DIR, ASSETS
 from .brand import load_brand, hex_rgb
 from .effects import sample
 from .fonts import resolve_font
@@ -80,6 +80,12 @@ def resolve(
     bg = sample(rng, style.get("background", "#0b1220"))
     font_spec = font_override or style.get("font") or "Impact"
 
+    # A style may declare a default source (string or a seed-sampled choice),
+    # e.g. rg-banner points at the bundled banner assets. CLI --source wins.
+    _style_source = None
+    if style.get("source"):
+        _style_source = sample(rng, style["source"])
+
     brand = None
     if brand_id or style.get("brand"):
         brand = load_brand(brand_id or style.get("brand"))
@@ -97,8 +103,13 @@ def resolve(
         "background": bg,
         "font": resolve_font(font_spec),
         "seed": seed,
-        "source": source,
+        "source": source or _style_source,
         "photo2": photo2,
+        # Opt-in hue clamp: default OFF. A clean brand job (e.g. rg-meme's
+        # clean-tabloid grade) must NOT deep-fry the photo. Styles that want
+        # the brand-palette chroma clamp set "clamp_hues": true; the fried
+        # look also lives in techniques/deep-fried-ragebait.json explicitly.
+        "clamp_hues": bool(style.get("clamp_hues", False)),
     }
 
     # photo placement
@@ -171,6 +182,8 @@ def resolve(
                 "max_w": int(_eval(t.get("max_w", "int(W-160)"), w, h, rng)),
                 "bottom": int(_eval(t.get("bottom", "int(H-90)"), w, h, rng)),
                 "stroke": int(t.get("stroke", 7)),
+                "gap": t.get("gap"),
+                "fill": bool(t.get("fill", False)),
                 "font": resolve_font(str(t.get("font") or font_spec)),
                 "lines": lines,
             })
@@ -264,9 +277,11 @@ def prep_panel(source: str, resolved: dict, dest_dir: Path, photo2: str | None =
     src = resolve_source(source)
     im = effects.cover_crop(Image.open(src).convert("RGB"), w, h)
 
-    # Brand lock: clamp outlaw hues to the brand palette before grading.
+    # Brand lock (opt-in): clamp chroma to the brand palette ONLY when the
+    # style asks for it. Unconditional clamping deep-fries clean stills, and
+    # the `generate` path never did it — so the default is clean on both.
     brand = resolved.get("brand")
-    if brand:
+    if brand and resolved.get("clamp_hues"):
         pal = palette_hexes(brand)
         if pal:
             im = effects.clamp_hues(im, pal)
@@ -301,6 +316,22 @@ def prep_panel(source: str, resolved: dict, dest_dir: Path, photo2: str | None =
                      sticker)
         except Exception as e:  # noqa: BLE001
             print(f"circle_inset skipped: {e}", file=__import__("sys").stderr)
+
+    # corner logo badge (brand asset pasted in a corner, bottom-aligned to masthead)
+    badge = ops.get("logo_badge")
+    if badge:
+        asset = badge.get("asset", "worldmap")
+        logo_path = ASSETS / "logos" / f"logo-{asset}.png"
+        if logo_path.exists():
+            im = effects.corner_badge(
+                im, str(logo_path),
+                corner=badge.get("corner", "top_right"),
+                size=float(badge.get("size", 0.10)),
+                margin=float(badge.get("margin", 0.03)),
+                bottom=badge.get("bottom"))
+        else:
+            print(f"logo_badge asset missing: {logo_path}",
+                  file=__import__("sys").stderr)
 
     dest_dir.mkdir(parents=True, exist_ok=True)
     panel = dest_dir / f"{resolved['style_id']}-panel.jpg"

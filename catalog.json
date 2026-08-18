@@ -141,6 +141,10 @@
     ],
     "photo": [
       {
+        "id": "brutalist-amtech",
+        "title": "Brutalist AMTECH ad \u2014 lead_lines + perspective_grid, raw type"
+      },
+      {
         "id": "contact-sheet",
         "title": "Contact sheet"
       },
@@ -171,6 +175,10 @@
       {
         "id": "full-bleed-band",
         "title": "Full-bleed + type band"
+      },
+      {
+        "id": "glitch-amtech",
+        "title": "Glitch AMTECH ad \u2014 channel_offset, slice_glitch, xerox"
       },
       {
         "id": "glitch-shift",
@@ -209,6 +217,10 @@
         "title": "Low key"
       },
       {
+        "id": "memphis-amtech",
+        "title": "Memphis AMTECH ad \u2014 slice_glitch + color_split + pastel geom shapes"
+      },
+      {
         "id": "minimal-caption",
         "title": "Quiet caption"
       },
@@ -223,6 +235,14 @@
       {
         "id": "polaroid",
         "title": "Polaroid frame"
+      },
+      {
+        "id": "psychedelic-amtech",
+        "title": "Psychedelic AMTECH ad \u2014 color split, perspective grid, vibrant colors"
+      },
+      {
+        "id": "raveflyer-amtech",
+        "title": "Rave flyer AMTECH ad \u2014 dense layers, saturated color, halftone"
       },
       {
         "id": "risograph",
@@ -261,12 +281,22 @@
         "title": "Unsharp punch"
       },
       {
+        "id": "vaporwave-amtech",
+        "title": "Vaporwave AMTECH ad \u2014 duotone violet tint, perspective grid, CRT scanlines"
+      },
+      {
         "id": "vhs-label",
         "title": "VHS sleeve type"
       },
       {
         "id": "xerox-punk",
         "title": "High contrast xerox"
+      }
+    ],
+    "propaganda": [
+      {
+        "id": "constructivist-amtech",
+        "title": "Constructivist AMTECH ad \u2014 diagonal composition, red/black/white, bold sans"
       }
     ],
     "editorial": [
@@ -299,26 +329,41 @@
         "title": "Xerox zine cover"
       }
     ],
+    "zine": [
+      {
+        "id": "punkzine-amtech",
+        "title": "Punk zine AMTECH ad \u2014 xerox, torn, splatter, aggressive type"
+      }
+    ],
     "retardglobal": [
       {
         "id": "rg-banner",
-        "title": "RETARD GLOBAL wordmark banner (hi-vis lime / orange retro) + serif footer"
+        "title": "RETARD GLOBAL wordmark banner \u2014 the bundled hi-vis lime / orange-retro banner assets (wordmark + serif footer), seed picks the variant"
       },
       {
         "id": "rg-meme-45",
-        "title": "RETARD GLOBAL meme card (4:5 portrait) \u2014 clean photo + subtle bottom gradient + masthead + stacked lime Impact headline"
+        "title": "RETARD GLOBAL meme card (4:5 portrait) \u2014 clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge"
       },
       {
         "id": "rg-meme",
-        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + subtle bottom gradient + masthead + stacked lime Impact headline"
+        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge"
       }
     ]
   },
   "style_brand": {
+    "brutalist-amtech": "amtech",
+    "constructivist-amtech": "amtech",
     "fuji-ragebait": "retardglobal",
+    "glitch-amtech": "amtech",
     "instagram-ragebait-rg-lock": "retardglobal",
+    "memphis-amtech": "amtech",
+    "psychedelic-amtech": "amtech",
+    "punkzine-amtech": "amtech",
+    "raveflyer-amtech": "amtech",
+    "rg-banner": "retardglobal",
     "rg-meme-45": "retardglobal",
-    "rg-meme": "retardglobal"
+    "rg-meme": "retardglobal",
+    "vaporwave-amtech": "amtech"
   },
   "brands": {
     "amtech": {

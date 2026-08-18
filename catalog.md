@@ -22,6 +22,7 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `zine` — Xerox zine cover
 
 ### photo
+- `brutalist-amtech` — Brutalist AMTECH ad — lead_lines + perspective_grid, raw type  (brand: amtech)
 - `contact-sheet` — Contact sheet
 - `diptych` — Diptych
 - `duotone` — Duotone punch
@@ -30,6 +31,7 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `emboss-relief` — Emboss
 - `film-rebate` — Film rebate still
 - `full-bleed-band` — Full-bleed + type band
+- `glitch-amtech` — Glitch AMTECH ad — channel_offset, slice_glitch, xerox  (brand: amtech)
 - `glitch-shift` — Channel-shift feel (offset)
 - `grain-extract` — Grain extract
 - `halftone-poster` — Posterize / pop
@@ -39,10 +41,13 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `invert-poster` — Invert
 - `letterbox` — Cinema letterbox
 - `low-key` — Low key
+- `memphis-amtech` — Memphis AMTECH ad — slice_glitch + color_split + pastel geom shapes  (brand: amtech)
 - `minimal-caption` — Quiet caption
 - `multiply-grade` — Multiply grade plate
 - `overlay-punch` — Overlay contrast
 - `polaroid` — Polaroid frame
+- `psychedelic-amtech` — Psychedelic AMTECH ad — color split, perspective grid, vibrant colors  (brand: amtech)
+- `raveflyer-amtech` — Rave flyer AMTECH ad — dense layers, saturated color, halftone  (brand: amtech)
 - `risograph` — Riso misregister feel
 - `screen-glow` — Screen glow plate
 - `sepia-postcard` — Sepia postcard
@@ -52,13 +57,17 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `thirds-poster` — Rule-of-thirds type
 - `triptych` — Triptych bars
 - `unsharp-crisp` — Unsharp punch
+- `vaporwave-amtech` — Vaporwave AMTECH ad — duotone violet tint, perspective grid, CRT scanlines  (brand: amtech)
 - `vhs-label` — VHS sleeve type
 - `xerox-punk` — High contrast xerox
 
+### propaganda
+- `constructivist-amtech` — Constructivist AMTECH ad — diagonal composition, red/black/white, bold sans  (brand: amtech)
+
 ### retardglobal
-- `rg-banner` — RETARD GLOBAL wordmark banner (hi-vis lime / orange retro) + serif footer
-- `rg-meme-45` — RETARD GLOBAL meme card (4:5 portrait) — clean photo + subtle bottom gradient + masthead + stacked lime Impact headline  (brand: retardglobal)
-- `rg-meme` — RETARD GLOBAL meme card (1:1) — clean photo + subtle bottom gradient + masthead + stacked lime Impact headline  (brand: retardglobal)
+- `rg-banner` — RETARD GLOBAL wordmark banner — the bundled hi-vis lime / orange-retro banner assets (wordmark + serif footer), seed picks the variant  (brand: retardglobal)
+- `rg-meme-45` — RETARD GLOBAL meme card (4:5 portrait) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge  (brand: retardglobal)
+- `rg-meme` — RETARD GLOBAL meme card (1:1) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge  (brand: retardglobal)
 
 ### type
 - `big-type-only` — Type-led field
@@ -89,6 +98,9 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `vs-thumb` — VS split thumbnail
 - `weather-bug` — Corner bug + chiron
 - `yt-thumb` — YouTube thumbnail
+
+### zine
+- `punkzine-amtech` — Punk zine AMTECH ad — xerox, torn, splatter, aggressive type  (brand: amtech)
 
 ## Brands
 ### amtech — AMTECH

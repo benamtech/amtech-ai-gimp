@@ -195,6 +195,7 @@ def _apply_draw_ops(im: Image.Image, ops: list[dict]) -> Image.Image:
                 int(op.get("cx", 0)), int(op.get("y0", 0)),
                 int(op.get("max_w", im.width)), int(op.get("bottom", im.height)),
                 stroke=int(op.get("stroke", 7)),
+                gap=op.get("gap"), fill=op.get("fill", False),
                 spec=op.get("font") or "Impact")
         elif t == "stroke_text":
             effects.stroke_text(

@@ -1,8 +1,8 @@
 {
-  "id": "rg-meme",
+  "id": "rg-meme-45-popout",
   "family": "retardglobal",
-  "title": "RETARD GLOBAL meme card (1:1) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge",
-  "canvas": [1080, 1080],
+  "title": "RETARD GLOBAL meme card (4:5) — clean photo + bottom fade + magenta masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring",
+  "canvas": [1080, 1350],
   "background": "#000000",
   "font": "Impact",
   "brand": "retardglobal",
@@ -10,7 +10,8 @@
   "technique": "clean-tabloid",
   "filters": [],
   "pillow": {
-    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112}
+    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112},
+    "circle_inset": {"d": 0.24, "cx": 0.76, "cy": 0.28, "ring": 12, "ring_color": "#FD2EFF"}
   },
   "copy": {
     "l1": ["THE RIZZLER"],
@@ -27,7 +28,7 @@
   "texts": [
     {"text": "{brand_name}", "x": 20, "y": 6, "size": 52, "color": "#DEFF2E", "anchor": "la", "stroke": 0},
     {"text": "{brand_url}", "x": 22, "y": 80, "size": 24, "color": "#FFFFFF", "anchor": "la", "stroke": 0},
-    {"type": "stack", "cx": "int(W*0.5)", "y0": "int(H*0.60)", "max_w": "int(W-80)", "bottom": "int(H-68)", "stroke": 8, "gap": 2, "fill": true,
+    {"type": "stack", "cx": "int(W*0.5)", "y0": "int(H*0.62)", "max_w": "int(W-80)", "bottom": "int(H-68)", "stroke": 8, "gap": 2, "fill": true,
      "lines": [
        {"text": "{l1}", "color": "#DEFF2E", "size": 130},
        {"text": "{l2}", "color": "#DEFF2E", "size": 110},

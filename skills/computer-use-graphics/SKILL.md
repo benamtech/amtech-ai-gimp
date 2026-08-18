@@ -209,12 +209,26 @@ template.
 
 The `retardglobal` brand ships a one-format factory. "Wanted for X" and "starts
 taking Ozempic" are the same meme: clean photo + smooth bottom fade + magenta
-masthead + lime Impact headline + cyan footer. No per-copy-type templates.
+masthead (lime wordmark + white URL) + lime Impact headline + white footer.
+No per-copy-type templates. The exact colors were reverse-engineered from the
+reference pixels — see `docs/RG-FORMAT-SPEC.md` before touching this.
 
 - Templates: `rg-meme` (1:1), `rg-meme-45` (4:5), `rg-banner` (wordmark banner).
+  The real brand assets are bundled: `assets/logos/` (world-map + CRT logos,
+  pasted as the corner badge) and `assets/banners/` (wordmark banner stills —
+  `rg-banner` uses them as its `source`, seed picks lime/orange).
 - Grade: `clean-tabloid` technique (default, referenced via `"technique"` in the
   style); `deep-fried-ragebait` is the optional grit look. Search with
-  `run.py techniques --tag ragebait`.
+  `run.py techniques --tag ragebait`. Photos are CLEAN by default — the brand
+  hue-clamp is opt-in (`"clamp_hues": true` in a style), never automatic.
+- Masthead = text-only wordmark lock (magenta block, **lime** `RETARD GLOBAL`,
+  **white** `RETARDGLOBAL.COM`). No logo PNG in the masthead — instead every
+  meme carries a **corner logo badge** (world-map or CRT computer logo from
+  `assets/logos/`) pasted top-right, ~13% width, bottom-aligned to the masthead.
+- Footer = **white** `RETARDGLOBAL.COM` (NOT cyan).
+- Headline = large + tightly stacked (first line ~130px, rest ~110px, `gap=2`,
+  `fill=true`). Lines "touch"; the block fills down to the footer.
+- **Never use the Jimmy Fallon image** of The Rizzler.
 - Bulk: `run.py meme --copy captions.txt [--images map.json] [--find-images]`
   wraps each caption into headline lines, resolves/stitches images, and emits a
   one-shot script + PNG per caption (deterministic per seed).
@@ -222,7 +236,7 @@ masthead + lime Impact headline + cyan footer. No per-copy-type templates.
   of <subject> [link]" → source a real still (never a stock stand-in), wrap the
   copy, `run.py generate --style rg-meme --brand retardglobal --source <still>
   --set l1=... --seed N`, vision-verify. Full playbook:
-  `docs/RETARDGLOBAL-MEMES.md`.
+  `docs/RETARDGLOBAL-MEMES.md` + `docs/RG-FORMAT-SPEC.md`.
 
 ## Hard rules
 

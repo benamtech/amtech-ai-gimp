@@ -1,7 +1,7 @@
 {
-  "id": "rg-meme",
+  "id": "rg-meme-nobadge",
   "family": "retardglobal",
-  "title": "RETARD GLOBAL meme card (1:1) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge",
+  "title": "RETARD GLOBAL meme card (1:1) — clean photo + bottom fade + magenta masthead + tight lime Impact headline + white footer (no corner logo badge)",
   "canvas": [1080, 1080],
   "background": "#000000",
   "font": "Impact",
@@ -9,9 +9,7 @@
   "photo": {"offset_jitter": [0, 0]},
   "technique": "clean-tabloid",
   "filters": [],
-  "pillow": {
-    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112}
-  },
+  "pillow": {},
   "copy": {
     "l1": ["THE RIZZLER"],
     "l2": ["STARTS TAKING"],

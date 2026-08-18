@@ -5,16 +5,24 @@ of stills, fully deterministic (same recipe + seed = same pixels).
 
 ## The format
 
-Every RG meme is the same card (1:1 `rg-meme`, or 4:5 `rg-meme-45`):
+Every RG meme is the same card (1:1 `rg-meme`, or 4:5 `rg-meme-45`). The exact
+colors below were reverse-engineered from the reference pixels — the full spec
+(with pixel evidence) is `docs/RG-FORMAT-SPEC.md`:
 
 1. **Clean photo** — a real still, lightly graded (contrast/saturation only, no
-   deep-fry).
+   deep-fry, no hue-clamp).
 2. **Bottom fade** — a smooth fade-to-black in the lower half (`fade_gradient`)
    so the headline reads. Not a box; a gradient.
-3. **Masthead** — top-left magenta block: `RETARD GLOBAL` / `RETARDGLOBAL.COM`.
-4. **Headline** — stacked Impact, lime `#DEFF2E`, thick black stroke. The first
-   line is the big punch; the rest are smaller.
-5. **Footer** — `RETARDGLOBAL.COM` in cyan.
+3. **Masthead** — top-left magenta (`#FD2EFF`) block, text-only wordmark lock:
+   **lime** `RETARD GLOBAL` + **white** `RETARDGLOBAL.COM`. No logo PNG.
+4. **Headline** — stacked Impact, lime `#DEFF2E`, thick black stroke, **large and
+   tightly stacked** (first line ~130px, rest ~110px, lines "touch"). The block
+   fills from its top down to just above the footer.
+5. **Footer** — `RETARDGLOBAL.COM` in **white** (not cyan), centered bottom, with
+   equal space above and below.
+6. **Corner logo** — the world-map logo (`assets/logos/logo-worldmap.png`, or
+   the computer CRT logo) pasted top-right, ~13% width, its bottom edge aligned
+   with the masthead banner's bottom edge, black keyline.
 
 There is no other format. "Wanted for double homicide" and "starts taking
 Ozempic" are the same meme with different words and a different photo.
@@ -66,8 +74,30 @@ count, not copy).
 
 - `rg-meme` — 1:1 (Instagram feed). The default.
 - `rg-meme-45` — 4:5 portrait. Same grammar.
-- `rg-banner` — 1920×640 RETARD wordmark banner (hi-vis lime / orange retro +
-  the serif footer line). A brand asset, seed picks lime vs orange.
+- `rg-banner` — 1920×675 RETARD wordmark banner. It **uses the bundled banner
+  assets** (`assets/banners/banner-lime.png` / `banner-orange.png`, the real
+  3000×1055 wordmark + serif-footer stills) as its `source`; the seed picks
+  lime vs orange. No re-rendered text — the actual asset is the output.
+
+## Brand assets (bundled, deterministic)
+
+The brand's real image assets live in the repo so scripts can use them without
+re-fetching:
+
+```
+assets/
+├── logos/
+│   ├── logo-worldmap.png   # 8-bit world map + "RETARD GLOBAL" pixel text (lime field, black art)
+│   └── logo-computer.png   # CRT monitor + lime globe + big black "R" (no text)
+└── banners/
+    ├── banner-lime.png     # RETARD wordmark + serif footer on hi-vis lime (3000×1055)
+    └── banner-orange.png   # same, orange retro variant
+```
+
+The meme templates paste a **corner logo badge** (`logo_badge` in the style's
+`pillow` block: `asset`, `corner`, `size`, `margin`, `bottom`) — default the
+world-map logo top-right, bottom-aligned to the masthead. `rg-banner` pulls the
+banner asset via a style-level `source` (`{"choices": [...]}`, seed-sampled).
 
 Looks live in the **technique catalog** (`run.py techniques`), not as separate
 templates:
@@ -84,9 +114,14 @@ Named look / canvas = `--style <id>`. If none is named, use `rg-meme`.
 Named faces are real stills. Ladder (see `references/image-search.md`):
 news `og:image` → fxtwitter `?name=orig` → Bing `murl` → Commons.
 
-- The Rizzler → `sources/the-rizzler.jpg` (LADbible/Betches og:image).
-- Chester Stone → `sources/chester-stone-face.png` (+ `-face2.png`),
-  from therealchesterstone.com (his RETARD HAT store triptych).
+- The Rizzler (Christian Joseph) → `sources/the-rizzler-origin.jpg` (iconic
+  origin "rizz face"), `sources/the-rizzler-knicks.jpg` (hand-on-chin at a
+  Knicks game), `sources/the-rizzler-superhero.jpg` (red-carpet superhero
+  costume). **NEVER use the Jimmy Fallon image.**
+- Chester Stone → `sources/chester-stone-hi-vis-hat.jpg` (couch, yellow
+  "RETARD" hat), `sources/chester-stone-gmfd-hat.jpg` (selfie in the hi-vis
+  GMFD hat), `sources/chester-stone-face.png` (+ `-face2.png`, store triptych),
+  from therealchesterstone.com.
 
 Tag every fetched still so the corpus is searchable:
 

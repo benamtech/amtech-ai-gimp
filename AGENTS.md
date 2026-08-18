@@ -112,6 +112,9 @@ python3 run.py batch --style fuji-ragebait --brand retardglobal \
 - `references/INDEX.md` — routing table into the technique corpus.
 - `references/image-search.md` — the encoded image-search playbook (engines,
   endpoints, license stance, anti-patterns). Read before you search.
+- `docs/RETARDGLOBAL-MEMES.md` — the RG meme-factory playbook (drop-in copy → memes).
+- `docs/RG-FORMAT-SPEC.md` — the RG meme format, reverse-engineered from the
+  reference pixels (masthead colors, headline, gradient, footer).
 - `schemas/` — JSON Schemas for brand, style, source, project, and recipe.
 
 ## Rules (hard)
@@ -151,13 +154,43 @@ Pass `--help` on any subcommand. All output is plain text or `--json`.
 
 ## Retard Global meme factory
 
-The `retardglobal` brand ships a one-format meme factory: drop in copy + images,
-get brand-locked stills (`run.py meme`). Templates `rg-meme` (1:1) /
-`rg-meme-45` (4:5) / `rg-banner`, default grade `techniques/clean-tabloid.json`,
-meta-generator `lib/meme.py`. The natural-language launch contract is:
+The `retardglobal` brand ships a **one-format** meme factory: drop in copy +
+images, get brand-locked stills (`run.py meme`). "Wanted for double homicide"
+and "starts taking Ozempic" are the SAME meme — one layout, one brand grammar;
+the copy is just copy, the images are just images. No per-copy-type templates.
+
+**The format (derived from the reference pixels — see `docs/RG-FORMAT-SPEC.md`):**
+
+- clean photo (mild contrast/saturation — NO hue-clamp, NO deep-fry),
+- smooth `fade_gradient` to black in the lower half (NOT a hard box),
+- top-left magenta masthead: **lime** `RETARD GLOBAL` + **white**
+  `RETARDGLOBAL.COM` (text-only wordmark lock — no logo PNG in the meme),
+- stacked lime `#DEFF2E` Impact headline — **large + tightly stacked**
+  (first line ~130px, rest ~110px, lines "touch", fills down to the footer),
+- **white** `RETARDGLOBAL.COM` footer (NOT cyan), equal space above/below,
+- **corner logo badge**: the world-map (or CRT computer) logo pasted top-right,
+  ~13% width, bottom-aligned to the masthead, from `assets/logos/` — this is
+  where the brand *assets* are embedded.
+
+Templates `rg-meme` (1:1) / `rg-meme-45` (4:5) / `rg-banner` (wordmark banner),
+default grade `techniques/clean-tabloid.json`, meta-generator `lib/meme.py`.
+The optional fried look is `techniques/deep-fried-ragebait.json` (opt-in, never
+default). The real brand assets are bundled in `assets/logos/` (world-map +
+CRT logos, pasted as the corner badge) and `assets/banners/` (the wordmark
+banner stills — `rg-banner` uses them as its `source`, seed picks lime/orange).
+The natural-language launch contract is:
 
 > "i need a retardglobal style instagram meme copy: '<copy>' with image of
 > <subject> [link]"
 
-→ source a real still, wrap the copy, `run.py generate --style rg-meme ...`,
-vision-verify. Full playbook: `docs/RETARDGLOBAL-MEMES.md`.
+→ source a real still (never a stock stand-in), wrap the copy,
+`run.py generate --style rg-meme --brand retardglobal --source <still> --set l1=... --seed N`,
+vision-verify every string. Full playbook: `docs/RETARDGLOBAL-MEMES.md`;
+format spec: `docs/RG-FORMAT-SPEC.md`.
+
+Bulk: `run.py meme --copy captions.txt --images map.json --out out/` (captions
+one per line; map.json maps subject → still path). Sourced stills already in
+`sources/`: The Rizzler (`the-rizzler-origin.jpg`, `the-rizzler-knicks.jpg`,
+`the-rizzler-superhero.jpg` — **never use the Jimmy Fallon image**) and Chester
+Stone (`chester-stone-hi-vis-hat.jpg`, `chester-stone-gmfd-hat.jpg`,
+`chester-stone-face.png`).

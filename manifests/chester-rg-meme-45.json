@@ -1,0 +1,12 @@
+{
+  "style": "rg-meme-45",
+  "brand": "retardglobal",
+  "mode": "compose",
+  "engine": "pillow",
+  "items": [
+    {"name": "mossad-gmfd-45", "source": "sources/chester-stone-gmfd-hat.jpg", "seed": 13,
+     "set": {"l1": "CHESTER STONE", "l2": "JOINS MOSSAD", "l3": "FOR 3 RACKS"}},
+    {"name": "wanted-face-45", "source": "sources/chester-stone-face.png", "seed": 43,
+     "set": {"l1": "CHESTER STONE", "l2": "WANTED FOR", "l3": "DOUBLE HOMICIDE"}}
+  ]
+}

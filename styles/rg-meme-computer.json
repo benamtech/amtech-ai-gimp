@@ -1,7 +1,7 @@
 {
-  "id": "rg-meme",
+  "id": "rg-meme-computer",
   "family": "retardglobal",
-  "title": "RETARD GLOBAL meme card (1:1) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge",
+  "title": "RETARD GLOBAL meme card (1:1) — clean photo + bottom fade + magenta masthead + tight lime Impact headline + white footer + CRT computer logo badge (top-right)",
   "canvas": [1080, 1080],
   "background": "#000000",
   "font": "Impact",
@@ -10,7 +10,7 @@
   "technique": "clean-tabloid",
   "filters": [],
   "pillow": {
-    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112}
+    "logo_badge": {"asset": "computer", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112}
   },
   "copy": {
     "l1": ["THE RIZZLER"],

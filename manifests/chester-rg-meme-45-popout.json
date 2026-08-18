@@ -1,0 +1,12 @@
+{
+  "style": "rg-meme-45-popout",
+  "brand": "retardglobal",
+  "mode": "compose",
+  "engine": "pillow",
+  "items": [
+    {"name": "chanel-gmfd-45-popout", "source": "sources/chester-stone-gmfd-hat.jpg", "photo2": "sources/popout-chanel-bags.jpg", "seed": 29,
+     "set": {"l1": "CHESTER STONE", "l2": "BUYS HIS BITCH", "l3": "20 CHANEL BAGS"}},
+    {"name": "babymama-face2-45-popout", "source": "sources/chester-stone-face2.png", "photo2": "sources/popout-baby-mama.jpg", "seed": 59,
+     "set": {"l1": "CHESTER STONE", "l2": "CRASHES OUT AND", "l3": "SMACKS HIS", "l4": "BABY MAMA", "l5": "OUCH"}}
+  ]
+}

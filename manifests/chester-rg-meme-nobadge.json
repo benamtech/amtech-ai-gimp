@@ -1,0 +1,12 @@
+{
+  "style": "rg-meme-nobadge",
+  "brand": "retardglobal",
+  "mode": "compose",
+  "engine": "pillow",
+  "items": [
+    {"name": "mossad-face2-nobadge", "source": "sources/chester-stone-face2.png", "seed": 19,
+     "set": {"l1": "CHESTER STONE", "l2": "JOINS MOSSAD", "l3": "FOR 3 RACKS"}},
+    {"name": "chanel-hi-vis-nobadge", "source": "sources/chester-stone-hi-vis-hat.jpg", "seed": 37,
+     "set": {"l1": "CHESTER STONE", "l2": "BUYS HIS BITCH", "l3": "20 CHANEL BAGS"}}
+  ]
+}

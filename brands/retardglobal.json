@@ -41,14 +41,21 @@
       {"id": "orange", "bg": "#FF7F00", "ink": "#000000", "label": "orange retro"}
     ],
     "footer": "RetardGlobal.com // Join Retard Global // Love and Peace on Earth // Made in USA // Love, America",
-    "footer_font": "serif-italic"
+    "footer_font": "serif-italic",
+    "assets": {
+      "lime": "assets/banners/banner-lime.png",
+      "orange": "assets/banners/banner-orange.png"
+    }
   },
 
   "masthead": {
     "lines": ["RETARD GLOBAL", "RETARDGLOBAL.COM"],
     "font": "Impact",
     "case": "upper",
-    "bg": "#FD2EFF"
+    "bg": "#FD2EFF",
+    "name_color": "#DEFF2E",
+    "url_color": "#FFFFFF",
+    "footer_color": "#FFFFFF"
   },
 
   "logo": {
@@ -57,8 +64,8 @@
     "ink": "#000000",
     "accent": "#DEFF2E",
     "assets": [
-      "logo-with-text--features-flat-map-of-world-in-black-with-grid-against-hi-vis-green-bg.png",
-      "no-text-logo--contains-computer-with-globe-and-letter-r--small-low-res-old-school-with-hi-vis-green.png"
+      "assets/logos/logo-worldmap.png",
+      "assets/logos/logo-computer.png"
     ]
   },
 
