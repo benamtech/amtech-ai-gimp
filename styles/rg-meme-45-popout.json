@@ -1,7 +1,7 @@
 {
   "id": "rg-meme-45-popout",
   "family": "retardglobal",
-  "title": "RETARD GLOBAL meme card (4:5) — clean photo + bottom fade + magenta masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring",
+  "title": "RETARD GLOBAL meme card (4:5) — clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring",
   "canvas": [1080, 1350],
   "background": "#000000",
   "font": "Impact",
@@ -10,32 +10,30 @@
   "technique": "clean-tabloid",
   "filters": [],
   "pillow": {
-    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.03, "bottom": 112},
+    "masthead_banner": {"width": 0.46},
+    "masthead_banner_asset": {"choices": ["lime", "orange"]},
+    "logo_badge": {"asset": "worldmap", "corner": "top_right", "size": 0.13, "margin": 0.0, "bottom": "banner"},
     "circle_inset": {"d": 0.24, "cx": 0.76, "cy": 0.28, "ring": 12, "ring_color": "#FD2EFF"}
   },
   "copy": {
-    "l1": ["THE RIZZLER"],
-    "l2": ["STARTS TAKING"],
-    "l3": ["OZEMPIC"],
+    "l1": [""],
+    "l2": [""],
+    "l3": [""],
     "l4": [""],
     "l5": [""],
     "l6": [""],
     "url": ["RETARDGLOBAL.COM"]
   },
-  "rects": [
-    {"x1": 0, "y1": 0, "x2": "int(W*0.46)", "y2": 112, "fill": "#FD2EFF"}
-  ],
+  "rects": [],
   "texts": [
-    {"text": "{brand_name}", "x": 20, "y": 6, "size": 52, "color": "#DEFF2E", "anchor": "la", "stroke": 0},
-    {"text": "{brand_url}", "x": 22, "y": 80, "size": 24, "color": "#FFFFFF", "anchor": "la", "stroke": 0},
-    {"type": "stack", "cx": "int(W*0.5)", "y0": "int(H*0.62)", "max_w": "int(W-80)", "bottom": "int(H-68)", "stroke": 8, "gap": 2, "fill": true,
+    {"type": "stack", "cx": "int(W*0.5)", "y0": "int(H*0.62)", "max_w": "int(W-40)", "bottom": "int(H-68)", "stroke": 6, "gap": 2, "fill": true,
      "lines": [
-       {"text": "{l1}", "color": "#DEFF2E", "size": 130},
-       {"text": "{l2}", "color": "#DEFF2E", "size": 110},
-       {"text": "{l3}", "color": "#DEFF2E", "size": 110},
-       {"text": "{l4}", "color": "#DEFF2E", "size": 110},
-       {"text": "{l5}", "color": "#DEFF2E", "size": 110},
-       {"text": "{l6}", "color": "#DEFF2E", "size": 110}
+       {"text": "{l1}", "color": "#DEFF2E", "size": 150},
+       {"text": "{l2}", "color": "#DEFF2E", "size": 130},
+       {"text": "{l3}", "color": "#DEFF2E", "size": 130},
+       {"text": "{l4}", "color": "#DEFF2E", "size": 130},
+       {"text": "{l5}", "color": "#DEFF2E", "size": 130},
+       {"text": "{l6}", "color": "#DEFF2E", "size": 130}
      ]},
     {"text": "{url}", "x": "int(W*0.5)", "y": "H-34", "size": 28, "color": "#FFFFFF", "anchor": "mm", "stroke": 0}
   ]

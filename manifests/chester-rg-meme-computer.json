@@ -5,8 +5,8 @@
   "engine": "pillow",
   "items": [
     {"name": "mossad-hi-vis-computer", "source": "sources/chester-stone-hi-vis-hat.jpg", "seed": 11,
-     "set": {"l1": "CHESTER STONE", "l2": "JOINS MOSSAD", "l3": "FOR 3 RACKS"}},
+     "set": {"l1": "CHESTER STONE JOINS", "l2": "MOSSAD FOR 3 RACKS"}},
     {"name": "wanted-face2-computer", "source": "sources/chester-stone-face2.png", "seed": 47,
-     "set": {"l1": "CHESTER STONE", "l2": "WANTED FOR", "l3": "DOUBLE HOMICIDE"}}
+     "set": {"l1": "CHESTER STONE WANTED", "l2": "FOR DOUBLE HOMICIDE"}}
   ]
 }

@@ -494,6 +494,24 @@ def corner_badge(im: Image.Image, logo_path: str, corner: str = "top_right",
     return base.convert("RGB")
 
 
+def masthead_banner(im: Image.Image, asset_path: str, width_frac: float = 0.46):
+    """Paste the real RETARD banner asset as the top-left masthead.
+
+    The bundled banner (assets/banners/banner-lime.png / banner-orange.png) is a
+    hi-vis wordmark + serif footer still. Paste it flush top-left, scaled to
+    `width_frac` of the canvas width, and return (image, rendered_height) so the
+    corner logo badge can bottom-align to it.
+    """
+    banner = Image.open(asset_path).convert("RGBA")
+    w, h = im.size
+    tw = int(w * width_frac)
+    th = int(tw * banner.height / banner.width)
+    banner = banner.resize((tw, th), Image.Resampling.LANCZOS)
+    base = im.convert("RGBA")
+    base.alpha_composite(banner, (0, 0))
+    return base.convert("RGB"), th
+
+
 # ── compositing / craft (brand-agnostic, image→image) ────────────────────────
 # These are the "hand-made graphics" primitives: duotone, mosaic, xerox, relief,
 # glitch-slice, anaglyph, waterline submerge, tint, and a two-image blend. Each

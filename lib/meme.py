@@ -41,7 +41,7 @@ def slugify(text: str, max_words: int = 5) -> str:
     return "-".join(words[:max_words]) or "meme"
 
 
-def wrap_headline(text: str, max_lines: int = 6, max_chars: int = 16) -> list[str]:
+def wrap_headline(text: str, max_lines: int = 6, max_chars: int = 20) -> list[str]:
     """Uppercase + greedy word wrap into short Impact headline lines."""
     words = (text or "").upper().split()
     lines: list[str] = []

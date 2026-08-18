@@ -317,18 +317,35 @@ def prep_panel(source: str, resolved: dict, dest_dir: Path, photo2: str | None =
         except Exception as e:  # noqa: BLE001
             print(f"circle_inset skipped: {e}", file=__import__("sys").stderr)
 
+    # masthead banner (real brand asset pasted top-left) — record its height
+    # so the corner logo badge can bottom-align to it.
+    banner_h = None
+    mb = ops.get("masthead_banner")
+    if mb:
+        asset = ops.get("masthead_banner_asset", "lime")
+        banner_path = ASSETS / "banners" / f"banner-{asset}.png"
+        if banner_path.exists():
+            im, banner_h = effects.masthead_banner(
+                im, str(banner_path), float(mb.get("width", 0.46)))
+        else:
+            print(f"masthead_banner asset missing: {banner_path}",
+                  file=__import__("sys").stderr)
+
     # corner logo badge (brand asset pasted in a corner, bottom-aligned to masthead)
     badge = ops.get("logo_badge")
     if badge:
         asset = badge.get("asset", "worldmap")
         logo_path = ASSETS / "logos" / f"logo-{asset}.png"
         if logo_path.exists():
+            bottom = badge.get("bottom")
+            if bottom == "banner":
+                bottom = banner_h
             im = effects.corner_badge(
                 im, str(logo_path),
                 corner=badge.get("corner", "top_right"),
                 size=float(badge.get("size", 0.10)),
                 margin=float(badge.get("margin", 0.03)),
-                bottom=badge.get("bottom"))
+                bottom=bottom)
         else:
             print(f"logo_badge asset missing: {logo_path}",
                   file=__import__("sys").stderr)

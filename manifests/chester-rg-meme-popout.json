@@ -5,10 +5,10 @@
   "engine": "pillow",
   "items": [
     {"name": "mossad-hi-vis-popout", "source": "sources/chester-stone-hi-vis-hat.jpg", "photo2": "sources/popout-mossad-seal.png", "seed": 17,
-     "set": {"l1": "CHESTER STONE", "l2": "JOINS MOSSAD", "l3": "FOR 3 RACKS"}},
-    {"name": "chanel-gmfd-popout", "source": "sources/chester-stone-gmfd-hat.jpg", "photo2": "sources/popout-chanel-bags.jpg", "seed": 23,
-     "set": {"l1": "CHESTER STONE", "l2": "BUYS HIS BITCH", "l3": "20 CHANEL BAGS"}},
+     "set": {"l1": "CHESTER STONE JOINS", "l2": "MOSSAD FOR 3 RACKS"}},
+    {"name": "chanel-gmfd-popout", "source": "sources/chester-stone-gmfd-hat.jpg", "photo2": "sources/popout-chanel-shop.jpg", "seed": 23,
+     "set": {"l1": "CHESTER STONE BUYS HIS", "l2": "BITCH 20 CHANEL BAGS"}},
     {"name": "babymama-face2-popout", "source": "sources/chester-stone-face2.png", "photo2": "sources/popout-baby-mama.jpg", "seed": 53,
-     "set": {"l1": "CHESTER STONE", "l2": "CRASHES OUT AND", "l3": "SMACKS HIS", "l4": "BABY MAMA", "l5": "OUCH"}}
+     "set": {"l1": "CHESTER STONE CRASHES", "l2": "OUT AND SMACKS HIS", "l3": "BABY MAMA OUCH"}}
   ]
 }

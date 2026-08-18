@@ -114,6 +114,17 @@ def emit_script(resolved: dict, out_dir: Path | None = None, name: str | None = 
     if resolved.get("filters"):
         A("")
 
+    # masthead banner (real brand asset pasted top-left); record its height so
+    # the corner badge can bottom-align to it.
+    mb = resolved.get("pillow", {}).get("masthead_banner")
+    if mb:
+        asset = resolved.get("pillow", {}).get("masthead_banner_asset", "lime")
+        banner_path = ROOT / "assets" / "banners" / f"banner-{asset}.png"
+        width_frac = float(mb.get("width", 0.46))
+        A(f"    im, _banner_h = effects.masthead_banner(im, {_py(str(banner_path))}, "
+          f"width_frac={width_frac})")
+        A("")
+
     # corner logo badge (brand asset)
     badge = resolved.get("pillow", {}).get("logo_badge")
     if badge:
@@ -123,9 +134,13 @@ def emit_script(resolved: dict, out_dir: Path | None = None, name: str | None = 
         margin = float(badge.get("margin", 0.03))
         bottom = badge.get("bottom")
         logo_path = ROOT / "assets" / "logos" / f"logo-{asset}.png"
-        A(f"    im = effects.corner_badge(im, {_py(str(logo_path))}, "
-          f"corner={_py(corner)}, size={size}, margin={margin}, "
-          f"bottom={bottom!r})")
+        if bottom == "banner":
+            A(f"    im = effects.corner_badge(im, {_py(str(logo_path))}, "
+              f"corner={_py(corner)}, size={size}, margin={margin}, bottom=_banner_h)")
+        else:
+            A(f"    im = effects.corner_badge(im, {_py(str(logo_path))}, "
+              f"corner={_py(corner)}, size={size}, margin={margin}, "
+              f"bottom={bottom!r})")
         A("")
 
     # draw
