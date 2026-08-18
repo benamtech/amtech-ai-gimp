@@ -18,6 +18,7 @@ from pathlib import Path
 
 from . import OUT_DIR, ROOT
 from . import effects
+from .brand import palette_hexes
 
 
 def _fn_name(filter_name: str) -> str | None:
@@ -69,6 +70,14 @@ def emit_script(resolved: dict, out_dir: Path | None = None, name: str | None = 
     if resolved.get("source"):
         A(f"    im = effects.cover_crop(Image.open({_py(resolved['source'])}).convert('RGB'), W, H)")
         A("")
+
+    # brand hue-clamp (opt-in) — emitted right after cover_crop to match the
+    # compose prep_panel order (cover_crop -> clamp_hues -> contrast/color).
+    if resolved.get("brand") and resolved.get("clamp_hues"):
+        pal = palette_hexes(resolved["brand"])
+        if pal:
+            A(f"    im = effects.clamp_hues(im, {_py(pal)})")
+            A("")
 
     # pillow ops
     for op, val in resolved.get("pillow", {}).items():

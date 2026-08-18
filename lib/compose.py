@@ -269,7 +269,7 @@ def build_project(resolved: dict, panel: Path) -> dict:
 
 
 def prep_panel(source: str, resolved: dict, dest_dir: Path, photo2: str | None = None) -> Path:
-    """Resolve source, cover-crop to canvas, apply pillow ops, write panel JPG."""
+    """Resolve source, cover-crop to canvas, apply pillow ops, write panel PNG."""
     from PIL import Image
     from . import effects
     from .brand import palette_hexes
@@ -351,8 +351,12 @@ def prep_panel(source: str, resolved: dict, dest_dir: Path, photo2: str | None =
                   file=__import__("sys").stderr)
 
     dest_dir.mkdir(parents=True, exist_ok=True)
-    panel = dest_dir / f"{resolved['style_id']}-panel.jpg"
-    im.save(panel, quality=95)
+    # Lossless PNG intermediate — a JPEG round-trip here would both degrade
+    # sharp pixel-art edges (logos/badges) and make the compose path diverge
+    # from the generate path (which never round-trips), breaking the
+    # "same recipe == same pixels" invariant across the two engines.
+    panel = dest_dir / f"{resolved['style_id']}-panel.png"
+    im.save(panel)
     return panel
 
 

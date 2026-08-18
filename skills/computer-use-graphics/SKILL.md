@@ -14,7 +14,7 @@ license: MIT
 compatibility: Requires Python 3.10+, Pillow. GIMP optional (auto-detected).
 metadata:
   bundle: amtech-computer-use-graphics
-  version: "0.2.0"
+  version: "0.2.1"
   author: Benjamin Palaskas
   org: AMTECH
   email: ben@amtechai.com
@@ -208,10 +208,11 @@ template.
 ### Retard Global meme factory (drop-in copy → memes)
 
 The `retardglobal` brand ships a one-format factory. "Wanted for X" and "starts
-taking Ozempic" are the same meme: clean photo + smooth bottom fade + magenta
-masthead (lime wordmark + white URL) + lime Impact headline + white footer.
-No per-copy-type templates. The exact colors were reverse-engineered from the
-reference pixels — see `docs/RG-FORMAT-SPEC.md` before touching this.
+taking Ozempic" are the same meme: clean photo + smooth bottom fade + real
+banner masthead (hi-vis lime/orange "RETARD" wordmark) + lime Impact headline
++ white footer. No per-copy-type templates. The exact colors were
+reverse-engineered from the reference pixels — see `docs/RG-FORMAT-SPEC.md`
+before touching this.
 
 - Templates: `rg-meme` (1:1), `rg-meme-45` (4:5), `rg-banner` (wordmark banner).
   The real brand assets are bundled: `assets/logos/` (world-map + CRT logos,
@@ -221,12 +222,14 @@ reference pixels — see `docs/RG-FORMAT-SPEC.md` before touching this.
   style); `deep-fried-ragebait` is the optional grit look. Search with
   `run.py techniques --tag ragebait`. Photos are CLEAN by default — the brand
   hue-clamp is opt-in (`"clamp_hues": true` in a style), never automatic.
-- Masthead = text-only wordmark lock (magenta block, **lime** `RETARD GLOBAL`,
-  **white** `RETARDGLOBAL.COM`). No logo PNG in the masthead — instead every
-  meme carries a **corner logo badge** (world-map or CRT computer logo from
-  `assets/logos/`) pasted top-right, ~13% width, bottom-aligned to the masthead.
+- Masthead = the real bundled banner asset (`assets/banners/banner-lime.png` /
+  `banner-orange.png`, seed-picked), pasted top-left via the `masthead_banner`
+  pillow op — a dense hi-vis "RETARD" wordmark + serif footer, not a sparse
+  text box. The **corner logo badge** (world-map or CRT logo from
+  `assets/logos/`) is pasted top-right, ~13% width, flush to the edge and
+  bottom-aligned to the banner (relative `bottom: "banner"` anchor).
 - Footer = **white** `RETARDGLOBAL.COM` (NOT cyan).
-- Headline = large + tightly stacked (first line ~130px, rest ~110px, `gap=2`,
+- Headline = large + tightly stacked (first line ~150px, rest ~130px, `gap=2`,
   `fill=true`). Lines "touch"; the block fills down to the footer.
 - **Never use the Jimmy Fallon image** of The Rizzler.
 - Bulk: `run.py meme --copy captions.txt [--images map.json] [--find-images]`
@@ -288,6 +291,7 @@ find_edges, emboss, contour; channel_offset (glitch), warhol, clamp_hues;
 bottom_lift, color_lift; grain, scanlines, crt, halftone, vignette, torn,
 splatter; **duotone, mosaic, xerox, relief, slice_glitch, color_split,
 waterline, tint, lead_lines, blend, perspective_grid, starfield, vgradient**;
-circle_sticker, ring, stripe, masthead, url_plate; fit_line, stack_lines,
-stroke_text, draw_text_shadow. Compose freely — this is not locked to a fixed
-style set, and `techniques/` captures any pipeline worth reusing.
+circle_sticker, ring, stripe, corner_badge, masthead_banner, masthead,
+url_plate; fit_line, stack_lines, stroke_text, draw_text_shadow. Compose
+freely — this is not locked to a fixed style set, and `techniques/` captures
+any pipeline worth reusing.

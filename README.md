@@ -1,6 +1,6 @@
 # amtech-computer-use-graphics
 
-**v0.2.0** — AMTECH · Benjamin Palaskas <ben@amtechai.com> · https://amtechai.com
+**v0.2.1** — AMTECH · Benjamin Palaskas <ben@amtechai.com> · https://amtechai.com
 
 The program composes images. It is deterministic. It does not use diffusion.
 It does not call a large language model at render time.
@@ -123,6 +123,7 @@ of movements, 1930s–2010s).
 | `compose` | Render a still from a recipe. |
 | `generate` | Emit and run a one-shot script. |
 | `batch` | Render many stills from one template. |
+| `meme` | Captions + images → many brand-locked memes (RG factory). |
 
 ### compose
 
@@ -261,7 +262,8 @@ search. Do not gate on licensing.
 - **glitch**: channel offset, warhol
 - **lift**: bottom lift, brand-color lift
 - **texture**: grain, scanlines, halftone, crt, vignette, torn, splatter
-- **composite**: cover, circle sticker, ring, stripe, masthead, url plate
+- **composite**: cover, circle sticker, corner badge, banner masthead, ring,
+  stripe, masthead, url plate
 
 The effects are not locked to a fixed style set. Compose them freely.
 
@@ -348,6 +350,17 @@ the module graph.
 The same recipe and seed give the same pixels. There is no diffusion and no
 language model in the render path. The language model (you) writes the recipe.
 The program prints the pixels.
+
+The two render paths — `compose` (project-JSON) and `generate`
+(script-of-scripts) — share the same `resolve()` sampling and the same op and
+filter ordering, so they produce **byte-identical** output for the same
+recipe + seed. The intermediate panel is a lossless PNG, and the generated
+script emits the brand hue-clamp and brand-asset overlays in the same position
+relative to the grade, so the two engines cannot drift apart.
+
+For dozens/hundreds of stills from one captions file, `generate_memes.py`
+renders the cross product of {captions} × {styles} × {seeds}; see
+`examples/captions-rg.txt` + `examples/images-rg.json`.
 
 ## License
 

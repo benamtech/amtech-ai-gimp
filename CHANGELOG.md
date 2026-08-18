@@ -2,6 +2,35 @@
 
 All notable changes to amtech-computer-use-graphics are tracked here.
 
+## [0.2.1] — 2026-08-17
+
+### Added — brand-asset overlays + mass generation
+
+- `masthead_banner` effect (`lib/effects.py`): paste a bundled banner asset
+  flush into a corner at a width fraction and return its rendered height, so a
+  sibling element can bottom-align to it. Driven from a style's `pillow` block
+  (`masthead_banner` + seed-sampled `masthead_banner_asset`).
+- `logo_badge` / `corner_badge` now accept `bottom: "banner"` — a relative
+  anchor that pins the badge's bottom edge to the rendered masthead-banner
+  height instead of a hardcoded pixel offset, so alignment survives canvas and
+  aspect-ratio changes.
+- `generate_memes.py` — a mass-generator that renders the cross product of
+  {captions} × {styles} × {seeds} as brand-locked stills (popout styles
+  auto-skip without a second still). Sample inputs in `examples/`.
+
+### Fixed — `compose` and `generate` now agree pixel-for-pixel
+
+- `compose.prep_panel` wrote its intermediate panel as a lossy JPEG; it now
+  writes a lossless PNG, removing the quality loss on sharp pixel-art edges
+  (logos/badges) and the divergence from the lossless `generate` path.
+- `library.emit_script` now emits the opt-in brand `clamp_hues` step (matching
+  `compose`'s prep_panel order) and emits `masthead_banner`/`logo_badge`
+  *before* the technique filters — they were emitted after, so brand-asset
+  overlays graded inconsistently between the two paths.
+- Result: `compose` and `generate` produce byte-identical output for the same
+  recipe + seed, restoring the documented "same recipe == same pixels"
+  invariant across both engines.
+
 ## [0.2.0] — 2026-08-17
 
 ### Added — universal technique catalog + design canon

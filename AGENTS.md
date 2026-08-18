@@ -163,13 +163,15 @@ the copy is just copy, the images are just images. No per-copy-type templates.
 
 - clean photo (mild contrast/saturation — NO hue-clamp, NO deep-fry),
 - smooth `fade_gradient` to black in the lower half (NOT a hard box),
-- top-left magenta masthead: **lime** `RETARD GLOBAL` + **white**
-  `RETARDGLOBAL.COM` (text-only wordmark lock — no logo PNG in the meme),
+- top-left masthead: the **real bundled banner asset** (hi-vis lime
+  `banner-lime.png` / orange `banner-orange.png`, seed-picked) pasted via the
+  `masthead_banner` pillow op — a dense "RETARD" wordmark + serif footer,
 - stacked lime `#DEFF2E` Impact headline — **large + tightly stacked**
-  (first line ~130px, rest ~110px, lines "touch", fills down to the footer),
+  (first line ~150px, rest ~130px, lines "touch", fills down to the footer),
 - **white** `RETARDGLOBAL.COM` footer (NOT cyan), equal space above/below,
 - **corner logo badge**: the world-map (or CRT computer) logo pasted top-right,
-  ~13% width, bottom-aligned to the masthead, from `assets/logos/` — this is
+  ~13% width, flush to the edge and bottom-aligned to the banner (relative
+  `bottom: "banner"` anchor), from `assets/logos/` — this is
   where the brand *assets* are embedded.
 
 Templates `rg-meme` (1:1) / `rg-meme-45` (4:5) / `rg-banner` (wordmark banner),

@@ -6,6 +6,14 @@ pixel-level color sampling (Pillow). It supersedes any earlier guess. When the
 images and this doc disagree, trust the images — but this doc records what the
 pixels actually showed.
 
+> **Update (2026-08-17):** the masthead is no longer the magenta text box
+> described below. The `rg-meme` styles now paste the **real bundled banner
+> asset** (`assets/banners/banner-lime.png` / `banner-orange.png`, seed-picked)
+> as the top-left masthead via the `masthead_banner` pillow op — a dense hi-vis
+> "RETARD" wordmark + serif footer, chosen because the text box read too sparse.
+> The pixel findings below remain as the historical record of the reference
+> images; points 3/4/6 in the format section reflect the current build.
+
 ## Sources inspected
 
 - `meme-example-1--rg-branded.jpg` (912x1136) — RG tabloid, magenta masthead.
@@ -49,20 +57,23 @@ meme examples deliberately keep the masthead text-only.
    ~1.08. NO hue-clamp, NO glitch, NO deep-fry.
 2. **Gradient** — `fade_gradient` start 0.45 → black, strength 0.85 (smooth
    contiguous rows, not a banded `bottom_lift`, not a box).
-3. **Masthead** — top-left magenta block (`#FD2EFF`, ~46% width × ~112px),
-   lime "RETARD GLOBAL" + white "RETARDGLOBAL.COM".
-4. **Headline** — stacked Impact, lime `#DEFF2E`, black stroke (8px), **tightly
+3. **Masthead** — the real bundled banner asset (hi-vis lime `banner-lime.png`
+   or orange `banner-orange.png`, seed-picked) pasted top-left via the
+   `masthead_banner` pillow op at ~46% width; a dense black "RETARD" wordmark +
+   a small serif footer line. (The original pixel-derived magenta text box is
+   superseded — see the note above.)
+4. **Headline** — stacked Impact, lime `#DEFF2E`, black stroke (6px), **tightly
    stacked** (`gap=2`, lines "touch") and **large, close-in-size**: first line
-   ~130px, the rest ~110px (first line only slightly bigger — deliberately below
-   the 1.5× hierarchy rule; the user wants close sizes). `fill=true` grows the
-   block to occupy the band down to the footer, and long copy shrinks to fit.
+   ~150px, the rest ~130px. `fill=true` grows the block to occupy the band down
+   to the footer, `max_w` (≈ `W-40`) caps the glyph size, and long copy shrinks
+   to fit.
 5. **Footer** — "RETARDGLOBAL.COM" WHITE, centered ~28px, with equal space
    above and below (the headline block ends just above it).
 6. **Corner logo badge** — the world-map logo (or computer CRT logo) pasted in
-   the top-right corner, ~13% of width, its bottom edge aligned with the
-   masthead banner's bottom edge, black keyline. This is how
-   the RG brand *assets* are embedded in every meme (the masthead stays
-   text-only).
+   the top-right corner, ~13% of width, flush to the right edge (`margin` 0) and
+   its bottom edge aligned to the masthead banner's rendered height (relative
+   `bottom: "banner"` anchor), black keyline. This is how the RG brand *assets*
+   are embedded in every meme.
 
 Variety = copy + photo + seed. Named canvas (1:1 vs 4:5) or named look
 (`deep-fried-ragebait` technique) — never a per-copy-type template.

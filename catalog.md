@@ -12,6 +12,209 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 - `propaganda` — Propaganda poster
 - `wanted-poster` — Wanted / broadside
 
+### custom
+- `bench-fast` — bench-fast
+- `burst-fast-000` — burst-fast-000
+- `burst-fast-001` — burst-fast-001
+- `burst-fast-002` — burst-fast-002
+- `burst-fast-003` — burst-fast-003
+- `burst-fast-004` — burst-fast-004
+- `burst-fast-005` — burst-fast-005
+- `burst-fast-006` — burst-fast-006
+- `burst-fast-007` — burst-fast-007
+- `burst-fast-008` — burst-fast-008
+- `burst-fast-009` — burst-fast-009
+- `burst-fast-010` — burst-fast-010
+- `burst-fast-011` — burst-fast-011
+- `burst-fast-012` — burst-fast-012
+- `burst-fast-013` — burst-fast-013
+- `burst-fast-014` — burst-fast-014
+- `burst-fast-015` — burst-fast-015
+- `burst-fast-016` — burst-fast-016
+- `burst-fast-017` — burst-fast-017
+- `burst-fast-018` — burst-fast-018
+- `burst-fast-019` — burst-fast-019
+- `burst-fast-020` — burst-fast-020
+- `burst-fast-021` — burst-fast-021
+- `burst-fast-022` — burst-fast-022
+- `burst-fast-023` — burst-fast-023
+- `burst-fast-024` — burst-fast-024
+- `burst-fast-025` — burst-fast-025
+- `burst-fast-026` — burst-fast-026
+- `burst-fast-027` — burst-fast-027
+- `burst-fast-028` — burst-fast-028
+- `burst-fast-029` — burst-fast-029
+- `burst-fast-030` — burst-fast-030
+- `burst-fast-031` — burst-fast-031
+- `burst-fast-032` — burst-fast-032
+- `burst-fast-033` — burst-fast-033
+- `burst-fast-034` — burst-fast-034
+- `burst-fast-035` — burst-fast-035
+- `burst-fast-036` — burst-fast-036
+- `burst-fast-037` — burst-fast-037
+- `burst-fast-038` — burst-fast-038
+- `burst-fast-039` — burst-fast-039
+- `burst-fast-040` — burst-fast-040
+- `burst-fast-041` — burst-fast-041
+- `burst-fast-042` — burst-fast-042
+- `burst-fast-043` — burst-fast-043
+- `burst-fast-044` — burst-fast-044
+- `burst-fast-045` — burst-fast-045
+- `burst-fast-046` — burst-fast-046
+- `burst-fast-047` — burst-fast-047
+- `burst-fast-048` — burst-fast-048
+- `burst-fast-049` — burst-fast-049
+- `burst-fast-050` — burst-fast-050
+- `burst-fast-051` — burst-fast-051
+- `burst-fast-052` — burst-fast-052
+- `burst-fast-053` — burst-fast-053
+- `burst-fast-054` — burst-fast-054
+- `burst-fast-055` — burst-fast-055
+- `burst-fast-056` — burst-fast-056
+- `burst-fast-057` — burst-fast-057
+- `burst-fast-058` — burst-fast-058
+- `burst-fast-059` — burst-fast-059
+- `burst-fast-060` — burst-fast-060
+- `burst-fast-061` — burst-fast-061
+- `burst-fast-062` — burst-fast-062
+- `burst-fast-063` — burst-fast-063
+- `burst-fast-064` — burst-fast-064
+- `burst-fast-065` — burst-fast-065
+- `burst-fast-066` — burst-fast-066
+- `burst-fast-067` — burst-fast-067
+- `burst-fast-068` — burst-fast-068
+- `burst-fast-069` — burst-fast-069
+- `burst-fast-070` — burst-fast-070
+- `burst-fast-071` — burst-fast-071
+- `burst-fast-072` — burst-fast-072
+- `burst-fast-073` — burst-fast-073
+- `burst-fast-074` — burst-fast-074
+- `burst-fast-075` — burst-fast-075
+- `burst-fast-076` — burst-fast-076
+- `burst-fast-077` — burst-fast-077
+- `burst-fast-078` — burst-fast-078
+- `burst-fast-079` — burst-fast-079
+- `burst-fast-080` — burst-fast-080
+- `burst-fast-081` — burst-fast-081
+- `burst-fast-082` — burst-fast-082
+- `burst-fast-083` — burst-fast-083
+- `burst-fast-084` — burst-fast-084
+- `burst-fast-085` — burst-fast-085
+- `burst-fast-086` — burst-fast-086
+- `burst-fast-087` — burst-fast-087
+- `burst-fast-088` — burst-fast-088
+- `burst-fast-089` — burst-fast-089
+- `burst-fast-090` — burst-fast-090
+- `burst-fast-091` — burst-fast-091
+- `burst-fast-092` — burst-fast-092
+- `burst-fast-093` — burst-fast-093
+- `burst-fast-094` — burst-fast-094
+- `burst-fast-095` — burst-fast-095
+- `burst-fast-096` — burst-fast-096
+- `burst-fast-097` — burst-fast-097
+- `burst-fast-098` — burst-fast-098
+- `burst-fast-099` — burst-fast-099
+- `dream_002` — ABSENCE — dream 002
+- `dream_006` — ABSENCE — dream 006
+- `dream_010` — ABSENCE — dream 010
+- `dream_014` — ABSENCE — dream 014
+- `dream_018` — ABSENCE — dream 018
+- `dream_022` — ABSENCE — dream 022
+- `dream_026` — ABSENCE — dream 026
+- `dream_030` — ABSENCE — dream 030
+- `dream_034` — ABSENCE — dream 034
+- `dream_038` — ABSENCE — dream 038
+- `dream_042` — ABSENCE — dream 042
+- `dream_046` — ABSENCE — dream 046
+- `dream_050` — ABSENCE — dream 050
+- `dream_054` — ABSENCE — dream 054
+- `dream_058` — ABSENCE — dream 058
+- `dream_062` — ABSENCE — dream 062
+- `dream_066` — ABSENCE — dream 066
+- `dream_070` — ABSENCE — dream 070
+- `dream_074` — ABSENCE — dream 074
+- `dream_078` — ABSENCE — dream 078
+- `dream_082` — ABSENCE — dream 082
+- `dream_086` — ABSENCE — dream 086
+- `dream_090` — ABSENCE — dream 090
+- `dream_094` — ABSENCE — dream 094
+- `dream_098` — ABSENCE — dream 098
+- `ghost_001` — ABSENCE — ghost 001
+- `ghost_005` — ABSENCE — ghost 005
+- `ghost_009` — ABSENCE — ghost 009
+- `ghost_013` — ABSENCE — ghost 013
+- `ghost_017` — ABSENCE — ghost 017
+- `ghost_021` — ABSENCE — ghost 021
+- `ghost_025` — ABSENCE — ghost 025
+- `ghost_029` — ABSENCE — ghost 029
+- `ghost_033` — ABSENCE — ghost 033
+- `ghost_037` — ABSENCE — ghost 037
+- `ghost_041` — ABSENCE — ghost 041
+- `ghost_045` — ABSENCE — ghost 045
+- `ghost_049` — ABSENCE — ghost 049
+- `ghost_053` — ABSENCE — ghost 053
+- `ghost_057` — ABSENCE — ghost 057
+- `ghost_061` — ABSENCE — ghost 061
+- `ghost_065` — ABSENCE — ghost 065
+- `ghost_069` — ABSENCE — ghost 069
+- `ghost_073` — ABSENCE — ghost 073
+- `ghost_077` — ABSENCE — ghost 077
+- `ghost_081` — ABSENCE — ghost 081
+- `ghost_085` — ABSENCE — ghost 085
+- `ghost_089` — ABSENCE — ghost 089
+- `ghost_093` — ABSENCE — ghost 093
+- `ghost_097` — ABSENCE — ghost 097
+- `relic_000` — ABSENCE — relic 000
+- `relic_004` — ABSENCE — relic 004
+- `relic_008` — ABSENCE — relic 008
+- `relic_012` — ABSENCE — relic 012
+- `relic_016` — ABSENCE — relic 016
+- `relic_020` — ABSENCE — relic 020
+- `relic_024` — ABSENCE — relic 024
+- `relic_028` — ABSENCE — relic 028
+- `relic_032` — ABSENCE — relic 032
+- `relic_036` — ABSENCE — relic 036
+- `relic_040` — ABSENCE — relic 040
+- `relic_044` — ABSENCE — relic 044
+- `relic_048` — ABSENCE — relic 048
+- `relic_052` — ABSENCE — relic 052
+- `relic_056` — ABSENCE — relic 056
+- `relic_060` — ABSENCE — relic 060
+- `relic_064` — ABSENCE — relic 064
+- `relic_068` — ABSENCE — relic 068
+- `relic_072` — ABSENCE — relic 072
+- `relic_076` — ABSENCE — relic 076
+- `relic_080` — ABSENCE — relic 080
+- `relic_084` — ABSENCE — relic 084
+- `relic_088` — ABSENCE — relic 088
+- `relic_092` — ABSENCE — relic 092
+- `relic_096` — ABSENCE — relic 096
+- `void_003` — ABSENCE — void 003
+- `void_007` — ABSENCE — void 007
+- `void_011` — ABSENCE — void 011
+- `void_015` — ABSENCE — void 015
+- `void_019` — ABSENCE — void 019
+- `void_023` — ABSENCE — void 023
+- `void_027` — ABSENCE — void 027
+- `void_031` — ABSENCE — void 031
+- `void_035` — ABSENCE — void 035
+- `void_039` — ABSENCE — void 039
+- `void_043` — ABSENCE — void 043
+- `void_047` — ABSENCE — void 047
+- `void_051` — ABSENCE — void 051
+- `void_055` — ABSENCE — void 055
+- `void_059` — ABSENCE — void 059
+- `void_063` — ABSENCE — void 063
+- `void_067` — ABSENCE — void 067
+- `void_071` — ABSENCE — void 071
+- `void_075` — ABSENCE — void 075
+- `void_079` — ABSENCE — void 079
+- `void_083` — ABSENCE — void 083
+- `void_087` — ABSENCE — void 087
+- `void_091` — ABSENCE — void 091
+- `void_095` — ABSENCE — void 095
+- `void_099` — ABSENCE — void 099
+
 ### editorial
 - `lookbook` — Fashion lookbook plate
 - `magazine-cover` — Magazine cover
@@ -66,8 +269,12 @@ Maps styles ↔ brands ↔ families. Machine source of truth: `catalog.json`. Re
 
 ### retardglobal
 - `rg-banner` — RETARD GLOBAL wordmark banner — the bundled hi-vis lime / orange-retro banner assets (wordmark + serif footer), seed picks the variant  (brand: retardglobal)
-- `rg-meme-45` — RETARD GLOBAL meme card (4:5 portrait) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge  (brand: retardglobal)
-- `rg-meme` — RETARD GLOBAL meme card (1:1) — clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge  (brand: retardglobal)
+- `rg-meme-45-popout` — RETARD GLOBAL meme card (4:5) — clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring  (brand: retardglobal)
+- `rg-meme-45` — RETARD GLOBAL meme card (4:5 portrait) — clean photo + smooth bottom fade + real banner masthead (hi-vis lime/orange wordmark) + big tight lime Impact headline + white footer + corner logo badge  (brand: retardglobal)
+- `rg-meme-computer` — RETARD GLOBAL meme card (1:1) — clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer + CRT computer logo badge (top-right)  (brand: retardglobal)
+- `rg-meme-nobadge` — RETARD GLOBAL meme card (1:1) — clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer (no corner logo badge)  (brand: retardglobal)
+- `rg-meme-popout` — RETARD GLOBAL meme card (1:1) — clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring  (brand: retardglobal)
+- `rg-meme` — RETARD GLOBAL meme card (1:1) — clean photo + smooth bottom fade + real banner masthead (hi-vis lime/orange wordmark) + big tight lime Impact headline + white footer + corner logo badge  (brand: retardglobal)
 
 ### type
 - `big-type-only` — Type-led field

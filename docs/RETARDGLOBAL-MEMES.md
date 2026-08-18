@@ -13,16 +13,18 @@ colors below were reverse-engineered from the reference pixels — the full spec
    deep-fry, no hue-clamp).
 2. **Bottom fade** — a smooth fade-to-black in the lower half (`fade_gradient`)
    so the headline reads. Not a box; a gradient.
-3. **Masthead** — top-left magenta (`#FD2EFF`) block, text-only wordmark lock:
-   **lime** `RETARD GLOBAL` + **white** `RETARDGLOBAL.COM`. No logo PNG.
-4. **Headline** — stacked Impact, lime `#DEFF2E`, thick black stroke, **large and
-   tightly stacked** (first line ~130px, rest ~110px, lines "touch"). The block
+3. **Masthead** — the real bundled banner asset (hi-vis lime `banner-lime.png`
+   or orange `banner-orange.png`, seed-picked) pasted top-left via the
+   `masthead_banner` pillow op; a dense black "RETARD" wordmark + serif footer.
+4. **Headline** — stacked Impact, lime `#DEFF2E`, thin black stroke, **large and
+   tightly stacked** (first line ~150px, rest ~130px, lines "touch"). The block
    fills from its top down to just above the footer.
 5. **Footer** — `RETARDGLOBAL.COM` in **white** (not cyan), centered bottom, with
    equal space above and below.
 6. **Corner logo** — the world-map logo (`assets/logos/logo-worldmap.png`, or
-   the computer CRT logo) pasted top-right, ~13% width, its bottom edge aligned
-   with the masthead banner's bottom edge, black keyline.
+   the computer CRT logo) pasted top-right, ~13% width, flush to the edge and
+   bottom-aligned to the banner's rendered height (`bottom: "banner"`), black
+   keyline.
 
 There is no other format. "Wanted for double homicide" and "starts taking
 Ozempic" are the same meme with different words and a different photo.
@@ -111,7 +113,8 @@ assets/
 
 The meme templates paste a **corner logo badge** (`logo_badge` in the style's
 `pillow` block: `asset`, `corner`, `size`, `margin`, `bottom`) — default the
-world-map logo top-right, bottom-aligned to the masthead. `rg-banner` pulls the
+world-map logo top-right, flush to the edge, bottom-aligned to the banner via a
+relative `bottom: "banner"` anchor. `rg-banner` pulls the
 banner asset via a style-level `source` (`{"choices": [...]}`, seed-sampled).
 
 Looks live in the **technique catalog** (`run.py techniques`), not as separate

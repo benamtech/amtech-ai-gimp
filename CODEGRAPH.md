@@ -54,7 +54,7 @@ design    -> __init__  (pure; no Pillow, no other lib deps)
 technique -> __init__  (loads techniques/*.json; pure stdlib)
 render    -> __init__, effects
 compose   -> __init__, brand, effects, fonts, render, source, style
-library   -> __init__, effects, compose, source
+library   -> __init__, effects, brand, compose, source
 batch     -> __init__, compose, library
 bootstrap -> __init__, fonts
 cli       -> __init__ (+ lazy imports of all the above)
@@ -85,8 +85,10 @@ compose.resolve()  ── deterministic sampling -> resolved dict
   script; the script is the artifact and may itself import `lib.effects` and
   emit more scripts.
 
-Both paths share `resolve()`, so they produce the same composition for the
-same inputs.
+Both paths share `resolve()` and the same op/filter ordering, so they produce
+byte-identical output for the same inputs: `compose` writes the intermediate
+panel as a lossless PNG and `generate` emits `clamp_hues` + brand-asset
+overlays in the same position relative to the technique filters.
 
 ## Data flow of a still
 
@@ -95,7 +97,7 @@ source spec ─► source.resolve() ─► local file
                                   │
                                   ▼
                        compose.prep_panel(): cover-crop + clamp_hues(brand)
-                                              + pillow ops ─► panel.jpg
+                                              + pillow ops ─► panel.png
                                   ▼
                        build_project(): layers + draw_ops
                                   ▼

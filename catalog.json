@@ -129,6 +129,812 @@
         "title": "YouTube thumbnail"
       }
     ],
+    "custom": [
+      {
+        "id": "bench-fast",
+        "title": "bench-fast"
+      },
+      {
+        "id": "burst-fast-000",
+        "title": "burst-fast-000"
+      },
+      {
+        "id": "burst-fast-001",
+        "title": "burst-fast-001"
+      },
+      {
+        "id": "burst-fast-002",
+        "title": "burst-fast-002"
+      },
+      {
+        "id": "burst-fast-003",
+        "title": "burst-fast-003"
+      },
+      {
+        "id": "burst-fast-004",
+        "title": "burst-fast-004"
+      },
+      {
+        "id": "burst-fast-005",
+        "title": "burst-fast-005"
+      },
+      {
+        "id": "burst-fast-006",
+        "title": "burst-fast-006"
+      },
+      {
+        "id": "burst-fast-007",
+        "title": "burst-fast-007"
+      },
+      {
+        "id": "burst-fast-008",
+        "title": "burst-fast-008"
+      },
+      {
+        "id": "burst-fast-009",
+        "title": "burst-fast-009"
+      },
+      {
+        "id": "burst-fast-010",
+        "title": "burst-fast-010"
+      },
+      {
+        "id": "burst-fast-011",
+        "title": "burst-fast-011"
+      },
+      {
+        "id": "burst-fast-012",
+        "title": "burst-fast-012"
+      },
+      {
+        "id": "burst-fast-013",
+        "title": "burst-fast-013"
+      },
+      {
+        "id": "burst-fast-014",
+        "title": "burst-fast-014"
+      },
+      {
+        "id": "burst-fast-015",
+        "title": "burst-fast-015"
+      },
+      {
+        "id": "burst-fast-016",
+        "title": "burst-fast-016"
+      },
+      {
+        "id": "burst-fast-017",
+        "title": "burst-fast-017"
+      },
+      {
+        "id": "burst-fast-018",
+        "title": "burst-fast-018"
+      },
+      {
+        "id": "burst-fast-019",
+        "title": "burst-fast-019"
+      },
+      {
+        "id": "burst-fast-020",
+        "title": "burst-fast-020"
+      },
+      {
+        "id": "burst-fast-021",
+        "title": "burst-fast-021"
+      },
+      {
+        "id": "burst-fast-022",
+        "title": "burst-fast-022"
+      },
+      {
+        "id": "burst-fast-023",
+        "title": "burst-fast-023"
+      },
+      {
+        "id": "burst-fast-024",
+        "title": "burst-fast-024"
+      },
+      {
+        "id": "burst-fast-025",
+        "title": "burst-fast-025"
+      },
+      {
+        "id": "burst-fast-026",
+        "title": "burst-fast-026"
+      },
+      {
+        "id": "burst-fast-027",
+        "title": "burst-fast-027"
+      },
+      {
+        "id": "burst-fast-028",
+        "title": "burst-fast-028"
+      },
+      {
+        "id": "burst-fast-029",
+        "title": "burst-fast-029"
+      },
+      {
+        "id": "burst-fast-030",
+        "title": "burst-fast-030"
+      },
+      {
+        "id": "burst-fast-031",
+        "title": "burst-fast-031"
+      },
+      {
+        "id": "burst-fast-032",
+        "title": "burst-fast-032"
+      },
+      {
+        "id": "burst-fast-033",
+        "title": "burst-fast-033"
+      },
+      {
+        "id": "burst-fast-034",
+        "title": "burst-fast-034"
+      },
+      {
+        "id": "burst-fast-035",
+        "title": "burst-fast-035"
+      },
+      {
+        "id": "burst-fast-036",
+        "title": "burst-fast-036"
+      },
+      {
+        "id": "burst-fast-037",
+        "title": "burst-fast-037"
+      },
+      {
+        "id": "burst-fast-038",
+        "title": "burst-fast-038"
+      },
+      {
+        "id": "burst-fast-039",
+        "title": "burst-fast-039"
+      },
+      {
+        "id": "burst-fast-040",
+        "title": "burst-fast-040"
+      },
+      {
+        "id": "burst-fast-041",
+        "title": "burst-fast-041"
+      },
+      {
+        "id": "burst-fast-042",
+        "title": "burst-fast-042"
+      },
+      {
+        "id": "burst-fast-043",
+        "title": "burst-fast-043"
+      },
+      {
+        "id": "burst-fast-044",
+        "title": "burst-fast-044"
+      },
+      {
+        "id": "burst-fast-045",
+        "title": "burst-fast-045"
+      },
+      {
+        "id": "burst-fast-046",
+        "title": "burst-fast-046"
+      },
+      {
+        "id": "burst-fast-047",
+        "title": "burst-fast-047"
+      },
+      {
+        "id": "burst-fast-048",
+        "title": "burst-fast-048"
+      },
+      {
+        "id": "burst-fast-049",
+        "title": "burst-fast-049"
+      },
+      {
+        "id": "burst-fast-050",
+        "title": "burst-fast-050"
+      },
+      {
+        "id": "burst-fast-051",
+        "title": "burst-fast-051"
+      },
+      {
+        "id": "burst-fast-052",
+        "title": "burst-fast-052"
+      },
+      {
+        "id": "burst-fast-053",
+        "title": "burst-fast-053"
+      },
+      {
+        "id": "burst-fast-054",
+        "title": "burst-fast-054"
+      },
+      {
+        "id": "burst-fast-055",
+        "title": "burst-fast-055"
+      },
+      {
+        "id": "burst-fast-056",
+        "title": "burst-fast-056"
+      },
+      {
+        "id": "burst-fast-057",
+        "title": "burst-fast-057"
+      },
+      {
+        "id": "burst-fast-058",
+        "title": "burst-fast-058"
+      },
+      {
+        "id": "burst-fast-059",
+        "title": "burst-fast-059"
+      },
+      {
+        "id": "burst-fast-060",
+        "title": "burst-fast-060"
+      },
+      {
+        "id": "burst-fast-061",
+        "title": "burst-fast-061"
+      },
+      {
+        "id": "burst-fast-062",
+        "title": "burst-fast-062"
+      },
+      {
+        "id": "burst-fast-063",
+        "title": "burst-fast-063"
+      },
+      {
+        "id": "burst-fast-064",
+        "title": "burst-fast-064"
+      },
+      {
+        "id": "burst-fast-065",
+        "title": "burst-fast-065"
+      },
+      {
+        "id": "burst-fast-066",
+        "title": "burst-fast-066"
+      },
+      {
+        "id": "burst-fast-067",
+        "title": "burst-fast-067"
+      },
+      {
+        "id": "burst-fast-068",
+        "title": "burst-fast-068"
+      },
+      {
+        "id": "burst-fast-069",
+        "title": "burst-fast-069"
+      },
+      {
+        "id": "burst-fast-070",
+        "title": "burst-fast-070"
+      },
+      {
+        "id": "burst-fast-071",
+        "title": "burst-fast-071"
+      },
+      {
+        "id": "burst-fast-072",
+        "title": "burst-fast-072"
+      },
+      {
+        "id": "burst-fast-073",
+        "title": "burst-fast-073"
+      },
+      {
+        "id": "burst-fast-074",
+        "title": "burst-fast-074"
+      },
+      {
+        "id": "burst-fast-075",
+        "title": "burst-fast-075"
+      },
+      {
+        "id": "burst-fast-076",
+        "title": "burst-fast-076"
+      },
+      {
+        "id": "burst-fast-077",
+        "title": "burst-fast-077"
+      },
+      {
+        "id": "burst-fast-078",
+        "title": "burst-fast-078"
+      },
+      {
+        "id": "burst-fast-079",
+        "title": "burst-fast-079"
+      },
+      {
+        "id": "burst-fast-080",
+        "title": "burst-fast-080"
+      },
+      {
+        "id": "burst-fast-081",
+        "title": "burst-fast-081"
+      },
+      {
+        "id": "burst-fast-082",
+        "title": "burst-fast-082"
+      },
+      {
+        "id": "burst-fast-083",
+        "title": "burst-fast-083"
+      },
+      {
+        "id": "burst-fast-084",
+        "title": "burst-fast-084"
+      },
+      {
+        "id": "burst-fast-085",
+        "title": "burst-fast-085"
+      },
+      {
+        "id": "burst-fast-086",
+        "title": "burst-fast-086"
+      },
+      {
+        "id": "burst-fast-087",
+        "title": "burst-fast-087"
+      },
+      {
+        "id": "burst-fast-088",
+        "title": "burst-fast-088"
+      },
+      {
+        "id": "burst-fast-089",
+        "title": "burst-fast-089"
+      },
+      {
+        "id": "burst-fast-090",
+        "title": "burst-fast-090"
+      },
+      {
+        "id": "burst-fast-091",
+        "title": "burst-fast-091"
+      },
+      {
+        "id": "burst-fast-092",
+        "title": "burst-fast-092"
+      },
+      {
+        "id": "burst-fast-093",
+        "title": "burst-fast-093"
+      },
+      {
+        "id": "burst-fast-094",
+        "title": "burst-fast-094"
+      },
+      {
+        "id": "burst-fast-095",
+        "title": "burst-fast-095"
+      },
+      {
+        "id": "burst-fast-096",
+        "title": "burst-fast-096"
+      },
+      {
+        "id": "burst-fast-097",
+        "title": "burst-fast-097"
+      },
+      {
+        "id": "burst-fast-098",
+        "title": "burst-fast-098"
+      },
+      {
+        "id": "burst-fast-099",
+        "title": "burst-fast-099"
+      },
+      {
+        "id": "dream_002",
+        "title": "ABSENCE \u2014 dream 002"
+      },
+      {
+        "id": "dream_006",
+        "title": "ABSENCE \u2014 dream 006"
+      },
+      {
+        "id": "dream_010",
+        "title": "ABSENCE \u2014 dream 010"
+      },
+      {
+        "id": "dream_014",
+        "title": "ABSENCE \u2014 dream 014"
+      },
+      {
+        "id": "dream_018",
+        "title": "ABSENCE \u2014 dream 018"
+      },
+      {
+        "id": "dream_022",
+        "title": "ABSENCE \u2014 dream 022"
+      },
+      {
+        "id": "dream_026",
+        "title": "ABSENCE \u2014 dream 026"
+      },
+      {
+        "id": "dream_030",
+        "title": "ABSENCE \u2014 dream 030"
+      },
+      {
+        "id": "dream_034",
+        "title": "ABSENCE \u2014 dream 034"
+      },
+      {
+        "id": "dream_038",
+        "title": "ABSENCE \u2014 dream 038"
+      },
+      {
+        "id": "dream_042",
+        "title": "ABSENCE \u2014 dream 042"
+      },
+      {
+        "id": "dream_046",
+        "title": "ABSENCE \u2014 dream 046"
+      },
+      {
+        "id": "dream_050",
+        "title": "ABSENCE \u2014 dream 050"
+      },
+      {
+        "id": "dream_054",
+        "title": "ABSENCE \u2014 dream 054"
+      },
+      {
+        "id": "dream_058",
+        "title": "ABSENCE \u2014 dream 058"
+      },
+      {
+        "id": "dream_062",
+        "title": "ABSENCE \u2014 dream 062"
+      },
+      {
+        "id": "dream_066",
+        "title": "ABSENCE \u2014 dream 066"
+      },
+      {
+        "id": "dream_070",
+        "title": "ABSENCE \u2014 dream 070"
+      },
+      {
+        "id": "dream_074",
+        "title": "ABSENCE \u2014 dream 074"
+      },
+      {
+        "id": "dream_078",
+        "title": "ABSENCE \u2014 dream 078"
+      },
+      {
+        "id": "dream_082",
+        "title": "ABSENCE \u2014 dream 082"
+      },
+      {
+        "id": "dream_086",
+        "title": "ABSENCE \u2014 dream 086"
+      },
+      {
+        "id": "dream_090",
+        "title": "ABSENCE \u2014 dream 090"
+      },
+      {
+        "id": "dream_094",
+        "title": "ABSENCE \u2014 dream 094"
+      },
+      {
+        "id": "dream_098",
+        "title": "ABSENCE \u2014 dream 098"
+      },
+      {
+        "id": "ghost_001",
+        "title": "ABSENCE \u2014 ghost 001"
+      },
+      {
+        "id": "ghost_005",
+        "title": "ABSENCE \u2014 ghost 005"
+      },
+      {
+        "id": "ghost_009",
+        "title": "ABSENCE \u2014 ghost 009"
+      },
+      {
+        "id": "ghost_013",
+        "title": "ABSENCE \u2014 ghost 013"
+      },
+      {
+        "id": "ghost_017",
+        "title": "ABSENCE \u2014 ghost 017"
+      },
+      {
+        "id": "ghost_021",
+        "title": "ABSENCE \u2014 ghost 021"
+      },
+      {
+        "id": "ghost_025",
+        "title": "ABSENCE \u2014 ghost 025"
+      },
+      {
+        "id": "ghost_029",
+        "title": "ABSENCE \u2014 ghost 029"
+      },
+      {
+        "id": "ghost_033",
+        "title": "ABSENCE \u2014 ghost 033"
+      },
+      {
+        "id": "ghost_037",
+        "title": "ABSENCE \u2014 ghost 037"
+      },
+      {
+        "id": "ghost_041",
+        "title": "ABSENCE \u2014 ghost 041"
+      },
+      {
+        "id": "ghost_045",
+        "title": "ABSENCE \u2014 ghost 045"
+      },
+      {
+        "id": "ghost_049",
+        "title": "ABSENCE \u2014 ghost 049"
+      },
+      {
+        "id": "ghost_053",
+        "title": "ABSENCE \u2014 ghost 053"
+      },
+      {
+        "id": "ghost_057",
+        "title": "ABSENCE \u2014 ghost 057"
+      },
+      {
+        "id": "ghost_061",
+        "title": "ABSENCE \u2014 ghost 061"
+      },
+      {
+        "id": "ghost_065",
+        "title": "ABSENCE \u2014 ghost 065"
+      },
+      {
+        "id": "ghost_069",
+        "title": "ABSENCE \u2014 ghost 069"
+      },
+      {
+        "id": "ghost_073",
+        "title": "ABSENCE \u2014 ghost 073"
+      },
+      {
+        "id": "ghost_077",
+        "title": "ABSENCE \u2014 ghost 077"
+      },
+      {
+        "id": "ghost_081",
+        "title": "ABSENCE \u2014 ghost 081"
+      },
+      {
+        "id": "ghost_085",
+        "title": "ABSENCE \u2014 ghost 085"
+      },
+      {
+        "id": "ghost_089",
+        "title": "ABSENCE \u2014 ghost 089"
+      },
+      {
+        "id": "ghost_093",
+        "title": "ABSENCE \u2014 ghost 093"
+      },
+      {
+        "id": "ghost_097",
+        "title": "ABSENCE \u2014 ghost 097"
+      },
+      {
+        "id": "relic_000",
+        "title": "ABSENCE \u2014 relic 000"
+      },
+      {
+        "id": "relic_004",
+        "title": "ABSENCE \u2014 relic 004"
+      },
+      {
+        "id": "relic_008",
+        "title": "ABSENCE \u2014 relic 008"
+      },
+      {
+        "id": "relic_012",
+        "title": "ABSENCE \u2014 relic 012"
+      },
+      {
+        "id": "relic_016",
+        "title": "ABSENCE \u2014 relic 016"
+      },
+      {
+        "id": "relic_020",
+        "title": "ABSENCE \u2014 relic 020"
+      },
+      {
+        "id": "relic_024",
+        "title": "ABSENCE \u2014 relic 024"
+      },
+      {
+        "id": "relic_028",
+        "title": "ABSENCE \u2014 relic 028"
+      },
+      {
+        "id": "relic_032",
+        "title": "ABSENCE \u2014 relic 032"
+      },
+      {
+        "id": "relic_036",
+        "title": "ABSENCE \u2014 relic 036"
+      },
+      {
+        "id": "relic_040",
+        "title": "ABSENCE \u2014 relic 040"
+      },
+      {
+        "id": "relic_044",
+        "title": "ABSENCE \u2014 relic 044"
+      },
+      {
+        "id": "relic_048",
+        "title": "ABSENCE \u2014 relic 048"
+      },
+      {
+        "id": "relic_052",
+        "title": "ABSENCE \u2014 relic 052"
+      },
+      {
+        "id": "relic_056",
+        "title": "ABSENCE \u2014 relic 056"
+      },
+      {
+        "id": "relic_060",
+        "title": "ABSENCE \u2014 relic 060"
+      },
+      {
+        "id": "relic_064",
+        "title": "ABSENCE \u2014 relic 064"
+      },
+      {
+        "id": "relic_068",
+        "title": "ABSENCE \u2014 relic 068"
+      },
+      {
+        "id": "relic_072",
+        "title": "ABSENCE \u2014 relic 072"
+      },
+      {
+        "id": "relic_076",
+        "title": "ABSENCE \u2014 relic 076"
+      },
+      {
+        "id": "relic_080",
+        "title": "ABSENCE \u2014 relic 080"
+      },
+      {
+        "id": "relic_084",
+        "title": "ABSENCE \u2014 relic 084"
+      },
+      {
+        "id": "relic_088",
+        "title": "ABSENCE \u2014 relic 088"
+      },
+      {
+        "id": "relic_092",
+        "title": "ABSENCE \u2014 relic 092"
+      },
+      {
+        "id": "relic_096",
+        "title": "ABSENCE \u2014 relic 096"
+      },
+      {
+        "id": "void_003",
+        "title": "ABSENCE \u2014 void 003"
+      },
+      {
+        "id": "void_007",
+        "title": "ABSENCE \u2014 void 007"
+      },
+      {
+        "id": "void_011",
+        "title": "ABSENCE \u2014 void 011"
+      },
+      {
+        "id": "void_015",
+        "title": "ABSENCE \u2014 void 015"
+      },
+      {
+        "id": "void_019",
+        "title": "ABSENCE \u2014 void 019"
+      },
+      {
+        "id": "void_023",
+        "title": "ABSENCE \u2014 void 023"
+      },
+      {
+        "id": "void_027",
+        "title": "ABSENCE \u2014 void 027"
+      },
+      {
+        "id": "void_031",
+        "title": "ABSENCE \u2014 void 031"
+      },
+      {
+        "id": "void_035",
+        "title": "ABSENCE \u2014 void 035"
+      },
+      {
+        "id": "void_039",
+        "title": "ABSENCE \u2014 void 039"
+      },
+      {
+        "id": "void_043",
+        "title": "ABSENCE \u2014 void 043"
+      },
+      {
+        "id": "void_047",
+        "title": "ABSENCE \u2014 void 047"
+      },
+      {
+        "id": "void_051",
+        "title": "ABSENCE \u2014 void 051"
+      },
+      {
+        "id": "void_055",
+        "title": "ABSENCE \u2014 void 055"
+      },
+      {
+        "id": "void_059",
+        "title": "ABSENCE \u2014 void 059"
+      },
+      {
+        "id": "void_063",
+        "title": "ABSENCE \u2014 void 063"
+      },
+      {
+        "id": "void_067",
+        "title": "ABSENCE \u2014 void 067"
+      },
+      {
+        "id": "void_071",
+        "title": "ABSENCE \u2014 void 071"
+      },
+      {
+        "id": "void_075",
+        "title": "ABSENCE \u2014 void 075"
+      },
+      {
+        "id": "void_079",
+        "title": "ABSENCE \u2014 void 079"
+      },
+      {
+        "id": "void_083",
+        "title": "ABSENCE \u2014 void 083"
+      },
+      {
+        "id": "void_087",
+        "title": "ABSENCE \u2014 void 087"
+      },
+      {
+        "id": "void_091",
+        "title": "ABSENCE \u2014 void 091"
+      },
+      {
+        "id": "void_095",
+        "title": "ABSENCE \u2014 void 095"
+      },
+      {
+        "id": "void_099",
+        "title": "ABSENCE \u2014 void 099"
+      }
+    ],
     "type": [
       {
         "id": "big-type-only",
@@ -341,12 +1147,28 @@
         "title": "RETARD GLOBAL wordmark banner \u2014 the bundled hi-vis lime / orange-retro banner assets (wordmark + serif footer), seed picks the variant"
       },
       {
+        "id": "rg-meme-45-popout",
+        "title": "RETARD GLOBAL meme card (4:5) \u2014 clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring"
+      },
+      {
         "id": "rg-meme-45",
-        "title": "RETARD GLOBAL meme card (4:5 portrait) \u2014 clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge"
+        "title": "RETARD GLOBAL meme card (4:5 portrait) \u2014 clean photo + smooth bottom fade + real banner masthead (hi-vis lime/orange wordmark) + big tight lime Impact headline + white footer + corner logo badge"
+      },
+      {
+        "id": "rg-meme-computer",
+        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer + CRT computer logo badge (top-right)"
+      },
+      {
+        "id": "rg-meme-nobadge",
+        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer (no corner logo badge)"
+      },
+      {
+        "id": "rg-meme-popout",
+        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + bottom fade + real banner masthead + tight lime Impact headline + white footer + corner logo badge + circle popout sticker (photo2) in a magenta ring"
       },
       {
         "id": "rg-meme",
-        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + smooth bottom fade + magenta masthead (lime wordmark, filled) + big tight lime Impact headline + white footer + corner logo badge"
+        "title": "RETARD GLOBAL meme card (1:1) \u2014 clean photo + smooth bottom fade + real banner masthead (hi-vis lime/orange wordmark) + big tight lime Impact headline + white footer + corner logo badge"
       }
     ]
   },
@@ -361,7 +1183,11 @@
     "punkzine-amtech": "amtech",
     "raveflyer-amtech": "amtech",
     "rg-banner": "retardglobal",
+    "rg-meme-45-popout": "retardglobal",
     "rg-meme-45": "retardglobal",
+    "rg-meme-computer": "retardglobal",
+    "rg-meme-nobadge": "retardglobal",
+    "rg-meme-popout": "retardglobal",
     "rg-meme": "retardglobal",
     "vaporwave-amtech": "amtech"
   },
