@@ -102,18 +102,6 @@ def emit_script(resolved: dict, out_dir: Path | None = None, name: str | None = 
           f"int(H * {cy}) - _sticker.size[1] // 2), _sticker)")
         A("")
 
-    # filters
-    for f in resolved.get("filters", []):
-        fn = _fn_name(f["name"])
-        if not fn:
-            A(f"    # filter not mapped: {f['name']} {f.get('param', {})}")
-            continue
-        kwargs = _filtered_kwargs(fn, f.get("param", {}))
-        args = ", ".join(f"{k}={v!r}" for k, v in kwargs.items())
-        A(f"    im = effects.{fn}(im{', ' + args if args else ''})")
-    if resolved.get("filters"):
-        A("")
-
     # masthead banner (real brand asset pasted top-left); record its height so
     # the corner badge can bottom-align to it.
     mb = resolved.get("pillow", {}).get("masthead_banner")
@@ -141,6 +129,18 @@ def emit_script(resolved: dict, out_dir: Path | None = None, name: str | None = 
             A(f"    im = effects.corner_badge(im, {_py(str(logo_path))}, "
               f"corner={_py(corner)}, size={size}, margin={margin}, "
               f"bottom={bottom!r})")
+        A("")
+
+    # filters
+    for f in resolved.get("filters", []):
+        fn = _fn_name(f["name"])
+        if not fn:
+            A(f"    # filter not mapped: {f['name']} {f.get('param', {})}")
+            continue
+        kwargs = _filtered_kwargs(fn, f.get("param", {}))
+        args = ", ".join(f"{k}={v!r}" for k, v in kwargs.items())
+        A(f"    im = effects.{fn}(im{', ' + args if args else ''})")
+    if resolved.get("filters"):
         A("")
 
     # draw
