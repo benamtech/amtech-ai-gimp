@@ -70,6 +70,21 @@ substring of the caption:
 Two images per caption stitch side-by-side into the photo area (driven by image
 count, not copy).
 
+### Mass variation (the cross product)
+
+For "a ton" of memes from one captions file — every caption rendered across
+multiple styles AND multiple seeds (masthead lime/orange + texture variety):
+
+```bash
+python3 generate_memes.py captions.txt --images images.json \
+  --styles rg-meme,rg-meme-45,rg-meme-popout --seeds 3 --out out/rg-batch
+```
+
+`images.json` maps a subject substring to a still, or to `[still, popout_still]`
+(the second still feeds the popout styles). Popout styles skip automatically
+when no second still is present. Deterministic seed per (caption, style, seed).
+See `examples/captions-rg.txt` + `examples/images-rg.json`.
+
 ## Templates, looks, canvases
 
 - `rg-meme` — 1:1 (Instagram feed). The default.
